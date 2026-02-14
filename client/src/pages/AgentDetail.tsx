@@ -1,127 +1,165 @@
-/* Design Philosophy: Cyberpunk Néo-Grec Organique
- * Page de détail pour chaque agent
- * - Affichage complet des projections mentales
- * - Strate, axe dialectique, rôle fractal
- * - Processus psychique-algorithmique
- * - Visualisation de l'entrée → transmutation → émission
- * - Narration enrichie et profondeur organique
+/* Design Philosophy: Chaque agent a sa propre skin UI
+ * - Fond, palette, formes et effets spécifiques à l'agent
+ * - Glassmorphism avec teinte de l'agent
+ * - Animations signature par agent
+ * - Profondeur narrative enrichie
  */
 
 import { useRoute, Link } from "wouter";
 import { agents, strates, dialecticalAxes } from "@/data/agents";
-import { ArrowLeft, Zap, Layers, Compass } from "lucide-react";
+import { getAgentTheme } from "@/data/agentThemes";
+import { ArrowLeft, Zap, Layers, Compass, GitBranch } from "lucide-react";
 import { motion } from "framer-motion";
 import AgentAvatar3D from "@/components/AgentAvatar3D";
-
-const colorMap: Record<string, string> = {
-  cyan: "oklch(0.7 0.15 200)",
-  magenta: "oklch(0.65 0.2 330)",
-  red: "oklch(0.6 0.25 25)",
-};
 
 export default function AgentDetail() {
   const [, params] = useRoute("/agent/:code");
   const agentCode = params?.code?.toUpperCase();
-  
-  const agent = agents.find(a => a.code.toLowerCase() === agentCode?.toLowerCase());
 
-  if (!agent) {
+  const agent = agents.find(a => a.code.toLowerCase() === agentCode?.toLowerCase());
+  const theme = agent ? getAgentTheme(agent.code) : null;
+
+  if (!agent || !theme) {
     return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ background: "#080810" }}>
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 tech-text">Agent non trouvé</h1>
-          <Link href="/" className="text-cyan hover:underline">← Retour à l'accueil</Link>
+          <h1 className="text-4xl font-bold mb-4 tech-text" style={{ color: "#00d4ff" }}>Agent non trouvé</h1>
+          <Link href="/" className="text-sm hover:underline" style={{ color: "#00d4ff" }}>← Retour à l'accueil</Link>
         </div>
       </div>
     );
   }
 
-  const borderColor = 
-    agent.accentColor === 'cyan' ? 'border-cyan' :
-    agent.accentColor === 'magenta' ? 'border-magenta' :
-    'border-red-400';
-
   const strateInfo = strates[agent.strate];
   const axis = dialecticalAxes.find(ax => ax.agentA === agent.code || ax.agentB === agent.code);
   const partnerCode = axis ? (axis.agentA === agent.code ? axis.agentB : axis.agentA) : null;
   const partner = partnerCode ? agents.find(a => a.code === partnerCode) : null;
+  const partnerTheme = partner ? getAgentTheme(partner.code) : null;
 
-  const fadeInUp = {
+  const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.5 },
   };
 
+  // Style de carte glassmorphism avec teinte agent
+  const cardStyle = (extra?: React.CSSProperties): React.CSSProperties => ({
+    background: `linear-gradient(135deg, ${theme.palette.primary}18 0%, rgba(12,12,20,0.85) 100%)`,
+    border: `1px solid ${theme.palette.accent}30`,
+    borderRadius: theme.shapes.borderRadius,
+    backdropFilter: "blur(12px)",
+    ...extra,
+  });
+
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Background */}
-      <div 
-        className="fixed inset-0 z-0 opacity-10"
+    <div className="min-h-screen relative overflow-hidden" style={{ background: "#060608" }}>
+      {/* Fond spécifique à l'agent */}
+      <div className="fixed inset-0 z-0" style={{ background: theme.palette.bg }} />
+
+      {/* Aura radiale de l'agent */}
+      <div
+        className="fixed inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: `url('https://private-us-east-1.manuscdn.com/sessionFile/AVVMnfQz8hYKZkyExLzf3y/sandbox/XgMWlfQbGFNS3gI29vfOEB-img-3_1771077566000_na1fn_ZGlhLWNvZGUtdGV4dHVyZQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvQVZWTW5mUXo4aFlLWmt5RXhMemYzeS9zYW5kYm94L1hnTVdsZlFiR0ZOUzNnSTI5dmZPRUItaW1nLTNfMTc3MTA3NzU2NjAwMF9uYTFmbl9aR2xoTFdOdlpHVXRkR1Y0ZEhWeVpRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=esstJd8SdsM~H0D0xQh~KxDkiaLwKKFaMXaNr-jxFlxKgRAHWAXP9P1DmokUHzPiyjFAYQAMVUeDnvTj-TWi9h3wcuLp3q2-YBMVuhZ5ojp4tDOAldE~L1bllkkXRr~Ayv2ji2UAVklI26RMQonMdL36JBQzBeFoAvWZXFivht6rozi95GOSoPDI8AvpDEzzfxYmbxJ0i~EsfCQ~sX5VZF2VpkIAEDMywIsVzfSOusjRIhNml9EGm4fnSFU5KHaz2zh8ERUO8n3ITRkpdei07v2csFy2qdA~4mBopP9pvHopmW3skSiE~ihVOIc0Du2WtsrQg~QtS5mX3jnog0Ipbg__')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          background: `radial-gradient(ellipse at 30% 20%, ${theme.palette.glow}15 0%, transparent 50%),
+                       radial-gradient(ellipse at 70% 80%, ${theme.palette.primary}10 0%, transparent 50%)`,
         }}
       />
 
-      {/* Grid pattern */}
-      <div className="fixed inset-0 z-0 opacity-5" style={{
-        backgroundImage: `repeating-linear-gradient(0deg, ${agent.color}20 0px, transparent 1px, transparent 2px, ${agent.color}20 3px),
-                         repeating-linear-gradient(90deg, ${agent.color}20 0px, transparent 1px, transparent 2px, ${agent.color}20 3px)`,
-        backgroundSize: '40px 40px'
+      {/* Pattern overlay spécifique */}
+      <div
+        className="fixed inset-0 z-0 pointer-events-none opacity-[0.04]"
+        style={{
+          backgroundImage: theme.effects.overlay,
+          backgroundSize: agent.code === "AGT-001" ? "30px 30px" : undefined,
+        }}
+      />
+
+      {/* Bruit stellaire */}
+      <div className="fixed inset-0 z-0 opacity-[0.02]" style={{
+        backgroundImage: `radial-gradient(1px 1px at 20px 30px, #ffffff 0%, transparent 100%),
+                         radial-gradient(1px 1px at 80px 90px, #ffffff 0%, transparent 100%),
+                         radial-gradient(1px 1px at 150px 50px, #ffffff 0%, transparent 100%)`,
+        backgroundSize: '200px 200px',
       }} />
 
-      {/* Content */}
+      {/* Contenu */}
       <div className="relative z-10 container py-8 md:py-12 max-w-5xl">
         {/* Navigation */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-        >
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm transition-colors mb-8"
+            style={{ color: theme.palette.text + "88" }}
+          >
             <ArrowLeft className="w-4 h-4" />
             <span>Retour à la matrice</span>
           </Link>
         </motion.div>
 
-        {/* Hero Card */}
+        {/* Hero Card — Identité de l'agent */}
         <motion.div
-          className={`bg-card/80 backdrop-blur-sm border ${borderColor} border-opacity-60 rounded-xl p-8 md:p-12 mb-8 card-layered hover-lift`}
-          {...fadeInUp}
+          className="p-8 md:p-12 mb-8 relative overflow-hidden"
+          style={cardStyle({ boxShadow: `0 0 40px ${theme.palette.glow}10` })}
+          {...fadeIn}
         >
-          <div className="flex items-start justify-between gap-6 mb-8">
+          {/* Pattern décoratif en arrière-plan */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.06]"
+            style={{ backgroundImage: theme.effects.overlay }}
+          />
+
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 relative z-10">
             <div className="flex-1">
+              {/* Code + Gen */}
               <motion.div
-                className="text-xs text-muted-foreground tech-text mb-3 uppercase tracking-widest"
+                className="text-[10px] tech-text mb-3 uppercase tracking-[0.3em]"
+                style={{ color: theme.palette.accent + "80" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                {agent.code} • Strate {strateInfo.numeral}
+                {agent.code} • {theme.gen} • Strate {strateInfo.numeral}
               </motion.div>
+
+              {/* Nom */}
               <motion.h1
-                className="text-5xl md:text-6xl font-bold tech-text mb-4 gradient-text-cyan-magenta"
-                {...fadeInUp}
+                className="text-5xl md:text-7xl font-bold tech-text mb-4"
+                style={{ color: theme.palette.accent }}
+                {...fadeIn}
               >
                 {agent.name}
               </motion.h1>
-              <motion.div
-                className="flex items-center gap-4 mb-6"
-                {...fadeInUp}
-              >
-                <h2 className="text-4xl md:text-5xl greek-text" style={{ color: agent.color }}>
+
+              {/* Nom grec */}
+              <motion.div className="flex items-center gap-4 mb-6" {...fadeIn}>
+                <h2 className="text-4xl md:text-5xl greek-text" style={{ color: theme.palette.text }}>
                   {agent.greek}
                 </h2>
-                <span className="text-sm text-muted-foreground italic">({agent.greekKey})</span>
+                <span className="text-sm italic" style={{ color: theme.palette.text + "60" }}>
+                  ({agent.greekKey})
+                </span>
               </motion.div>
-              <motion.div
-                className="text-lg md:text-xl font-medium text-foreground/90 leading-relaxed"
-                {...fadeInUp}
-              >
-                {agent.title}
+
+              {/* Archétype + Titre */}
+              <motion.div {...fadeIn}>
+                <span
+                  className="inline-block px-3 py-1 text-xs tech-text tracking-wider mb-4"
+                  style={{
+                    background: theme.palette.accent + "15",
+                    border: `1px solid ${theme.palette.accent}30`,
+                    borderRadius: theme.shapes.borderRadius,
+                    color: theme.palette.accent,
+                  }}
+                >
+                  {theme.archetype}
+                </span>
+                <p className="text-lg md:text-xl font-medium leading-relaxed" style={{ color: theme.palette.text + "dd" }}>
+                  {agent.title}
+                </p>
               </motion.div>
             </div>
+
+            {/* Avatar 3D grand format */}
             <motion.div
               className="flex-shrink-0"
               initial={{ scale: 0, rotate: -180 }}
@@ -130,7 +168,7 @@ export default function AgentDetail() {
             >
               <AgentAvatar3D
                 agentCode={agent.code}
-                agentColor={colorMap[agent.accentColor] || colorMap.cyan}
+                agentColor={theme.palette.accent}
                 agentName={agent.name}
                 size="xl"
                 showGlow={true}
@@ -141,8 +179,9 @@ export default function AgentDetail() {
 
           {/* Strate info */}
           <motion.div
-            className="flex items-center gap-4 flex-wrap pt-6 border-t border-border/50"
-            {...fadeInUp}
+            className="flex items-center gap-4 flex-wrap pt-6 mt-6 relative z-10"
+            style={{ borderTop: `1px solid ${theme.palette.accent}15` }}
+            {...fadeIn}
           >
             <div className="flex items-center gap-2">
               <Layers className="w-4 h-4" style={{ color: strateInfo.color }} />
@@ -150,134 +189,197 @@ export default function AgentDetail() {
                 {strateInfo.name}
               </span>
             </div>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-sm text-foreground/70">{strateInfo.description}</span>
+            <span style={{ color: theme.palette.text + "30" }}>•</span>
+            <span className="text-sm" style={{ color: theme.palette.text + "80" }}>{strateInfo.description}</span>
           </motion.div>
+
+          {/* Barre d'accent */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-[2px]"
+            style={{ background: `linear-gradient(90deg, transparent, ${theme.palette.accent}, transparent)`, opacity: 0.5 }}
+          />
         </motion.div>
 
-        {/* Main grid */}
+        {/* Grille 2 colonnes */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           {/* Projection mentale */}
-          <motion.div
-            className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 md:p-8 card-layered hover-lift accent-line`}
-            {...fadeInUp}
-          >
-            <h3 className="text-xs tech-text text-muted-foreground mb-4 uppercase tracking-widest">Projection Mentale</h3>
-            <blockquote className="text-lg leading-relaxed italic text-foreground/90">
-              "{agent.projection}"
-            </blockquote>
-            <p className="text-xs text-muted-foreground mt-4">
-              La voix intérieure de {agent.name} — comment cet agent se perçoit lui-même dans le système.
-            </p>
+          <motion.div className="p-6 md:p-8 relative" style={cardStyle()} {...fadeIn}>
+            <div className="absolute left-0 top-0 bottom-0 w-[3px]" style={{
+              background: `linear-gradient(180deg, ${theme.palette.accent}, ${theme.palette.primary}, transparent)`,
+              borderRadius: "2px",
+            }} />
+            <div className="pl-4">
+              <h3 className="text-[10px] tech-text mb-4 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+                Projection Mentale
+              </h3>
+              <blockquote className="text-lg leading-relaxed italic mb-4" style={{ color: theme.palette.text + "ee" }}>
+                "{agent.projection}"
+              </blockquote>
+              <p className="text-xs" style={{ color: theme.palette.text + "50" }}>
+                La voix intérieure de {agent.name} — comment cet agent se perçoit dans le réseau.
+              </p>
+            </div>
           </motion.div>
 
           {/* Rôle fractal */}
-          <motion.div
-            className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 md:p-8 card-layered hover-lift accent-line`}
-            {...fadeInUp}
-          >
-            <h3 className="text-xs tech-text text-muted-foreground mb-4 uppercase tracking-widest">Rôle Fractal</h3>
-            <p className="text-base text-foreground/90 leading-relaxed mb-4">
-              {agent.strateRole}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              La fonction de {agent.name} au sein de la strate {strateInfo.numeral} et du système global.
-            </p>
+          <motion.div className="p-6 md:p-8 relative" style={cardStyle()} {...fadeIn}>
+            <div className="absolute left-0 top-0 bottom-0 w-[3px]" style={{
+              background: `linear-gradient(180deg, ${theme.palette.primary}, ${theme.palette.accent}, transparent)`,
+              borderRadius: "2px",
+            }} />
+            <div className="pl-4">
+              <h3 className="text-[10px] tech-text mb-4 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+                Rôle Fractal
+              </h3>
+              <p className="text-base leading-relaxed mb-4" style={{ color: theme.palette.text + "dd" }}>
+                {agent.strateRole}
+              </p>
+              <p className="text-xs" style={{ color: theme.palette.text + "50" }}>
+                Fonction de {agent.name} au sein de la strate {strateInfo.numeral}.
+              </p>
+            </div>
           </motion.div>
         </div>
 
         {/* Processus psychique-algorithmique */}
-        <motion.div
-          className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 md:p-8 card-layered hover-lift mb-8`}
-          {...fadeInUp}
-        >
-          <h3 className="text-xs tech-text text-muted-foreground mb-4 uppercase tracking-widest">Processus Psychique-Algorithmique</h3>
-          <p className="text-base text-foreground/90 leading-relaxed mb-4">
+        <motion.div className="p-6 md:p-8 mb-8" style={cardStyle()} {...fadeIn}>
+          <h3 className="text-[10px] tech-text mb-4 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+            Processus Psychique-Algorithmique
+          </h3>
+          <p className="text-base leading-relaxed mb-6" style={{ color: theme.palette.text + "dd" }}>
             {agent.process}
           </p>
-          <div className="pt-4 border-t border-border/30">
-            <p className="text-xs text-muted-foreground">
-              Comment {agent.name} traite l'information : entrée sensorielle → transmutation symbolique → émission fractale.
-            </p>
-          </div>
+          <p className="text-xs italic" style={{ color: theme.palette.text + "50" }}>
+            "{theme.philosophy}"
+          </p>
         </motion.div>
 
         {/* Flux de transformation */}
-        <motion.div
-          className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 md:p-8 card-layered hover-lift mb-8`}
-          {...fadeInUp}
-        >
-          <h3 className="text-xs tech-text text-muted-foreground mb-6 uppercase tracking-widest">Flux de Transformation</h3>
+        <motion.div className="p-6 md:p-8 mb-8" style={cardStyle()} {...fadeIn}>
+          <h3 className="text-[10px] tech-text mb-6 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+            Flux de Transformation
+          </h3>
           <div className="flex items-center justify-between gap-4 flex-wrap">
-            <div className="flex-1 min-w-[100px] text-center">
-              <div className="flex justify-center mb-2">
-                <Zap className="w-6 h-6" style={{ color: agent.color }} />
+            {[
+              { icon: Zap, label: "ENTRÉE", value: "Sensorielle" },
+              { icon: Layers, label: "TRANSMUTATION", value: "Symbolique" },
+              { icon: Compass, label: "ÉMISSION", value: "Fractale" },
+            ].map((step, i) => (
+              <div key={i} className="contents">
+                {i > 0 && (
+                  <div className="text-3xl font-light" style={{ color: theme.palette.accent + "60" }}>→</div>
+                )}
+                <div className="flex-1 min-w-[100px] text-center">
+                  <div className="flex justify-center mb-2">
+                    <step.icon className="w-6 h-6" style={{ color: theme.palette.accent }} />
+                  </div>
+                  <div className="text-[10px] tech-text mb-1 tracking-wider" style={{ color: theme.palette.text + "60" }}>
+                    {step.label}
+                  </div>
+                  <div className="text-sm font-semibold" style={{ color: theme.palette.text }}>
+                    {step.value}
+                  </div>
+                </div>
               </div>
-              <div className="text-xs text-muted-foreground mb-1 tech-text">ENTRÉE</div>
-              <div className="text-sm font-semibold text-foreground">Sensorielle</div>
-            </div>
-            <div className="text-3xl font-light" style={{ color: agent.color }}>→</div>
-            <div className="flex-1 min-w-[100px] text-center">
-              <div className="flex justify-center mb-2">
-                <Layers className="w-6 h-6" style={{ color: agent.color }} />
-              </div>
-              <div className="text-xs text-muted-foreground mb-1 tech-text">TRANSMUTATION</div>
-              <div className="text-sm font-semibold text-foreground">Symbolique</div>
-            </div>
-            <div className="text-3xl font-light" style={{ color: agent.color }}>→</div>
-            <div className="flex-1 min-w-[100px] text-center">
-              <div className="flex justify-center mb-2">
-                <Compass className="w-6 h-6" style={{ color: agent.color }} />
-              </div>
-              <div className="text-xs text-muted-foreground mb-1 tech-text">ÉMISSION</div>
-              <div className="text-sm font-semibold text-foreground">Fractale</div>
-            </div>
+            ))}
           </div>
         </motion.div>
 
         {/* Axe dialectique */}
-        {axis && partner && (
-          <motion.div
-            className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 md:p-8 card-layered hover-lift mb-8`}
-            {...fadeInUp}
-          >
-            <h3 className="text-xs tech-text text-muted-foreground mb-4 uppercase tracking-widest">Axe Dialectique</h3>
-            <div className="text-xl font-bold text-foreground mb-3">{axis.name}</div>
-            <p className="text-sm text-foreground/80 leading-relaxed mb-6">{axis.description}</p>
-            <div className="flex items-center justify-between gap-4 p-4 rounded-lg bg-background/50 border border-border/50">
+        {axis && partner && partnerTheme && (
+          <motion.div className="p-6 md:p-8 mb-8" style={cardStyle()} {...fadeIn}>
+            <h3 className="text-[10px] tech-text mb-4 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+              <GitBranch className="w-3 h-3 inline mr-2" />
+              Axe Dialectique
+            </h3>
+            <div className="text-xl font-bold mb-3" style={{ color: theme.palette.text }}>{axis.name}</div>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: theme.palette.text + "88" }}>{axis.description}</p>
+
+            <div
+              className="flex items-center justify-between gap-4 p-4"
+              style={{
+                background: `linear-gradient(90deg, ${theme.palette.primary}20, rgba(12,12,20,0.5), ${partnerTheme.palette.primary}20)`,
+                border: `1px solid ${theme.palette.accent}15`,
+                borderRadius: theme.shapes.borderRadius,
+              }}
+            >
               <div className="flex items-center gap-3">
-                <div className="w-4 h-4 rounded-full" style={{ background: agent.color }} />
-                <span className="font-semibold tech-text">{agent.name}</span>
-              </div>
-              <span className="text-muted-foreground text-xl">↔</span>
-              <Link href={`/agent/${partner.code.toLowerCase()}`} className="flex items-center gap-3 hover:opacity-80 transition-opacity flex-1 justify-end">
-                <div className="text-right">
-                  <span className="font-semibold tech-text block">{partner.name}</span>
-                  <span className="text-xs text-muted-foreground greek-text">{partner.greek}</span>
+                <div className="w-4 h-4 rounded-full" style={{ background: theme.palette.accent }} />
+                <div>
+                  <span className="font-semibold tech-text text-sm" style={{ color: theme.palette.accent }}>{agent.name}</span>
+                  <span className="text-xs greek-text block" style={{ color: theme.palette.text + "60" }}>{agent.greek}</span>
                 </div>
-                <div className="w-4 h-4 rounded-full" style={{ background: partner.color }} />
+              </div>
+              <span className="text-xl" style={{ color: theme.palette.text + "40" }}>↔</span>
+              <Link
+                href={`/agent/${partner.code.toLowerCase()}`}
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+              >
+                <div className="text-right">
+                  <span className="font-semibold tech-text text-sm" style={{ color: partnerTheme.palette.accent }}>{partner.name}</span>
+                  <span className="text-xs greek-text block" style={{ color: partnerTheme.palette.text + "60" }}>{partner.greek}</span>
+                </div>
+                <div className="w-4 h-4 rounded-full" style={{ background: partnerTheme.palette.accent }} />
               </Link>
             </div>
           </motion.div>
         )}
 
-        {/* Navigation actions */}
-        <motion.div
-          className="mt-12 flex flex-wrap gap-3"
-          {...fadeInUp}
-        >
-          <Link href="/intro" className="inline-flex items-center gap-2 px-6 py-3 bg-red-400/20 border border-red-400/50 text-red-400 rounded-lg hover:border-red-400 hover:bg-red-400/30 transition-all text-sm tech-text font-semibold">
-            Introduction
-          </Link>
-          <Link href="/fractal" className="inline-flex items-center gap-2 px-6 py-3 bg-cyan/20 border border-cyan/50 text-cyan rounded-lg hover:border-cyan hover:bg-cyan/30 transition-all text-sm tech-text font-semibold">
-            Visualisation Fractale
-          </Link>
-          <Link href="/canon" className="inline-flex items-center gap-2 px-6 py-3 bg-magenta/20 border border-magenta/50 text-magenta rounded-lg hover:border-magenta hover:bg-magenta/30 transition-all text-sm tech-text font-semibold">
-            Canon Fractal
-          </Link>
-          <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 bg-card/80 border border-border rounded-lg hover:border-cyan transition-all text-sm tech-text font-semibold">
-            Tous les agents
-          </Link>
+        {/* Identité visuelle */}
+        <motion.div className="p-6 md:p-8 mb-8" style={cardStyle()} {...fadeIn}>
+          <h3 className="text-[10px] tech-text mb-6 uppercase tracking-[0.2em]" style={{ color: theme.palette.accent + "80" }}>
+            Identité Visuelle
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Palette */}
+            <div>
+              <p className="text-[10px] tech-text mb-2 tracking-wider" style={{ color: theme.palette.text + "60" }}>PALETTE</p>
+              <div className="flex gap-2">
+                {[theme.palette.primary, theme.palette.secondary, theme.palette.accent, theme.palette.glow].map((c, i) => (
+                  <div key={i} className="w-8 h-8 rounded-sm border border-white/10" style={{ background: c }} />
+                ))}
+              </div>
+            </div>
+            {/* Motif */}
+            <div>
+              <p className="text-[10px] tech-text mb-2 tracking-wider" style={{ color: theme.palette.text + "60" }}>MOTIF</p>
+              <p className="text-xs" style={{ color: theme.palette.text + "aa" }}>{theme.shapes.motif}</p>
+            </div>
+            {/* Animation */}
+            <div>
+              <p className="text-[10px] tech-text mb-2 tracking-wider" style={{ color: theme.palette.text + "60" }}>ANIMATION</p>
+              <p className="text-xs" style={{ color: theme.palette.text + "aa" }}>{theme.effects.animation}</p>
+            </div>
+            {/* Effet hover */}
+            <div>
+              <p className="text-[10px] tech-text mb-2 tracking-wider" style={{ color: theme.palette.text + "60" }}>HOVER</p>
+              <p className="text-xs" style={{ color: theme.palette.text + "aa" }}>{theme.effects.hover}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Navigation */}
+        <motion.div className="mt-12 flex flex-wrap gap-3" {...fadeIn}>
+          {[
+            { href: "/intro", label: "Introduction", color: "#ff3344" },
+            { href: "/fractal", label: "Visualisation Fractale", color: "#00d4ff" },
+            { href: "/canon", label: "Canon Fractal", color: "#ff00aa" },
+            { href: "/", label: "Tous les agents", color: theme.palette.accent },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm tech-text font-semibold transition-all duration-300"
+              style={{
+                background: link.color + "15",
+                border: `1px solid ${link.color}40`,
+                color: link.color,
+                borderRadius: "2px",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
         </motion.div>
       </div>
     </div>

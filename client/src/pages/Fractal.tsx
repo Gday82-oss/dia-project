@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { agents, diaCore, strates, dialecticalAxes, type Agent, type Strate } from "@/data/agents";
 import { agentImages } from "@/components/AgentAvatar3D";
+import { getAgentTheme } from "@/data/agentThemes";
 
 const SIZE = 900;
 const CX = SIZE / 2;
@@ -326,7 +327,12 @@ export default function Fractal() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 40 }}
-            className="absolute right-4 bottom-4 w-[min(500px,95vw)] rounded-xl bg-card/90 backdrop-blur-md p-5 border border-border shadow-2xl z-40"
+            className="absolute right-4 bottom-4 w-[min(500px,95vw)] backdrop-blur-md p-5 shadow-2xl z-40"
+            style={{
+              background: `linear-gradient(135deg, ${getAgentTheme(active.code)?.palette.primary || '#0c0c14'}30, rgba(12,12,20,0.92))`,
+              border: `1px solid ${getAgentTheme(active.code)?.palette.accent || '#ffffff'}30`,
+              borderRadius: getAgentTheme(active.code)?.shapes.borderRadius || '12px',
+            }}
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-3">
@@ -380,7 +386,7 @@ export default function Fractal() {
 
             {/* Actions */}
             <div className="mt-3 flex items-center justify-between gap-3">
-              <Link href={`/agent/${active.code.toLowerCase()}`} className="text-xs text-[oklch(0.7_0.15_200)] hover:underline tech-text">
+              <Link href={`/agent/${active.code.toLowerCase()}`} className="text-xs hover:underline tech-text" style={{ color: getAgentTheme(active.code)?.palette.accent || '#00d4ff' }}>
                 Voir détails →
               </Link>
               <button
