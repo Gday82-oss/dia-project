@@ -97,7 +97,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#fff8dc",
     },
     shapes: {
-      borderRadius: "50%",
+      borderRadius: "4px",
       pattern: "radial",
       motif: "halo / rayons / auréole",
     },
@@ -122,7 +122,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#e8dcc0",
     },
     shapes: {
-      borderRadius: "50%",
+      borderRadius: "4px",
       pattern: "spiral",
       motif: "spirale / arc / timeline circulaire",
     },
@@ -147,7 +147,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#d0d8e8",
     },
     shapes: {
-      borderRadius: "24px",
+      borderRadius: "6px",
       pattern: "wave",
       motif: "blob / vague / contours diffus",
     },
@@ -172,7 +172,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#e0c8f0",
     },
     shapes: {
-      borderRadius: "12px",
+      borderRadius: "6px",
       pattern: "ink",
       motif: "goutte d'encre / nuage de mots",
     },
@@ -222,7 +222,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#ffe0e8",
     },
     shapes: {
-      borderRadius: "50%",
+      borderRadius: "4px",
       pattern: "intertwined",
       motif: "courbes entrelacées / orbites croisées",
     },
@@ -272,7 +272,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#ffd8c0",
     },
     shapes: {
-      borderRadius: "50%",
+      borderRadius: "4px",
       pattern: "cardiac",
       motif: "courbe organique / spirale / signal cardiaque",
     },
@@ -297,7 +297,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#e0d8f0",
     },
     shapes: {
-      borderRadius: "16px",
+      borderRadius: "6px",
       pattern: "mist",
       motif: "triangle flou / cône de lumière / brume",
     },
@@ -322,7 +322,7 @@ export const agentThemes: Record<string, AgentTheme> = {
       text: "#d0f0c0",
     },
     shapes: {
-      borderRadius: "20px",
+      borderRadius: "6px",
       pattern: "fractal-leaf",
       motif: "feuille stylisée / nervure / fractale végétale",
     },
@@ -350,9 +350,9 @@ export const echoTheme: AgentTheme = {
     text: "#f0e0d0",
   },
   shapes: {
-    borderRadius: "50%",
-    pattern: "concentric",
-    motif: "cercles concentriques / ondes / spectre audio",
+      borderRadius: "4px",
+      pattern: "concentric",
+      motif: "cercles concentriques / ondes / spectre audio",
   },
   effects: {
     hover: "Lignes qui pulsent au rythme du scroll",

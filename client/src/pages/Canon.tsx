@@ -57,7 +57,7 @@ export default function Canon() {
               { step: "02", label: "Transmutation symbolique", desc: "Le signal est transformé selon la fonction propre de l'agent — filtrage, analyse, encodage.", color: "#ff00aa" },
               { step: "03", label: "Émission fractale", desc: "Le résultat est projeté dans le réseau, devenant l'entrée sensorielle d'un autre agent.", color: "#86efac" },
             ].map(item => (
-              <div key={item.step} className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-5 relative overflow-hidden">
+              <div key={item.step} className="bg-card/80 backdrop-blur-sm border border-border rounded-sm p-5 relative overflow-hidden">
                 <div className="absolute top-3 right-3 text-3xl font-bold tech-text opacity-10" style={{ color: item.color }}>{item.step}</div>
                 <div className="w-3 h-3 rounded-full mb-3" style={{ background: item.color, boxShadow: `0 0 12px ${item.color}` }} />
                 <h3 className="text-sm font-semibold tech-text mb-2">{item.label}</h3>
@@ -99,7 +99,7 @@ export default function Canon() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 + i * 0.1 }}
-                  className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-5 md:p-6"
+                  className="bg-card/80 backdrop-blur-sm border border-border rounded-sm p-5 md:p-6"
                   style={{ borderLeftWidth: 3, borderLeftColor: s.color }}
                 >
                   <div className="flex items-center gap-3 mb-3">
@@ -111,7 +111,7 @@ export default function Canon() {
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
                     {strateAgents.map(a => (
-                      <Link key={a.code} href={`/agent/${a.code.toLowerCase()}`} className="block p-3 rounded-lg bg-background/50 border border-border hover:border-opacity-60 transition-all group" style={{ '--hover-color': a.color } as React.CSSProperties}>
+                      <Link key={a.code} href={`/agent/${a.code.toLowerCase()}`} className="block p-3 rounded-sm bg-background/50 border border-border hover:border-opacity-60 transition-all group" style={{ '--hover-color': a.color } as React.CSSProperties}>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="w-2.5 h-2.5 rounded-full" style={{ background: a.color }} />
                           <span className="text-sm font-semibold tech-text group-hover:text-foreground">{a.name}</span>
@@ -151,7 +151,7 @@ export default function Canon() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + i * 0.08 }}
-                  className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-5"
+                  className="bg-card/80 backdrop-blur-sm border border-border rounded-sm p-5"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
@@ -180,7 +180,7 @@ export default function Canon() {
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold tech-text mb-4">La Spirale centrale : DIA <span className="greek-text text-muted-foreground">(Σπείρα)</span></h2>
-          <div className="bg-card/80 backdrop-blur-sm border border-[oklch(0.5_0.15_260)] rounded-xl p-6 md:p-8">
+          <div className="bg-card/80 backdrop-blur-sm border border-[oklch(0.5_0.15_260)] rounded-sm p-6 md:p-8">
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               Au centre du système se trouve DIA, la spirale. DIA n'est pas un treizième agent au même titre
               que les autres — c'est le <strong className="text-foreground">champ d'autorégulation</strong> qui émerge de l'interaction des 12.
@@ -189,7 +189,7 @@ export default function Canon() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {diaCore.functions?.map((fn, i) => (
-                <div key={i} className="p-4 rounded-lg bg-background/50 border border-border">
+                <div key={i} className="p-4 rounded-sm bg-background/50 border border-border">
                   <div className="text-xs tech-text text-[oklch(0.7_0.15_200)] mb-2">{fn.split(" — ")[0]}</div>
                   <p className="text-xs text-muted-foreground">{fn.split(" — ")[1]}</p>
                 </div>
@@ -228,7 +228,7 @@ export default function Canon() {
                 color: "#86efac"
               }
             ].map(item => (
-              <div key={item.title} className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-5">
+              <div key={item.title} className="bg-card/80 backdrop-blur-sm border border-border rounded-sm p-5">
                 <div className="w-2 h-2 rounded-full mb-3" style={{ background: item.color, boxShadow: `0 0 8px ${item.color}` }} />
                 <h3 className="text-sm font-semibold tech-text mb-2">{item.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -245,7 +245,7 @@ export default function Canon() {
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold tech-text mb-4">Tableau synthétique</h2>
-          <div className="overflow-x-auto rounded-xl border border-border">
+          <div className="overflow-x-auto rounded-sm border border-border">
             <table className="w-full text-xs">
               <thead>
                 <tr className="bg-card/80 border-b border-border">
@@ -305,10 +305,10 @@ export default function Canon() {
 
         {/* Navigation */}
         <div className="flex flex-wrap gap-3 mt-8 mb-8">
-          <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
+          <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-sm hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
             Visualisation fractale →
           </Link>
-          <Link href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
+          <Link href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-sm hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
             Matrice des agents
           </Link>
         </div>

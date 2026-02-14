@@ -53,7 +53,7 @@ export default function Intro() {
           </motion.p>
 
           <motion.div
-            className="max-w-2xl mx-auto mb-12 p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm accent-line"
+            className="max-w-2xl mx-auto mb-12 p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm accent-line"
             {...fadeInUp}
           >
             <p className="text-base md:text-lg leading-relaxed">
@@ -94,7 +94,7 @@ export default function Intro() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <motion.div
-                className="p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift strate-fondation"
+                className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-fondation"
                 variants={fadeInUp}
               >
                 <h3 className="text-cyan font-bold mb-3 tech-text">Fondation (Strate I)</h3>
@@ -107,7 +107,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift strate-perception"
+                className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-perception"
                 variants={fadeInUp}
               >
                 <h3 className="text-cyan font-bold mb-3 tech-text">Perception (Strate II)</h3>
@@ -120,7 +120,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift strate-transmutation"
+                className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-transmutation"
                 variants={fadeInUp}
               >
                 <h3 className="text-magenta font-bold mb-3 tech-text">Transmutation (Strate III)</h3>
@@ -133,7 +133,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift strate-emission"
+                className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-emission"
                 variants={fadeInUp}
               >
                 <h3 className="text-green-400 font-bold mb-3 tech-text">Émission (Strate IV)</h3>
@@ -162,7 +162,7 @@ export default function Intro() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <motion.div
-                className="p-8 border border-cyan/40 rounded-lg bg-card/70 backdrop-blur-sm hover-lift text-center"
+                className="p-8 border border-cyan/40 rounded-sm bg-card/70 backdrop-blur-sm hover-lift text-center"
                 variants={fadeInUp}
               >
                 <Zap className="w-12 h-12 mx-auto mb-4 text-cyan" />
@@ -173,7 +173,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-8 border border-magenta/40 rounded-lg bg-card/70 backdrop-blur-sm hover-lift text-center"
+                className="p-8 border border-magenta/40 rounded-sm bg-card/70 backdrop-blur-sm hover-lift text-center"
                 variants={fadeInUp}
               >
                 <Layers className="w-12 h-12 mx-auto mb-4 text-magenta" />
@@ -184,7 +184,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-8 border border-green-400/40 rounded-lg bg-card/70 backdrop-blur-sm hover-lift text-center"
+                className="p-8 border border-green-400/40 rounded-sm bg-card/70 backdrop-blur-sm hover-lift text-center"
                 variants={fadeInUp}
               >
                 <Compass className="w-12 h-12 mx-auto mb-4 text-green-400" />
@@ -196,7 +196,7 @@ export default function Intro() {
             </div>
 
             <motion.div
-              className="p-6 border border-cyan/20 rounded-lg bg-card/50 backdrop-blur-sm text-center accent-line"
+              className="p-6 border border-cyan/20 rounded-sm bg-card/50 backdrop-blur-sm text-center accent-line"
               variants={fadeInUp}
             >
               <p className="text-foreground/80">
@@ -229,7 +229,7 @@ export default function Intro() {
               ].map((axis, idx) => (
                 <motion.div
                   key={idx}
-                  className="p-4 border border-cyan/20 rounded-lg bg-card/50 backdrop-blur-sm hover-lift"
+                  className="p-4 border border-cyan/20 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                   variants={fadeInUp}
                 >
                   <h3 className="font-bold text-cyan tech-text mb-2">{axis.name}</h3>
@@ -239,7 +239,7 @@ export default function Intro() {
             </div>
 
             <motion.div
-              className="mt-8 p-6 border border-magenta/20 rounded-lg bg-card/50 backdrop-blur-sm accent-line"
+              className="mt-8 p-6 border border-magenta/20 rounded-sm bg-card/50 backdrop-blur-sm accent-line"
               variants={fadeInUp}
             >
               <p className="text-foreground/80">
@@ -263,7 +263,7 @@ export default function Intro() {
 
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div
-                className="p-6 border border-cyan/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift"
+                className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
                 <h3 className="text-cyan font-bold mb-3 tech-text">Rotation Orbitale</h3>
@@ -273,7 +273,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-6 border border-magenta/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift"
+                className="p-6 border border-magenta/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
                 <h3 className="text-magenta font-bold mb-3 tech-text">Migration entre Strates</h3>
@@ -283,7 +283,7 @@ export default function Intro() {
               </motion.div>
 
               <motion.div
-                className="p-6 border border-green-400/30 rounded-lg bg-card/50 backdrop-blur-sm hover-lift"
+                className="p-6 border border-green-400/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
                 <h3 className="text-green-400 font-bold mb-3 tech-text">Pulsation des Axes</h3>

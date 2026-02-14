@@ -103,7 +103,7 @@ export default function Fractal() {
         <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={() => setShowStrates(s => !s)}
-            className={`px-3 py-1.5 rounded-lg text-xs tech-text transition-all ${
+            className={`px-3 py-1.5 rounded-sm text-xs tech-text transition-all ${
               showStrates ? "bg-[oklch(0.7_0.15_200)] text-black" : "bg-card/80 backdrop-blur-sm border border-border"
             }`}
           >
@@ -111,7 +111,7 @@ export default function Fractal() {
           </button>
           <button
             onClick={() => setShowAxes(a => !a)}
-            className={`px-3 py-1.5 rounded-lg text-xs tech-text transition-all ${
+            className={`px-3 py-1.5 rounded-sm text-xs tech-text transition-all ${
               showAxes ? "bg-[oklch(0.65_0.2_330)] text-black" : "bg-card/80 backdrop-blur-sm border border-border"
             }`}
           >
@@ -119,11 +119,11 @@ export default function Fractal() {
           </button>
           <button
             onClick={() => { setPinned(null); setHovered(null); }}
-            className="px-3 py-1.5 rounded-lg text-xs tech-text bg-card/80 backdrop-blur-sm border border-border hover:border-[oklch(0.6_0.25_25)] transition-all"
+            className="px-3 py-1.5 rounded-sm text-xs tech-text bg-card/80 backdrop-blur-sm border border-border hover:border-[oklch(0.6_0.25_25)] transition-all"
           >
             Reset
           </button>
-          <Link href="/canon" className="px-3 py-1.5 rounded-lg text-xs tech-text bg-card/80 backdrop-blur-sm border border-border hover:border-[oklch(0.7_0.15_200)] transition-all">
+          <Link href="/canon" className="px-3 py-1.5 rounded-sm text-xs tech-text bg-card/80 backdrop-blur-sm border border-border hover:border-[oklch(0.7_0.15_200)] transition-all">
             Canon →
           </Link>
         </div>
@@ -377,7 +377,7 @@ export default function Fractal() {
 
             {/* Dialectical axis */}
             {activeAxis && (
-              <div className="mb-3 p-3 rounded-lg bg-background/50 border border-border">
+              <div className="mb-3 p-3 rounded-sm bg-background/50 border border-border">
                 <div className="text-xs text-muted-foreground mb-1 tech-text">AXE DIALECTIQUE</div>
                 <div className="text-sm font-medium text-foreground">{activeAxis.name}</div>
                 <div className="text-xs text-muted-foreground mt-1">{activeAxis.description}</div>
@@ -390,7 +390,7 @@ export default function Fractal() {
                 Voir détails →
               </Link>
               <button
-                className="px-3 py-1 bg-card border border-border rounded-lg text-xs tech-text hover:border-[oklch(0.6_0.25_25)] transition-colors"
+                className="px-3 py-1 bg-card border border-border rounded-sm text-xs tech-text hover:border-[oklch(0.6_0.25_25)] transition-colors"
                 onClick={() => setPinned(null)}
               >
                 Fermer
