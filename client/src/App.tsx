@@ -5,6 +5,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Fractal from "./pages/Fractal";
+import AgentDetail from "./pages/AgentDetail";
 
 /* Design Philosophy: Cyberpunk Néo-Grec
  * Dark theme with electric cyan/magenta accents
@@ -15,6 +17,8 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/fractal"} component={Fractal} />
+      <Route path="/agent/:code" component={AgentDetail} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
