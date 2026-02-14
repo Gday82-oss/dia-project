@@ -3,10 +3,18 @@
  * - Glowing borders and scan line effects
  * - Greek typography with technical accents
  * - Cyan/magenta color scheme on deep black
+ * - 3D rotating agent avatars as visual identity
  */
 
 import { Link } from "wouter";
 import { agents } from "@/data/agents";
+import AgentAvatar3D from "@/components/AgentAvatar3D";
+
+const colorMap: Record<string, string> = {
+  cyan: "oklch(0.7 0.15 200)",
+  magenta: "oklch(0.65 0.2 330)",
+  red: "oklch(0.6 0.25 25)",
+};
 
 export default function Home() {
   return (
@@ -30,7 +38,7 @@ export default function Home() {
       }} />
       
       {/* Decorative vertical line with glow */}
-      <div className="fixed right-8 top-0 bottom-0 w-0.5 z-10">
+      <div className="fixed right-8 top-0 bottom-0 w-0.5 z-10 hidden lg:block">
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.6_0.25_25)] via-[oklch(0.7_0.15_200)] to-[oklch(0.65_0.2_330)] opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.6_0.25_25)] via-[oklch(0.7_0.15_200)] to-[oklch(0.65_0.2_330)] blur-sm opacity-40" />
       </div>
@@ -80,6 +88,8 @@ export default function Home() {
               agent.accentColor === 'cyan' ? 'border-[oklch(0.7_0.15_200)]' :
               agent.accentColor === 'magenta' ? 'border-[oklch(0.65_0.2_330)]' :
               'border-[oklch(0.6_0.25_25)]';
+
+            const accentHex = colorMap[agent.accentColor] || colorMap.cyan;
             
             return (
               <Link
@@ -104,30 +114,48 @@ export default function Home() {
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.7_0.15_200)] to-transparent animate-pulse" />
                   </div>
                   
-                  {/* Card header with code and name */}
-                  <div className="flex justify-between items-start mb-4 relative z-10">
-                    <span className="tech-text text-xs text-muted-foreground">
-                      {agent.code}
-                    </span>
-                    <span className="tech-text text-xs font-bold text-foreground">
-                      {agent.name}
-                    </span>
+                  {/* Card layout: Avatar + Info */}
+                  <div className="flex items-start gap-5 relative z-10">
+                    {/* 3D Avatar */}
+                    <div className="shrink-0">
+                      <AgentAvatar3D
+                        agentCode={agent.code}
+                        agentColor={accentHex}
+                        agentName={agent.name}
+                        size="md"
+                        showGlow={true}
+                        pauseOnHover={true}
+                      />
+                    </div>
+                    
+                    {/* Agent info */}
+                    <div className="flex-1 min-w-0">
+                      {/* Code and name */}
+                      <div className="flex justify-between items-start mb-2">
+                        <span className="tech-text text-xs text-muted-foreground">
+                          {agent.code}
+                        </span>
+                        <span className="tech-text text-xs font-bold text-foreground">
+                          {agent.name}
+                        </span>
+                      </div>
+                      
+                      {/* Greek name */}
+                      <h2 className="greek-text text-2xl md:text-3xl font-semibold mb-2 text-foreground group-hover:text-[oklch(0.7_0.15_200)] transition-colors duration-200">
+                        {agent.greek}
+                      </h2>
+                      
+                      {/* Title */}
+                      <h3 className="text-sm md:text-base font-medium mb-1 text-foreground">
+                        {agent.title}
+                      </h3>
+                      
+                      {/* Description - truncated */}
+                      <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                        {agent.description}
+                      </p>
+                    </div>
                   </div>
-                  
-                  {/* Greek name - main focus */}
-                  <h2 className="greek-text text-4xl md:text-5xl font-semibold mb-4 text-foreground group-hover:text-[oklch(0.7_0.15_200)] transition-colors duration-200 relative z-10">
-                    {agent.greek}
-                  </h2>
-                  
-                  {/* Title */}
-                  <h3 className="text-base md:text-lg font-medium mb-2 text-foreground relative z-10">
-                    {agent.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground leading-relaxed relative z-10">
-                    {agent.description}
-                  </p>
                   
                   {/* Hover effect overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.7_0.15_200)]/3 to-[oklch(0.65_0.2_330)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg pointer-events-none" />

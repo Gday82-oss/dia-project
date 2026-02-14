@@ -11,6 +11,13 @@ import { useRoute, Link } from "wouter";
 import { agents, strates, dialecticalAxes } from "@/data/agents";
 import { ArrowLeft, Zap, Layers, Compass } from "lucide-react";
 import { motion } from "framer-motion";
+import AgentAvatar3D from "@/components/AgentAvatar3D";
+
+const colorMap: Record<string, string> = {
+  cyan: "oklch(0.7 0.15 200)",
+  magenta: "oklch(0.65 0.2 330)",
+  red: "oklch(0.6 0.25 25)",
+};
 
 export default function AgentDetail() {
   const [, params] = useRoute("/agent/:code");
@@ -116,15 +123,20 @@ export default function AgentDetail() {
               </motion.div>
             </div>
             <motion.div
-              className="w-24 h-24 rounded-full flex-shrink-0 glow-organic-cyan"
-              style={{ 
-                background: agent.color,
-                opacity: 0.85
-              }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 100 }}
-            />
+              className="flex-shrink-0"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ type: "spring", stiffness: 80, damping: 15 }}
+            >
+              <AgentAvatar3D
+                agentCode={agent.code}
+                agentColor={colorMap[agent.accentColor] || colorMap.cyan}
+                agentName={agent.name}
+                size="xl"
+                showGlow={true}
+                pauseOnHover={true}
+              />
+            </motion.div>
           </div>
 
           {/* Strate info */}

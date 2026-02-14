@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import { agents, diaCore, strates, dialecticalAxes, type Agent, type Strate } from "@/data/agents";
+import { agentImages } from "@/components/AgentAvatar3D";
 
 const SIZE = 900;
 const CX = SIZE / 2;
@@ -231,27 +232,70 @@ export default function Fractal() {
             </text>
           </g>
 
-          {/* Agent nodes */}
+          {/* Agent nodes with avatar images */}
           {nodes.map(n => {
             const isActive = active && active.code === n.code;
             const isPartner = partnerCode === n.code;
-            const nodeR = isActive ? 16 : isPartner ? 14 : 10;
+            const nodeR = isActive ? 28 : isPartner ? 24 : 18;
+            const imgUrl = agentImages[n.code];
+            const clipId = `clip-${n.code}`;
             return (
               <g key={n.code}>
+                {/* Glow ring */}
+                <circle
+                  cx={n.x} cy={n.y} r={nodeR + 4}
+                  fill="none"
+                  stroke={n.color}
+                  strokeOpacity={isActive ? 0.8 : isPartner ? 0.5 : 0.2}
+                  strokeWidth={isActive ? 2 : 1}
+                  style={{ filter: isActive || isPartner ? `drop-shadow(0 0 10px ${n.color})` : 'none' }}
+                />
+                {/* Clip path for circular image */}
+                <defs>
+                  <clipPath id={clipId}>
+                    <circle cx={n.x} cy={n.y} r={nodeR} />
+                  </clipPath>
+                </defs>
+                {/* Agent avatar image */}
+                {imgUrl ? (
+                  <image
+                    href={imgUrl}
+                    x={n.x - nodeR}
+                    y={n.y - nodeR}
+                    width={nodeR * 2}
+                    height={nodeR * 2}
+                    clipPath={`url(#${clipId})`}
+                    onMouseEnter={() => setHovered(n)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => setPinned(p => (p && p.code === n.code ? null : n))}
+                    className="cursor-pointer"
+                    style={{ filter: isActive || isPartner ? `drop-shadow(0 0 8px ${n.color})` : 'none' }}
+                  />
+                ) : (
+                  <circle
+                    cx={n.x} cy={n.y} r={nodeR}
+                    fill={n.color}
+                    fillOpacity={isActive ? 1 : isPartner ? 0.85 : 0.75}
+                    onMouseEnter={() => setHovered(n)}
+                    onMouseLeave={() => setHovered(null)}
+                    onClick={() => setPinned(p => (p && p.code === n.code ? null : n))}
+                    className="cursor-pointer"
+                  />
+                )}
+                {/* Border ring */}
                 <circle
                   cx={n.x} cy={n.y} r={nodeR}
-                  fill={n.color}
-                  fillOpacity={isActive ? 1 : isPartner ? 0.85 : 0.75}
-                  stroke={isActive ? "#fff" : isPartner ? "#fff" : "oklch(0.08 0 0)"}
-                  strokeWidth={isActive ? 2 : 1.5}
+                  fill="none"
+                  stroke={isActive ? "#fff" : isPartner ? "#fff" : n.color}
+                  strokeWidth={isActive ? 2.5 : 1.5}
+                  strokeOpacity={isActive ? 1 : isPartner ? 0.8 : 0.5}
                   onMouseEnter={() => setHovered(n)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => setPinned(p => (p && p.code === n.code ? null : n))}
                   className="cursor-pointer"
-                  style={{ filter: isActive || isPartner ? `drop-shadow(0 0 8px ${n.color})` : 'none' }}
                 />
                 <text
-                  x={n.x} y={n.y - 20}
+                  x={n.x} y={n.y - nodeR - 8}
                   textAnchor="middle"
                   className="fill-foreground tech-text pointer-events-none"
                   fontSize={10} fontWeight={600}
@@ -260,7 +304,7 @@ export default function Fractal() {
                   {n.name}
                 </text>
                 <text
-                  x={n.x} y={n.y + 26}
+                  x={n.x} y={n.y + nodeR + 14}
                   textAnchor="middle"
                   className="fill-muted-foreground greek-text pointer-events-none"
                   fontSize={9}
@@ -292,7 +336,13 @@ export default function Fractal() {
                   {active.name} <span className="text-muted-foreground greek-text text-lg">{active.greek}</span>
                 </div>
               </div>
-              <div className="w-5 h-5 rounded-full flex-shrink-0" style={{ background: active.color, boxShadow: `0 0 16px ${active.color}` }} />
+              {agentImages[active.code] ? (
+                <div className="w-14 h-14 rounded-full flex-shrink-0 overflow-hidden border-2" style={{ borderColor: active.color, boxShadow: `0 0 16px ${active.color}60` }}>
+                  <img src={agentImages[active.code]} alt={active.name} className="w-full h-full object-cover" />
+                </div>
+              ) : (
+                <div className="w-5 h-5 rounded-full flex-shrink-0" style={{ background: active.color, boxShadow: `0 0 16px ${active.color}` }} />
+              )}
             </div>
 
             {/* Strate badge */}
