@@ -53,6 +53,10 @@ export default function Home() {
             Noyau humain — <span className="tech-text text-xs">GEN012</span> comme extensions fonctionnelles
           </p>
           <div className="flex flex-wrap gap-3">
+            <Link href="/intro" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.6_0.25_25)]/10 border border-[oklch(0.6_0.25_25)]/30 rounded-lg hover:bg-[oklch(0.6_0.25_25)]/20 hover:border-[oklch(0.6_0.25_25)] transition-all duration-200 text-sm tech-text">
+              <span>Introduction</span>
+              <span className="text-[oklch(0.6_0.25_25)]">→</span>
+            </Link>
             <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.7_0.15_200)]/10 border border-[oklch(0.7_0.15_200)]/30 rounded-lg hover:bg-[oklch(0.7_0.15_200)]/20 hover:border-[oklch(0.7_0.15_200)] transition-all duration-200 text-sm tech-text">
               <span>Visualisation Fractale</span>
               <span className="text-[oklch(0.7_0.15_200)]">→</span>

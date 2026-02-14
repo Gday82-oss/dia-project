@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Intro from "./pages/Intro";
 import Fractal from "./pages/Fractal";
 import AgentDetail from "./pages/AgentDetail";
 import Canon from "./pages/Canon";
@@ -18,6 +19,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/intro"} component={Intro} />
       <Route path={"/fractal"} component={Fractal} />
       <Route path="/agent/:code" component={AgentDetail} />
       <Route path="/canon" component={Canon} />

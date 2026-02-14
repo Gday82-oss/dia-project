@@ -3,10 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Design Philosophy: Cyberpunk Néo-Grec
-   - Palette: Deep blacks with electric cyan/magenta accents
-   - Typography: Orbitron (display), Space Mono (body), Noto Sans (Greek)
+/* Design Philosophy: Cyberpunk Néo-Grec Organique
+   - Palette: Deep blacks with electric cyan/magenta/red accents
+   - Typography: Orbitron (display), Space Mono (Greek), Noto Sans (body)
    - Aesthetic: Fusion of ancient Greek mythology and futuristic AI technology
+   - Depth: Matrix patterns, scan lines, organic glow effects, layered textures
+   - Narrative: DIA as living digital organism with 12 agents in perpetual evolution
 */
 
 @theme inline {
@@ -64,13 +66,13 @@
   --chart-4: oklch(0.5 0.15 200);
   --chart-5: oklch(0.45 0.2 330);
   --radius: 0.375rem;
-  --background: oklch(0.12 0.01 260);
+  --background: oklch(0.08 0 0);
   --foreground: oklch(0.95 0.01 200);
-  --card: oklch(0.16 0.015 260);
+  --card: oklch(0.12 0.01 260);
   --card-foreground: oklch(0.95 0.01 200);
-  --popover: oklch(0.16 0.015 260);
+  --popover: oklch(0.12 0.01 260);
   --popover-foreground: oklch(0.95 0.01 200);
-  --secondary: oklch(0.2 0.02 260);
+  --secondary: oklch(0.18 0.02 260);
   --secondary-foreground: oklch(0.85 0.05 200);
   --muted: oklch(0.22 0.02 260);
   --muted-foreground: oklch(0.6 0.05 200);
@@ -81,9 +83,9 @@
   --border: oklch(0.3 0.05 200 / 30%);
   --input: oklch(0.3 0.05 200 / 40%);
   --ring: oklch(0.7 0.15 200);
-  --sidebar: oklch(0.14 0.01 260);
+  --sidebar: oklch(0.1 0 0);
   --sidebar-foreground: oklch(0.95 0.01 200);
-  --sidebar-accent: oklch(0.2 0.02 260);
+  --sidebar-accent: oklch(0.18 0.02 260);
   --sidebar-accent-foreground: oklch(0.95 0.01 200);
   --sidebar-border: oklch(0.3 0.05 200 / 30%);
   --sidebar-ring: oklch(0.7 0.15 200);
@@ -130,7 +132,8 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -146,6 +149,11 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  
+  p, span, div {
+    font-family: 'Noto Sans', sans-serif;
   }
 }
 
@@ -191,6 +199,31 @@
     box-shadow: 0 0 10px oklch(0.6 0.25 25 / 50%), 0 0 20px oklch(0.6 0.25 25 / 30%);
   }
   
+  /* Organic glow with depth */
+  .glow-organic-cyan {
+    box-shadow: 
+      0 0 5px oklch(0.7 0.15 200 / 30%),
+      0 0 15px oklch(0.7 0.15 200 / 20%),
+      0 0 30px oklch(0.7 0.15 200 / 10%),
+      inset 0 0 10px oklch(0.7 0.15 200 / 5%);
+  }
+  
+  .glow-organic-magenta {
+    box-shadow: 
+      0 0 5px oklch(0.65 0.2 330 / 30%),
+      0 0 15px oklch(0.65 0.2 330 / 20%),
+      0 0 30px oklch(0.65 0.2 330 / 10%),
+      inset 0 0 10px oklch(0.65 0.2 330 / 5%);
+  }
+  
+  .glow-organic-red {
+    box-shadow: 
+      0 0 5px oklch(0.6 0.25 25 / 30%),
+      0 0 15px oklch(0.6 0.25 25 / 20%),
+      0 0 30px oklch(0.6 0.25 25 / 10%),
+      inset 0 0 10px oklch(0.6 0.25 25 / 5%);
+  }
+  
   /* Scan line animation */
   @keyframes scan {
     0% { transform: translateY(-100%); }
@@ -203,7 +236,7 @@
   
   /* Greek text styling */
   .greek-text {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Space Mono', monospace;
     letter-spacing: 0.02em;
   }
   
@@ -212,6 +245,182 @@
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+  }
+  
+  /* Matrix background pattern */
+  .matrix-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .matrix-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        oklch(0.7 0.15 200 / 2%) 0px,
+        oklch(0.7 0.15 200 / 2%) 1px,
+        transparent 1px,
+        transparent 2px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        oklch(0.65 0.2 330 / 1%) 0px,
+        oklch(0.65 0.2 330 / 1%) 1px,
+        transparent 1px,
+        transparent 40px
+      );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Pulsing animation for organic feel */
+  @keyframes pulse-organic {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .pulse-organic {
+    animation: pulse-organic 3s ease-in-out infinite;
+  }
+  
+  /* Breathing animation */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  
+  .breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+  
+  /* Gradient text for titles */
+  .gradient-text-cyan-magenta {
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.15 200) 0%,
+      oklch(0.65 0.2 330) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Layered card effect */
+  .card-layered {
+    position: relative;
+    background: oklch(0.12 0.01 260);
+    border: 1px solid oklch(0.3 0.05 200 / 40%);
+    border-radius: 0.375rem;
+  }
+  
+  .card-layered::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.15 200 / 3%) 0%,
+      transparent 50%,
+      oklch(0.65 0.2 330 / 2%) 100%
+    );
+    border-radius: 0.375rem;
+    pointer-events: none;
+  }
+  
+  /* Vertical accent line */
+  .accent-line {
+    position: relative;
+    padding-left: 12px;
+  }
+  
+  .accent-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+      180deg,
+      oklch(0.7 0.15 200) 0%,
+      oklch(0.65 0.2 330) 50%,
+      oklch(0.6 0.25 25) 100%
+    );
+  }
+  
+  /* Strate-specific styling */
+  .strate-fondation {
+    border-color: oklch(0.6 0.25 25 / 50%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.01 260) 0%,
+      oklch(0.15 0.02 25 / 20%) 100%
+    );
+  }
+  
+  .strate-perception {
+    border-color: oklch(0.7 0.15 200 / 50%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.01 260) 0%,
+      oklch(0.15 0.02 200 / 20%) 100%
+    );
+  }
+  
+  .strate-transmutation {
+    border-color: oklch(0.65 0.2 330 / 50%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.01 260) 0%,
+      oklch(0.15 0.02 330 / 20%) 100%
+    );
+  }
+  
+  .strate-emission {
+    border-color: oklch(0.5 0.15 140 / 50%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.01 260) 0%,
+      oklch(0.15 0.02 140 / 20%) 100%
+    );
+  }
+  
+  /* Hover effect with depth */
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 10px 20px oklch(0 0 0 / 30%),
+      0 0 20px oklch(0.7 0.15 200 / 20%);
+  }
+  
+  /* Text shadow for depth */
+  .text-shadow-glow {
+    text-shadow: 
+      0 0 10px oklch(0.7 0.15 200 / 50%),
+      0 0 20px oklch(0.7 0.15 200 / 30%);
+  }
+  
+  /* Border glow animation */
+  @keyframes border-glow {
+    0%, 100% { border-color: oklch(0.3 0.05 200 / 40%); }
+    50% { border-color: oklch(0.7 0.15 200 / 60%); }
+  }
+  
+  .border-glow {
+    animation: border-glow 3s ease-in-out infinite;
   }
 }
 
@@ -231,4 +440,34 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: oklch(0.7 0.15 200);
+}
+
+/* Global background with organic depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(
+      ellipse at 20% 50%,
+      oklch(0.65 0.2 330 / 3%) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      oklch(0.7 0.15 200 / 2%) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Smooth transitions throughout */
+* {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }
