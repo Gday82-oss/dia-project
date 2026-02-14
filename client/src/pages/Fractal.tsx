@@ -67,10 +67,8 @@ export default function Fractal() {
       {/* Header */}
       <div className="absolute inset-x-0 top-0 p-4 md:p-6 flex flex-wrap items-center justify-between gap-3 z-30">
         <div>
-          <Link href="/">
-            <a className="text-xl md:text-2xl font-semibold tracking-tight tech-text hover:text-[oklch(0.7_0.15_200)] transition-colors">
+          <Link href="/" className="text-xl md:text-2xl font-semibold tracking-tight tech-text hover:text-[oklch(0.7_0.15_200)] transition-colors">
               DIA • Projections mentales
-            </a>
           </Link>
           <p className="text-xs text-muted-foreground mt-1">Visualisation fractale du moi digital</p>
         </div>
@@ -304,10 +302,8 @@ export default function Fractal() {
             </div>
             
             <div className="mt-4 flex items-center justify-between gap-3">
-              <Link href={`/agent/${active.code.toLowerCase()}`}>
-                <a className="text-xs text-[oklch(0.7_0.15_200)] hover:underline tech-text">
+              <Link href={`/agent/${active.code.toLowerCase()}`} className="text-xs text-[oklch(0.7_0.15_200)] hover:underline tech-text">
                   Voir détails →
-                </a>
               </Link>
               <button
                 className="px-3 py-1 bg-card border border-border rounded-lg text-xs tech-text hover:border-[oklch(0.6_0.25_25)] transition-colors"

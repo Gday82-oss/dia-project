@@ -52,11 +52,9 @@ export default function Home() {
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mb-6">
             Noyau humain — <span className="tech-text text-xs">GEN012</span> comme extensions fonctionnelles
           </p>
-          <Link href="/fractal">
-            <a className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.7_0.15_200)]/10 border border-[oklch(0.7_0.15_200)]/30 rounded-lg hover:bg-[oklch(0.7_0.15_200)]/20 hover:border-[oklch(0.7_0.15_200)] transition-all duration-200 text-sm tech-text">
+          <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.7_0.15_200)]/10 border border-[oklch(0.7_0.15_200)]/30 rounded-lg hover:bg-[oklch(0.7_0.15_200)]/20 hover:border-[oklch(0.7_0.15_200)] transition-all duration-200 text-sm tech-text">
               <span>Visualisation Fractale</span>
               <span className="text-[oklch(0.7_0.15_200)]">→</span>
-            </a>
           </Link>
         </header>
         
@@ -74,9 +72,10 @@ export default function Home() {
               'border-[oklch(0.6_0.25_25)]';
             
             return (
-              <Link key={agent.code} href={`/agent/${agent.code.toLowerCase()}`}>
-                <a
-                  className={`
+              <Link
+                key={agent.code}
+                href={`/agent/${agent.code.toLowerCase()}`}
+                className={`
                     group relative bg-card/80 backdrop-blur-sm border ${borderColor} border-opacity-40
                     p-6 rounded-lg transition-all duration-200
                     hover:border-opacity-100 hover:bg-card
@@ -85,11 +84,11 @@ export default function Home() {
                     overflow-hidden
                     block
                   `}
-                  style={{
-                    animationDelay: `${index * 80}ms`,
-                    animationFillMode: 'backwards'
-                  }}
-                >
+                style={{
+                  animationDelay: `${index * 80}ms`,
+                  animationFillMode: 'backwards'
+                }}
+              >
                   {/* Subtle scan line effect on card */}
                   <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.7_0.15_200)] to-transparent animate-pulse" />
@@ -122,7 +121,6 @@ export default function Home() {
                   
                   {/* Hover effect overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.7_0.15_200)]/3 to-[oklch(0.65_0.2_330)]/3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-lg pointer-events-none" />
-                </a>
               </Link>
             );
           })}

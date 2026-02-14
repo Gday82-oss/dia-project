@@ -20,9 +20,7 @@ export default function AgentDetail() {
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4 tech-text">Agent non trouvé</h1>
-          <Link href="/">
-            <a className="text-[oklch(0.7_0.15_200)] hover:underline">← Retour à l'accueil</a>
-          </Link>
+          <Link href="/" className="text-[oklch(0.7_0.15_200)] hover:underline">← Retour à l'accueil</Link>
         </div>
       </div>
     );
@@ -55,11 +53,9 @@ export default function AgentDetail() {
       {/* Content */}
       <div className="relative z-10 container py-8 md:py-12 max-w-4xl">
         {/* Navigation */}
-        <Link href="/">
-          <a className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
+        <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" />
             <span>Retour à la matrice</span>
-          </a>
         </Link>
 
         {/* Header Card */}
@@ -139,15 +135,11 @@ export default function AgentDetail() {
 
         {/* Actions */}
         <div className="mt-8 flex gap-4">
-          <Link href="/fractal">
-            <a className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
+          <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
               Visualisation fractale
-            </a>
           </Link>
-          <Link href="/">
-            <a className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
+          <Link href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
               Tous les agents
-            </a>
           </Link>
         </div>
       </div>
