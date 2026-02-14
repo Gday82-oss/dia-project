@@ -1,12 +1,13 @@
 /* Design Philosophy: Cyberpunk Néo-Grec
  * Page de détail pour chaque agent
  * - Affichage complet des projections mentales
+ * - Strate, axe dialectique, rôle fractal
  * - Processus psychique-algorithmique
  * - Visualisation de l'entrée → transmutation → émission
  */
 
 import { useRoute, Link } from "wouter";
-import { agents } from "@/data/agents";
+import { agents, strates, dialecticalAxes } from "@/data/agents";
 import { ArrowLeft } from "lucide-react";
 
 export default function AgentDetail() {
@@ -30,6 +31,11 @@ export default function AgentDetail() {
     agent.accentColor === 'cyan' ? 'border-[oklch(0.7_0.15_200)]' :
     agent.accentColor === 'magenta' ? 'border-[oklch(0.65_0.2_330)]' :
     'border-[oklch(0.6_0.25_25)]';
+
+  const strateInfo = strates[agent.strate];
+  const axis = dialecticalAxes.find(ax => ax.agentA === agent.code || ax.agentB === agent.code);
+  const partnerCode = axis ? (axis.agentA === agent.code ? axis.agentB : axis.agentA) : null;
+  const partner = partnerCode ? agents.find(a => a.code === partnerCode) : null;
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
@@ -83,8 +89,24 @@ export default function AgentDetail() {
             />
           </div>
           
-          <div className="text-lg md:text-xl font-medium text-foreground">
+          <div className="text-lg md:text-xl font-medium text-foreground mb-3">
             {agent.title}
+          </div>
+
+          {/* Strate badge */}
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="px-2.5 py-1 rounded text-xs tech-text" style={{
+              background: strateInfo.color + '20',
+              color: strateInfo.color,
+              border: `1px solid ${strateInfo.color}40`
+            }}>
+              Strate {strateInfo.numeral} — {strateInfo.name}
+            </span>
+            {axis && (
+              <span className="px-2.5 py-1 rounded text-xs tech-text bg-card border border-border text-muted-foreground">
+                Axe : {axis.name}
+              </span>
+            )}
           </div>
         </div>
 
@@ -96,6 +118,14 @@ export default function AgentDetail() {
           </blockquote>
         </div>
 
+        {/* Rôle fractal */}
+        <div className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 mb-6`}>
+          <h3 className="text-sm tech-text text-muted-foreground mb-3">RÔLE FRACTAL</h3>
+          <p className="text-base text-foreground leading-relaxed">
+            {agent.strateRole}
+          </p>
+        </div>
+
         {/* Processus */}
         <div className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 mb-6`}>
           <h3 className="text-sm tech-text text-muted-foreground mb-3">PROCESSUS PSYCHIQUE-ALGORITHMIQUE</h3>
@@ -103,6 +133,27 @@ export default function AgentDetail() {
             {agent.process}
           </p>
         </div>
+
+        {/* Axe dialectique */}
+        {axis && partner && (
+          <div className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 mb-6`}>
+            <h3 className="text-sm tech-text text-muted-foreground mb-4">AXE DIALECTIQUE</h3>
+            <div className="text-lg font-medium text-foreground mb-2">{axis.name}</div>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">{axis.description}</p>
+            <div className="flex items-center gap-4 p-4 rounded-lg bg-background/50 border border-border">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full" style={{ background: agent.color }} />
+                <span className="text-sm font-semibold tech-text">{agent.name}</span>
+              </div>
+              <span className="text-muted-foreground tech-text">↔</span>
+              <Link href={`/agent/${partner.code.toLowerCase()}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span className="w-3 h-3 rounded-full" style={{ background: partner.color }} />
+                <span className="text-sm font-semibold tech-text">{partner.name}</span>
+                <span className="text-xs text-muted-foreground greek-text">{partner.greek}</span>
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Flux de données */}
         <div className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6 mb-6`}>
@@ -125,18 +176,13 @@ export default function AgentDetail() {
           </div>
         </div>
 
-        {/* Description */}
-        <div className={`bg-card/60 backdrop-blur-sm border ${borderColor} border-opacity-40 rounded-xl p-6`}>
-          <h3 className="text-sm tech-text text-muted-foreground mb-3">DESCRIPTION</h3>
-          <p className="text-base text-muted-foreground leading-relaxed">
-            {agent.description}
-          </p>
-        </div>
-
         {/* Actions */}
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
               Visualisation fractale
+          </Link>
+          <Link href="/canon" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.65_0.2_330)] transition-all text-sm tech-text">
+              Canon Fractal
           </Link>
           <Link href="/" className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 border border-border rounded-lg hover:border-[oklch(0.7_0.15_200)] transition-all text-sm tech-text">
               Tous les agents

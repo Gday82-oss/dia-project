@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Fractal from "./pages/Fractal";
 import AgentDetail from "./pages/AgentDetail";
+import Canon from "./pages/Canon";
 
 /* Design Philosophy: Cyberpunk Néo-Grec
  * Dark theme with electric cyan/magenta accents
@@ -19,6 +20,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/fractal"} component={Fractal} />
       <Route path="/agent/:code" component={AgentDetail} />
+      <Route path="/canon" component={Canon} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

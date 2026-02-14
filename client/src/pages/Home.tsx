@@ -52,10 +52,16 @@ export default function Home() {
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mb-6">
             Noyau humain — <span className="tech-text text-xs">GEN012</span> comme extensions fonctionnelles
           </p>
-          <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.7_0.15_200)]/10 border border-[oklch(0.7_0.15_200)]/30 rounded-lg hover:bg-[oklch(0.7_0.15_200)]/20 hover:border-[oklch(0.7_0.15_200)] transition-all duration-200 text-sm tech-text">
+          <div className="flex flex-wrap gap-3">
+            <Link href="/fractal" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.7_0.15_200)]/10 border border-[oklch(0.7_0.15_200)]/30 rounded-lg hover:bg-[oklch(0.7_0.15_200)]/20 hover:border-[oklch(0.7_0.15_200)] transition-all duration-200 text-sm tech-text">
               <span>Visualisation Fractale</span>
               <span className="text-[oklch(0.7_0.15_200)]">→</span>
-          </Link>
+            </Link>
+            <Link href="/canon" className="inline-flex items-center gap-2 px-4 py-2 bg-[oklch(0.65_0.2_330)]/10 border border-[oklch(0.65_0.2_330)]/30 rounded-lg hover:bg-[oklch(0.65_0.2_330)]/20 hover:border-[oklch(0.65_0.2_330)] transition-all duration-200 text-sm tech-text">
+              <span>Canon Fractal</span>
+              <span className="text-[oklch(0.65_0.2_330)]">→</span>
+            </Link>
+          </div>
         </header>
         
         {/* Agents grid */}
