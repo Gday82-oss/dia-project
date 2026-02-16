@@ -176,16 +176,10 @@ export default function Home() {
 
                     {/* Informations */}
                     <div className="flex-1 min-w-0">
-                      {/* En-tête : code + archétype */}
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="tech-text text-[10px] tracking-widest" style={{ color: theme.palette.accent + "90" }}>
-                          {theme.gen}
-                        </span>
-                        <span
-                          className="tech-text text-xs font-bold tracking-wider"
-                          style={{ color: theme.palette.accent }}
-                        >
-                          {agent.name}
+                      {/* En-tête : code — nom */}
+                      <div className="mb-2">
+                        <span className="tech-text text-xs font-bold tracking-wider" style={{ color: theme.palette.accent }}>
+                          {agent.code} — {agent.name}
                         </span>
                       </div>
 
