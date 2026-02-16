@@ -11,8 +11,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { agents, diaCore } from "@/data/agents";
 import { agentThemes, getAgentTheme } from "@/data/agentThemes";
 import AgentAvatar3D from "@/components/AgentAvatar3D";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [hoveredAgent, setHoveredAgent] = useState<string | null>(null);
   const hoveredTheme = hoveredAgent ? getAgentTheme(hoveredAgent) : null;
 
