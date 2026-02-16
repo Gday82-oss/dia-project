@@ -1,18 +1,57 @@
-# TODO - Harmonisation des encadrés
+# TODO - DIA Project
 
-## Problème identifié
-Les `borderRadius: "50%"` dans agentThemes.ts transforment les cartes en ellipses/ovales qui cachent le texte.
+## Phase 1 — Architecture de base ✅
+- [x] Initialiser le projet web statique
+- [x] Créer les 12 agents DIA avec avatars 3D
+- [x] Implémenter la visualisation fractale
+- [x] Créer pages de détail par agent
+- [x] Harmoniser les encadrés (supprimer ellipses/ovales)
+- [x] Enrichir la personnalité organique du système
+- [x] Upgrade vers web-db-user (DB + backend)
+- [x] Implémenter les services d'agents IA
+- [x] Créer le dashboard de monitoring
 
-## Corrections à faire
-- [x] AGT-003 (LUX) : borderRadius "50%" → "4px"
-- [x] AGT-004 (CHRONOS) : borderRadius "50%" → "4px"
-- [x] AGT-008 (EROS) : borderRadius "50%" → "4px"
-- [x] AGT-010 (ANIMA) : borderRadius "50%" → "4px"
-- [x] AGT-013 (ÉCHO) : borderRadius "50%" → "4px"
-- [x] AGT-005 (LÉTHÉ) : borderRadius "24px" → "6px"
-- [x] AGT-012 (CHLOROS) : borderRadius "20px" → "6px"
-- [x] AGT-011 (NOESIS) : borderRadius "16px" → "6px"
-- [x] AGT-006 (PSYCHE) : borderRadius "12px" → "6px"
-- [ ] Vérifier AgentDetail.tsx pour les mêmes problèmes
-- [ ] Vérifier Canon.tsx et Intro.tsx
-- [ ] Tester visuellement
+## Phase 2 — UX/UI & Navigation
+- [ ] Créer une navigation fixe (header sticky) avec menu principal
+- [ ] Implémenter breadcrumbs sur toutes les pages
+- [ ] Ajouter responsive design mobile-first
+- [ ] Créer des CTA clairs (boutons d'action)
+- [ ] Ajouter footer avec liens utiles
+
+## Phase 3 — Contenu Structuré
+- [ ] Créer page "Qui sommes-nous" (mission DIA, bénéfices)
+- [ ] Créer page "Agents" avec détails complets (soft/hard skills)
+- [ ] Créer page "Valeurs" (approche humaniste)
+- [ ] Intégrer soft/hard skills de chaque agent
+- [ ] Ajouter cas d'usage professionnels
+- [ ] Créer page "Offres professionnelles" (Tech, Création, Stratégie, Humain, Mémoire)
+
+## Phase 4 — SEO & Performance
+- [ ] Optimiser meta tags (titre, description)
+- [ ] Créer URLs propres et cohérentes
+- [ ] Compresser images (WebP/AVIF)
+- [ ] Minifier CSS/JS
+- [ ] Activer cache navigateur
+- [ ] Tester PageSpeed Insights
+- [ ] Ajouter sitemap.xml et robots.txt
+
+## Phase 5 — Interactivité & Engagement
+- [ ] Ajouter animations subtiles (hover, transitions)
+- [ ] Implémenter formulaire de contact
+- [ ] Ajouter newsletter signup
+- [ ] Créer micro-interactions
+- [ ] Ajouter indicateurs de chargement
+
+## Phase 6 — Sécurité & Accessibilité
+- [ ] Vérifier HTTPS obligatoire
+- [ ] Ajouter Content Security Policy
+- [ ] Alt text pour toutes les images
+- [ ] Navigation clavier complète
+- [ ] Contraste élevé textes/boutons
+- [ ] Tester accessibilité (WCAG 2.1)
+
+## Phase 7 — Monitoring & Maintenance
+- [ ] Configurer monitoring uptime
+- [ ] Ajouter analytics (Google Analytics)
+- [ ] Mettre en place backups automatiques
+- [ ] Créer logs de performance
