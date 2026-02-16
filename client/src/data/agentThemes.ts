@@ -36,7 +36,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-001": {
     code: "AGT-001",
     name: "MINOS",
-    gen: "GEN001",
+    gen: "1",
     archetype: "Architecte",
     palette: {
       primary: "#1a2744",      // bleu graphite sombre
@@ -61,7 +61,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-002": {
     code: "AGT-002",
     name: "DIAGNOS",
-    gen: "GEN002",
+    gen: "2",
     archetype: "Méta",
     palette: {
       primary: "#e8e8e8",      // blanc froid
@@ -86,7 +86,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-003": {
     code: "AGT-003",
     name: "LUX",
-    gen: "GEN003",
+    gen: "3",
     archetype: "Intercesseur",
     palette: {
       primary: "#ffd700",      // or blanc
@@ -111,7 +111,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-004": {
     code: "AGT-004",
     name: "CHRONOS",
-    gen: "GEN004",
+    gen: "4",
     archetype: "Temps",
     palette: {
       primary: "#d4af37",      // or pâle
@@ -136,7 +136,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-005": {
     code: "AGT-005",
     name: "LÉTHÉ",
-    gen: "GEN005",
+    gen: "5",
     archetype: "Onde",
     palette: {
       primary: "#c0c0d0",      // argent liquide
@@ -161,7 +161,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-006": {
     code: "AGT-006",
     name: "PSYCHE",
-    gen: "GEN007",
+    gen: "6",
     archetype: "Langue",
     palette: {
       primary: "#4b0082",      // indigo profond
@@ -211,7 +211,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-008": {
     code: "AGT-008",
     name: "EROS",
-    gen: "GEN011",
+    gen: "11",
     archetype: "Liaison",
     palette: {
       primary: "#cc3355",      // or rouge
@@ -236,7 +236,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-009": {
     code: "AGT-009",
     name: "MÉTIS",
-    gen: "GEN008",
+    gen: "8",
     archetype: "Stratège",
     palette: {
       primary: "#4682b4",      // bleu acier
@@ -261,7 +261,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-010": {
     code: "AGT-010",
     name: "ANIMA",
-    gen: "GEN009",
+    gen: "9",
     archetype: "Souffle",
     palette: {
       primary: "#cc2200",      // rouge carmin
@@ -286,7 +286,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-011": {
     code: "AGT-011",
     name: "NOESIS",
-    gen: "GEN010",
+    gen: "10",
     archetype: "Intuitive",
     palette: {
       primary: "#8866aa",      // violet brumeux
@@ -311,7 +311,7 @@ export const agentThemes: Record<string, AgentTheme> = {
   "AGT-012": {
     code: "AGT-012",
     name: "CHLOROS",
-    gen: "GEN012",
+    gen: "12",
     archetype: "Régénérateur",
     palette: {
       primary: "#66cc00",      // vert acide
@@ -339,7 +339,7 @@ export const agentThemes: Record<string, AgentTheme> = {
 export const echoTheme: AgentTheme = {
   code: "AGT-013",
   name: "ÉCHO",
-  gen: "GEN006",
+  gen: "13",
   archetype: "Résonant",
   palette: {
     primary: "#b87333",      // cuivre mat
