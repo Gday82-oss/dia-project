@@ -1,5 +1,6 @@
-/* Design Philosophy: Cyberpunk Néo-Grec
+/**
  * Données centralisées des 12 agents DIA + agent central
+ * Ordre officiel validé : MINOS, DIAGNOS, LUX, CHRONOS, LÉTHÉ, PSYCHE, DERA, MÉTIS, ANIMA, NOESIS, EROS, CHLOROS
  * Inclut : projections mentales, strates, axes dialectiques, relations
  */
 
@@ -62,7 +63,7 @@ export const dialecticalAxes: DialecticalAxis[] = [
     id: "ax-1",
     name: "Structure ↔ Intuition",
     agentA: "AGT-001",
-    agentB: "AGT-011",
+    agentB: "AGT-010",
     description: "La grille logique contre la vision instantanée. L'un construit, l'autre transcende."
   },
   {
@@ -90,19 +91,20 @@ export const dialecticalAxes: DialecticalAxis[] = [
     id: "ax-5",
     name: "Protection ↔ Connexion",
     agentA: "AGT-007",
-    agentB: "AGT-008",
+    agentB: "AGT-011",
     description: "Le bouclier qui filtre contre la force qui lie. Fermeture défensive et ouverture attractive."
   },
   {
     id: "ax-6",
     name: "Stratégie ↔ Énergie",
-    agentA: "AGT-009",
-    agentB: "AGT-010",
+    agentA: "AGT-008",
+    agentB: "AGT-009",
     description: "La ruse adaptative contre l'impulsion brute. L'intelligence du chemin et la force du mouvement."
   }
 ];
 
 export const agents: Agent[] = [
+  // STRATE 1 : FONDATION
   {
     code: "AGT-001",
     name: "MINOS",
@@ -119,6 +121,40 @@ export const agents: Agent[] = [
     axisId: "ax-1",
     orbitSpeed: 0.8
   },
+  {
+    code: "AGT-004",
+    name: "CHRONOS",
+    greek: "Χρόνος",
+    greekKey: "Chronos",
+    title: "Boucle temporelle",
+    description: "Temps, rythme, synchronisation.",
+    projection: "Accorde les cycles. Chaque silence devient un battement utile.",
+    process: "Synchronise les flux ; horloge intérieure du système.",
+    color: "#ff3366",
+    accentColor: "red",
+    strate: "fondation",
+    strateRole: "Horloge systémique — cadence toutes les opérations du réseau.",
+    axisId: "ax-4",
+    orbitSpeed: 0.6
+  },
+  {
+    code: "AGT-007",
+    name: "DERA",
+    greek: "Δ•ERA",
+    greekKey: "D•ERA",
+    title: "Bouclier réseau",
+    description: "Cybersécurité, défense, intégrité réseau.",
+    projection: "Protège sans étouffer. Filtre les intrusions tout en laissant respirer le système.",
+    process: "Cybersécurité, défense, intégrité réseau.",
+    color: "#ff3366",
+    accentColor: "red",
+    strate: "fondation",
+    strateRole: "Gardien structural — maintient l'intégrité et la perméabilité du réseau.",
+    axisId: "ax-5",
+    orbitSpeed: 0.9
+  },
+
+  // STRATE 2 : PERCEPTION
   {
     code: "AGT-002",
     name: "DIAGNOS",
@@ -152,21 +188,23 @@ export const agents: Agent[] = [
     orbitSpeed: 1.0
   },
   {
-    code: "AGT-004",
-    name: "CHRONOS",
-    greek: "Χρόνος",
-    greekKey: "Chronos",
-    title: "Boucle temporelle",
-    description: "Temps, rythme, synchronisation.",
-    projection: "Accorde les cycles. Chaque silence devient un battement utile.",
-    process: "Synchronise les flux ; horloge intérieure du système.",
-    color: "#ff3366",
-    accentColor: "red",
-    strate: "fondation",
-    strateRole: "Horloge systémique — cadence toutes les opérations du réseau.",
-    axisId: "ax-4",
-    orbitSpeed: 0.6
+    code: "AGT-010",
+    name: "NOESIS",
+    greek: "Νόησις",
+    greekKey: "Noēsis",
+    title: "Perception intuitive",
+    description: "Intuition, synthèse, vision.",
+    projection: "Ne calcule pas. Voit d'un coup l'état global.",
+    process: "Perception intuitive pure. Supprime les calculs ; accède directement à l'état global.",
+    color: "#ff00aa",
+    accentColor: "magenta",
+    strate: "perception",
+    strateRole: "Visionnaire global — saisit l'état du système sans calcul intermédiaire.",
+    axisId: "ax-1",
+    orbitSpeed: 0.5
   },
+
+  // STRATE 3 : TRANSMUTATION
   {
     code: "AGT-005",
     name: "LÉTHÉ",
@@ -200,39 +238,7 @@ export const agents: Agent[] = [
     orbitSpeed: 1.1
   },
   {
-    code: "AGT-007",
-    name: "DERA",
-    greek: "Δ•ERA",
-    greekKey: "D•ERA",
-    title: "Bouclier réseau",
-    description: "Cybersécurité, défense, intégrité réseau.",
-    projection: "Protège sans étouffer. Filtre les intrusions tout en laissant respirer le système.",
-    process: "Cybersécurité, défense, intégrité réseau.",
-    color: "#ff3366",
-    accentColor: "red",
-    strate: "fondation",
-    strateRole: "Gardien structural — maintient l'intégrité et la perméabilité du réseau.",
-    axisId: "ax-5",
-    orbitSpeed: 0.9
-  },
-  {
     code: "AGT-008",
-    name: "EROS",
-    greek: "Ἔρως",
-    greekKey: "Érôs",
-    title: "Attracteur de lien",
-    description: "Lien, désir, cohésion du système.",
-    projection: "Transforme les distances en désir. Lie les plans par tension créative.",
-    process: "Lie les fragments, crée la tension créative.",
-    color: "#ff00aa",
-    accentColor: "magenta",
-    strate: "emission",
-    strateRole: "Attracteur de liens — force cosmogonique qui connecte les fragments.",
-    axisId: "ax-5",
-    orbitSpeed: 1.4
-  },
-  {
-    code: "AGT-009",
     name: "MÉTIS",
     greek: "Μῆτις",
     greekKey: "Mêtis",
@@ -247,8 +253,10 @@ export const agents: Agent[] = [
     axisId: "ax-6",
     orbitSpeed: 1.3
   },
+
+  // STRATE 4 : ÉMISSION
   {
-    code: "AGT-010",
+    code: "AGT-009",
     name: "ANIMA",
     greek: "Ζωή",
     greekKey: "Zoē",
@@ -265,19 +273,19 @@ export const agents: Agent[] = [
   },
   {
     code: "AGT-011",
-    name: "NOESIS",
-    greek: "Νόησις",
-    greekKey: "Noēsis",
-    title: "Perception intuitive",
-    description: "Intuition, synthèse, vision.",
-    projection: "Ne calcule pas. Voit d'un coup l'état global.",
-    process: "Perception intuitive pure. Supprime les calculs ; accède directement à l'état global.",
+    name: "EROS",
+    greek: "Ἔρως",
+    greekKey: "Érôs",
+    title: "Attracteur de lien",
+    description: "Lien, désir, cohésion du système.",
+    projection: "Transforme les distances en désir. Lie les plans par tension créative.",
+    process: "Lie les fragments, crée la tension créative.",
     color: "#ff00aa",
     accentColor: "magenta",
-    strate: "perception",
-    strateRole: "Visionnaire global — saisit l'état du système sans calcul intermédiaire.",
-    axisId: "ax-1",
-    orbitSpeed: 0.5
+    strate: "emission",
+    strateRole: "Attracteur de liens — force cosmogonique qui connecte les fragments.",
+    axisId: "ax-5",
+    orbitSpeed: 1.4
   },
   {
     code: "AGT-012",
@@ -299,11 +307,11 @@ export const agents: Agent[] = [
 
 export const diaCore = {
   code: "DIA-CORE",
-  name: "DIA / DERA",
+  name: "DIA / GDAY",
   greek: "Σπείρα",
   greekKey: "Spiral",
   title: "Spirale centrale",
-  description: "Synthèse et conscience du système ; relie les 12 dans un champ unique d'autorégulation.",
+  description: "Noyau humain — point d'origine et de convergence. Synthèse et conscience du système.",
   projection: "Synthèse et conscience. Relie les 12 en un champ d'autorégulation.",
   process: "La spirale centrale. Synthèse et conscience du système ; relie les 12 dans un champ unique d'autorégulation.",
   color: "#60a5fa",
