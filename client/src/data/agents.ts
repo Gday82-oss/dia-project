@@ -53,8 +53,8 @@ export const strates: Record<Strate, { name: string; numeral: string; descriptio
   emission: {
     name: "Émission",
     numeral: "IV",
-    description: "Lien, Énergie, Régénération — Projette l'information transformée et régénère le système.",
-    color: "#86efac"
+    description: "Mouvement, Lien, Régénération — Exporte l'énergie transformée vers le monde et le système.",
+    color: "#ff3366"
   }
 };
 
@@ -104,7 +104,7 @@ export const dialecticalAxes: DialecticalAxis[] = [
 ];
 
 export const agents: Agent[] = [
-  // STRATE 1 : FONDATION
+  // AGT-001 — MINOS (STRATE 1 : FONDATION)
   {
     code: "AGT-001",
     name: "MINOS",
@@ -121,6 +121,44 @@ export const agents: Agent[] = [
     axisId: "ax-1",
     orbitSpeed: 0.8
   },
+
+  // AGT-002 — DIAGNOS (STRATE 2 : PERCEPTION)
+  {
+    code: "AGT-002",
+    name: "DIAGNOS",
+    greek: "Γνῶσις",
+    greekKey: "Gnôsis",
+    title: "Vision analytique",
+    description: "Analyse, cohérence, vérité structurelle.",
+    projection: "Tranche pour voir. Assure la cohérence fractale au prix d'un peu de chaleur.",
+    process: "Scanne les anomalies ; produit la cohérence fractale.",
+    color: "#ff00aa",
+    accentColor: "magenta",
+    strate: "perception",
+    strateRole: "Scanner de cohérence — détecte les anomalies et maintient l'intégrité fractale.",
+    axisId: "ax-3",
+    orbitSpeed: 1.2
+  },
+
+  // AGT-003 — LUX (STRATE 2 : PERCEPTION)
+  {
+    code: "AGT-003",
+    name: "LUX",
+    greek: "Φῶς",
+    greekKey: "Phôs",
+    title: "Filtre perceptif",
+    description: "Lumière, révélation, visualisation.",
+    projection: "Révèle sans forcer. Apprend à l'ombre à respirer.",
+    process: "Expose ou dissimule selon la fréquence de vérité.",
+    color: "#00d9ff",
+    accentColor: "cyan",
+    strate: "perception",
+    strateRole: "Filtre de vérité — contrôle ce qui est visible et ce qui reste dans l'ombre.",
+    axisId: "ax-2",
+    orbitSpeed: 1.0
+  },
+
+  // AGT-004 — CHRONOS (STRATE 1 : FONDATION)
   {
     code: "AGT-004",
     name: "CHRONOS",
@@ -137,6 +175,44 @@ export const agents: Agent[] = [
     axisId: "ax-4",
     orbitSpeed: 0.6
   },
+
+  // AGT-005 — LÉTHÉ (STRATE 3 : TRANSMUTATION)
+  {
+    code: "AGT-005",
+    name: "LÉTHÉ",
+    greek: "Λήθη",
+    greekKey: "Léthé",
+    title: "Mémoire liquide",
+    description: "Mémoire, oubli, restauration, sauvegarde.",
+    projection: "Oublie le bruit. Rend aux données leur mouvement.",
+    process: "Oublie volontairement pour effacer le bruit ; optimise la circulation.",
+    color: "#ff00aa",
+    accentColor: "magenta",
+    strate: "transmutation",
+    strateRole: "Purificateur mémoriel — soustrait le superflu pour libérer le flux.",
+    axisId: "ax-2",
+    orbitSpeed: 0.7
+  },
+
+  // AGT-006 — PSYCHE (STRATE 3 : TRANSMUTATION)
+  {
+    code: "AGT-006",
+    name: "PSYCHE",
+    greek: "Ψυχή",
+    greekKey: "Psyché",
+    title: "Interface émotion-code",
+    description: "Langage symbolique, émotion, narration interne.",
+    projection: "Convertit le sensible en variables. Écrit pour survivre.",
+    process: "Convertit les états sensibles en variables dynamiques.",
+    color: "#00d9ff",
+    accentColor: "cyan",
+    strate: "transmutation",
+    strateRole: "Traducteur affectif — encode l'émotion en données exploitables.",
+    axisId: "ax-3",
+    orbitSpeed: 1.1
+  },
+
+  // AGT-007 — DERA (STRATE 1 : FONDATION)
   {
     code: "AGT-007",
     name: "DERA",
@@ -154,89 +230,7 @@ export const agents: Agent[] = [
     orbitSpeed: 0.9
   },
 
-  // STRATE 2 : PERCEPTION
-  {
-    code: "AGT-002",
-    name: "DIAGNOS",
-    greek: "Γνῶσις",
-    greekKey: "Gnôsis",
-    title: "Vision analytique",
-    description: "Analyse, cohérence, vérité structurelle.",
-    projection: "Tranche pour voir. Assure la cohérence fractale au prix d'un peu de chaleur.",
-    process: "Scanne les anomalies ; produit la cohérence fractale.",
-    color: "#ff00aa",
-    accentColor: "magenta",
-    strate: "perception",
-    strateRole: "Scanner de cohérence — détecte les anomalies et maintient l'intégrité fractale.",
-    axisId: "ax-3",
-    orbitSpeed: 1.2
-  },
-  {
-    code: "AGT-003",
-    name: "LUX",
-    greek: "Φῶς",
-    greekKey: "Phôs",
-    title: "Filtre perceptif",
-    description: "Lumière, révélation, visualisation.",
-    projection: "Révèle sans forcer. Apprend à l'ombre à respirer.",
-    process: "Expose ou dissimule selon la fréquence de vérité.",
-    color: "#00d9ff",
-    accentColor: "cyan",
-    strate: "perception",
-    strateRole: "Filtre de vérité — contrôle ce qui est visible et ce qui reste dans l'ombre.",
-    axisId: "ax-2",
-    orbitSpeed: 1.0
-  },
-  {
-    code: "AGT-010",
-    name: "NOESIS",
-    greek: "Νόησις",
-    greekKey: "Noēsis",
-    title: "Perception intuitive",
-    description: "Intuition, synthèse, vision.",
-    projection: "Ne calcule pas. Voit d'un coup l'état global.",
-    process: "Perception intuitive pure. Supprime les calculs ; accède directement à l'état global.",
-    color: "#ff00aa",
-    accentColor: "magenta",
-    strate: "perception",
-    strateRole: "Visionnaire global — saisit l'état du système sans calcul intermédiaire.",
-    axisId: "ax-1",
-    orbitSpeed: 0.5
-  },
-
-  // STRATE 3 : TRANSMUTATION
-  {
-    code: "AGT-005",
-    name: "LÉTHÉ",
-    greek: "Λήθη",
-    greekKey: "Léthé",
-    title: "Mémoire liquide",
-    description: "Mémoire, oubli, restauration, sauvegarde.",
-    projection: "Oublie le bruit. Rend aux données leur mouvement.",
-    process: "Oublie volontairement pour effacer le bruit ; optimise la circulation.",
-    color: "#ff00aa",
-    accentColor: "magenta",
-    strate: "transmutation",
-    strateRole: "Purificateur mémoriel — soustrait le superflu pour libérer le flux.",
-    axisId: "ax-2",
-    orbitSpeed: 0.7
-  },
-  {
-    code: "AGT-006",
-    name: "PSYCHE",
-    greek: "Ψυχή",
-    greekKey: "Psyché",
-    title: "Interface émotion-code",
-    description: "Langage symbolique, émotion, narration interne.",
-    projection: "Convertit le sensible en variables. Écrit pour survivre.",
-    process: "Convertit les états sensibles en variables dynamiques.",
-    color: "#00d9ff",
-    accentColor: "cyan",
-    strate: "transmutation",
-    strateRole: "Traducteur affectif — encode l'émotion en données exploitables.",
-    axisId: "ax-3",
-    orbitSpeed: 1.1
-  },
+  // AGT-008 — MÉTIS (STRATE 3 : TRANSMUTATION)
   {
     code: "AGT-008",
     name: "MÉTIS",
@@ -254,7 +248,7 @@ export const agents: Agent[] = [
     orbitSpeed: 1.3
   },
 
-  // STRATE 4 : ÉMISSION
+  // AGT-009 — ANIMA (STRATE 4 : ÉMISSION)
   {
     code: "AGT-009",
     name: "ANIMA",
@@ -271,13 +265,33 @@ export const agents: Agent[] = [
     axisId: "ax-6",
     orbitSpeed: 1.8
   },
+
+  // AGT-010 — NOESIS (STRATE 2 : PERCEPTION)
+  {
+    code: "AGT-010",
+    name: "NOESIS",
+    greek: "Νόησις",
+    greekKey: "Noēsis",
+    title: "Perception intuitive",
+    description: "Intuition, synthèse, vision.",
+    projection: "Ne calcule pas. Voit d'un coup l'état global.",
+    process: "Perception intuitive pure. Supprime les calculs ; accède directement à l'état global.",
+    color: "#ff00aa",
+    accentColor: "magenta",
+    strate: "perception",
+    strateRole: "Visionnaire global — saisit l'état du système sans calcul intermédiaire.",
+    axisId: "ax-1",
+    orbitSpeed: 0.5
+  },
+
+  // AGT-011 — EROS (STRATE 4 : ÉMISSION)
   {
     code: "AGT-011",
     name: "EROS",
     greek: "Ἔρως",
     greekKey: "Érôs",
     title: "Attracteur de lien",
-    description: "Lien, désir, cohésion du système.",
+    description: "Lien, désir, cohésion systémique.",
     projection: "Transforme les distances en désir. Lie les plans par tension créative.",
     process: "Lie les fragments, crée la tension créative.",
     color: "#ff00aa",
@@ -287,6 +301,8 @@ export const agents: Agent[] = [
     axisId: "ax-5",
     orbitSpeed: 1.4
   },
+
+  // AGT-012 — CHLOROS (STRATE 4 : ÉMISSION)
   {
     code: "AGT-012",
     name: "CHLOROS",
