@@ -257,7 +257,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 text-xs">
               {diaCore.functions.map((fn, i) => (
                 <span
-                  key={i}
+                  key={fn}
                   className="px-3 py-1.5"
                   style={{
                     background: "rgba(96, 165, 250, 0.08)",
