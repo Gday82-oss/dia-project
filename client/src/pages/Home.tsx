@@ -8,9 +8,8 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { agents, diaCore } from "@/data/agents";
-import { agentThemes, getAgentTheme } from "@/data/agentThemes";
-import AgentAvatar3D from "@/components/AgentAvatar3D";
+import { agents, diaCore, getAgentTheme } from "@features/agents/agent.data";
+import AgentCard from "@features/agents/components/AgentCard";
 import { useAuth } from "@/_core/hooks/useAuth";
 
 export default function Home() {
@@ -43,21 +42,27 @@ export default function Home() {
       {/* Fond stellaire permanent */}
       <div className="fixed inset-0 z-0">
         {/* Bruit stellaire subtil */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `radial-gradient(1px 1px at 20px 30px, #ffffff 0%, transparent 100%),
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `radial-gradient(1px 1px at 20px 30px, #ffffff 0%, transparent 100%),
                            radial-gradient(1px 1px at 40px 70px, #ffffff 0%, transparent 100%),
                            radial-gradient(1px 1px at 50px 160px, #ffffff 0%, transparent 100%),
                            radial-gradient(1px 1px at 90px 40px, #ffffff 0%, transparent 100%),
                            radial-gradient(1px 1px at 130px 80px, #ffffff 0%, transparent 100%),
                            radial-gradient(1px 1px at 160px 120px, #ffffff 0%, transparent 100%)`,
-          backgroundSize: '200px 200px',
-        }} />
+            backgroundSize: "200px 200px",
+          }}
+        />
         {/* Filaments lumineux */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          background: `linear-gradient(217deg, rgba(0,212,255,0.1), transparent 70%),
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            background: `linear-gradient(217deg, rgba(0,212,255,0.1), transparent 70%),
                        linear-gradient(127deg, rgba(255,0,170,0.08), transparent 70%),
                        linear-gradient(336deg, rgba(255,51,102,0.06), transparent 70%)`,
-        }} />
+          }}
+        />
       </div>
 
       {/* Ligne verticale décorative */}
@@ -80,7 +85,8 @@ export default function Home() {
               <span style={{ color: "#ff00aa" }}>GDAY</span>
             </h1>
             <p className="text-sm md:text-base text-muted-foreground max-w-2xl mb-2">
-              Noyau humain — <span className="tech-text text-xs">GEN012</span> comme extensions fonctionnelles
+              Noyau humain — <span className="tech-text text-xs">GEN012</span>{" "}
+              comme extensions fonctionnelles
             </p>
             <p className="text-xs text-muted-foreground/60 max-w-xl mb-8 italic">
               {diaCore.projection}
@@ -93,13 +99,22 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap gap-3"
           >
-            <Link href="/intro" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ff334420] border border-[#ff334450] text-sm tech-text hover:bg-[#ff334440] hover:border-[#ff3344] transition-all duration-300 rounded-sm">
+            <Link
+              href="/intro"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ff334420] border border-[#ff334450] text-sm tech-text hover:bg-[#ff334440] hover:border-[#ff3344] transition-all duration-300 rounded-sm"
+            >
               Introduction <span style={{ color: "#ff3344" }}>→</span>
             </Link>
-            <Link href="/fractal" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00d4ff15] border border-[#00d4ff40] text-sm tech-text hover:bg-[#00d4ff30] hover:border-[#00d4ff] transition-all duration-300 rounded-sm">
+            <Link
+              href="/fractal"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00d4ff15] border border-[#00d4ff40] text-sm tech-text hover:bg-[#00d4ff30] hover:border-[#00d4ff] transition-all duration-300 rounded-sm"
+            >
               Visualisation Fractale <span style={{ color: "#00d4ff" }}>→</span>
             </Link>
-            <Link href="/canon" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ff00aa15] border border-[#ff00aa40] text-sm tech-text hover:bg-[#ff00aa30] hover:border-[#ff00aa] transition-all duration-300 rounded-sm">
+            <Link
+              href="/canon"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ff00aa15] border border-[#ff00aa40] text-sm tech-text hover:bg-[#ff00aa30] hover:border-[#ff00aa] transition-all duration-300 rounded-sm"
+            >
               Canon Fractal <span style={{ color: "#ff00aa" }}>→</span>
             </Link>
           </motion.div>
@@ -108,10 +123,8 @@ export default function Home() {
         {/* Grille des agents — chaque carte a sa propre skin */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {agents.map((agent, index) => {
-            const theme = agentThemes[agent.code];
+            const theme = getAgentTheme(agent.code);
             if (!theme) return null;
-
-            const isHovered = hoveredAgent === agent.code;
 
             return (
               <motion.div
@@ -120,98 +133,13 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.06 }}
               >
-                <Link
-                  href={`/agent/${agent.code.toLowerCase()}`}
-                  className="block group relative overflow-hidden transition-all duration-400"
+                <AgentCard
+                  agent={agent}
+                  theme={theme}
+                  isHovered={hoveredAgent === agent.code}
                   onMouseEnter={() => setHoveredAgent(agent.code)}
                   onMouseLeave={() => setHoveredAgent(null)}
-                  style={{
-                    background: isHovered ? theme.palette.bg : "rgba(12, 12, 20, 0.7)",
-                    border: `1px solid ${isHovered ? theme.palette.accent + "80" : theme.palette.accent + "25"}`,
-                    borderRadius: theme.shapes.borderRadius,
-                    backdropFilter: "blur(12px)",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    transform: isHovered ? "translateY(-4px)" : "translateY(0)",
-                    boxShadow: isHovered
-                      ? `0 0 20px ${theme.palette.glow}30, 0 0 40px ${theme.palette.glow}15, 0 8px 32px rgba(0,0,0,0.4)`
-                      : "0 2px 8px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  {/* Pattern overlay spécifique à l'agent */}
-                  <div
-                    className="absolute inset-0 pointer-events-none transition-opacity duration-400"
-                    style={{
-                      backgroundImage: theme.effects.overlay,
-                      backgroundSize: agent.code === "AGT-001" ? "30px 30px" : undefined,
-                      opacity: isHovered ? 0.6 : 0.15,
-                    }}
-                  />
-
-                  {/* Scan line au survol */}
-                  {isHovered && (
-                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                      <div
-                        className="absolute inset-x-0 h-[1px]"
-                        style={{
-                          background: `linear-gradient(90deg, transparent, ${theme.palette.accent}60, transparent)`,
-                          animation: "scan 2s linear infinite",
-                        }}
-                      />
-                    </div>
-                  )}
-
-                  {/* Contenu de la carte */}
-                  <div className="relative z-10 p-5 flex items-start gap-5">
-                    {/* Avatar 3D */}
-                    <div className="shrink-0">
-                      <AgentAvatar3D
-                        agentCode={agent.code}
-                        agentColor={theme.palette.accent}
-                        agentName={agent.name}
-                        size="md"
-                        showGlow={true}
-                        pauseOnHover={true}
-                      />
-                    </div>
-
-                    {/* Informations */}
-                    <div className="flex-1 min-w-0">
-                      {/* En-tête : code — nom */}
-                      <div className="mb-2">
-                        <span className="tech-text text-xs font-bold tracking-wider" style={{ color: theme.palette.accent }}>
-                          {agent.code} — {agent.name}
-                        </span>
-                      </div>
-
-                      {/* Nom grec */}
-                      <h2
-                        className="greek-text text-2xl md:text-3xl font-semibold mb-1 transition-colors duration-300"
-                        style={{ color: isHovered ? theme.palette.accent : theme.palette.text }}
-                      >
-                        {agent.greek}
-                      </h2>
-
-                      {/* Archétype */}
-                      <p className="text-xs font-medium mb-2 uppercase tracking-wider" style={{ color: theme.palette.text + "cc" }}>
-                        {theme.archetype} — {agent.title}
-                      </p>
-
-                      {/* Projection mentale */}
-                      <p className="text-xs leading-relaxed line-clamp-2" style={{ color: theme.palette.text + "88" }}>
-                        {agent.projection}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Barre d'accent en bas */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-[2px] transition-opacity duration-300"
-                    style={{
-                      background: `linear-gradient(90deg, transparent, ${theme.palette.accent}, transparent)`,
-                      opacity: isHovered ? 0.8 : 0.2,
-                    }}
-                  />
-                </Link>
+                />
               </motion.div>
             );
           })}
@@ -227,7 +155,8 @@ export default function Home() {
           <div
             className="relative p-8 md:p-10 overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, rgba(12,12,20,0.9) 0%, rgba(20,16,30,0.9) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(12,12,20,0.9) 0%, rgba(20,16,30,0.9) 100%)",
               border: "1px solid rgba(96, 165, 250, 0.2)",
               borderRadius: "4px",
               backdropFilter: "blur(16px)",
@@ -247,7 +176,10 @@ export default function Home() {
 
             <div className="flex items-center gap-4 mb-4">
               <div className="w-3 h-3 rounded-full bg-[#60a5fa] animate-pulse" />
-              <h2 className="tech-text text-lg tracking-widest" style={{ color: "#60a5fa" }}>
+              <h2
+                className="tech-text text-lg tracking-widest"
+                style={{ color: "#60a5fa" }}
+              >
                 DIA / DERA — Σπείρα
               </h2>
             </div>
@@ -276,7 +208,8 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-20 pt-8 border-t border-[#00d4ff10] text-center">
           <p className="text-xs text-muted-foreground/40 tech-text tracking-widest">
-            DIA — Système fractal d'agents cognitifs — 12 démiurges en évolution perpétuelle
+            DIA — Système fractal d'agents cognitifs — 12 démiurges en évolution
+            perpétuelle
           </p>
         </footer>
       </div>

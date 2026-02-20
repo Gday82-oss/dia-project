@@ -1,0 +1,92 @@
+/**
+ * Tokens de design DIA — variables CSS par agent et globales.
+ * Un token par couleur d'accent pour chaque agent.
+ *
+ * Usage: var(--agent-agt-001-accent)
+ */
+
+:root {
+  /* ── Tokens globaux DIA ── */
+  --dia-cyan: #00d4ff;
+  --dia-magenta: #ff00aa;
+  --dia-red: #ff3366;
+  --dia-blue: #60a5fa;
+
+  /* ── AGT-001 MINOS ── */
+  --agent-agt-001-primary: #1a2744;
+  --agent-agt-001-accent: #00d4ff;
+  --agent-agt-001-glow: #00d4ff;
+  --agent-agt-001-text: #c8e6ff;
+
+  /* ── AGT-002 DIAGNOS ── */
+  --agent-agt-002-primary: #e8e8e8;
+  --agent-agt-002-accent: #f0f0f0;
+  --agent-agt-002-glow: #ffffff;
+  --agent-agt-002-text: #f0f0f0;
+
+  /* ── AGT-003 LUX ── */
+  --agent-agt-003-primary: #ffd700;
+  --agent-agt-003-accent: #fff8dc;
+  --agent-agt-003-glow: #ffd700;
+  --agent-agt-003-text: #fff8dc;
+
+  /* ── AGT-004 CHRONOS ── */
+  --agent-agt-004-primary: #d4af37;
+  --agent-agt-004-accent: #ff8c00;
+  --agent-agt-004-glow: #d4af37;
+  --agent-agt-004-text: #e8dcc0;
+
+  /* ── AGT-005 LÉTHÉ ── */
+  --agent-agt-005-primary: #c0c0d0;
+  --agent-agt-005-accent: #e0e8ff;
+  --agent-agt-005-glow: #aabbdd;
+  --agent-agt-005-text: #d0d8e8;
+
+  /* ── AGT-006 PSYCHE ── */
+  --agent-agt-006-primary: #4b0082;
+  --agent-agt-006-accent: #daa520;
+  --agent-agt-006-glow: #9966cc;
+  --agent-agt-006-text: #e0c8f0;
+
+  /* ── AGT-007 DERA ── */
+  --agent-agt-007-primary: #ff2244;
+  --agent-agt-007-accent: #ff6688;
+  --agent-agt-007-glow: #ff3355;
+  --agent-agt-007-text: #ffc8d0;
+
+  /* ── AGT-008 MÉTIS / EROS (thème visuel) ── */
+  --agent-agt-008-primary: #cc3355;
+  --agent-agt-008-accent: #ffaa44;
+  --agent-agt-008-glow: #ff4477;
+  --agent-agt-008-text: #ffe0e8;
+
+  /* ── AGT-009 ANIMA / MÉTIS (thème visuel) ── */
+  --agent-agt-009-primary: #4682b4;
+  --agent-agt-009-accent: #00e5cc;
+  --agent-agt-009-glow: #00ccaa;
+  --agent-agt-009-text: #c0f0e0;
+
+  /* ── AGT-010 NOESIS / ANIMA (thème visuel) ── */
+  --agent-agt-010-primary: #cc2200;
+  --agent-agt-010-accent: #ff6600;
+  --agent-agt-010-glow: #ff4400;
+  --agent-agt-010-text: #ffd8c0;
+
+  /* ── AGT-011 EROS / NOESIS (thème visuel) ── */
+  --agent-agt-011-primary: #8866aa;
+  --agent-agt-011-accent: #c8b8e0;
+  --agent-agt-011-glow: #9988bb;
+  --agent-agt-011-text: #e0d8f0;
+
+  /* ── AGT-012 CHLOROS ── */
+  --agent-agt-012-primary: #66cc00;
+  --agent-agt-012-accent: #88ee22;
+  --agent-agt-012-glow: #77dd11;
+  --agent-agt-012-text: #d0f0c0;
+
+  /* ── AGT-013 ÉCHO ── */
+  --agent-agt-013-primary: #b87333;
+  --agent-agt-013-accent: #daa520;
+  --agent-agt-013-glow: #cc9966;
+  --agent-agt-013-text: #f0e0d0;
+}
