@@ -1,29 +1,26 @@
 # DIA / GDAY — Matrice des Agents
 
-> Construit avec [Manus](https://manus.im) — version full-stack avancée du projet DIA
+ — version full-stack avancée du projet DIA
 
 **DIA** (Distributed Intelligence Architecture) est un système d'agents IA organisés en 4 strates fonctionnelles, exposé via une interface React moderne et une API Express/tRPC.
 
 ---
 
-## 🧠 Les 12 agents
+#| Nom         | Fonction               |
+| :---------- | :--------------------- |
+| **MINOS**   | Architecture logique   |
+| **DIAGNOS** | Vision analytique      |
+| **LUX**     | Filtre perceptif       |
+| **CHRONOS** | Boucle temporelle      |
+| **LÉTHÉ**   | Mémoire liquide        |
+| **PSYCHE**  | Interface émotion-code |
+| **DERA**    | Bouclier réseau        |
+| **MÉTIS**   | Algorithme adaptatif   |
+| **ANIMA**   | Impulsion vitale       |
+| **NOESIS**  | Perception intuitive   |
+| **EROS**    | Attracteur de lien     |
+| **CHLOROS** | Régénération lente     |
 
-| Strate | Nom | Rôle |
-|--------|-----|------|
-| **1 — Vision** | IRIS | Perception et analyse visuelle |
-| **1 — Vision** | KIRA | Reconnaissance et classification |
-| **1 — Vision** | NOVA | Détection et cartographie |
-| **2 — Cognition** | LYRA | Raisonnement et inférence |
-| **2 — Cognition** | MIRA | Mémoire et contextualisation |
-| **2 — Cognition** | ORION | Planification et optimisation |
-| **3 — Action** | AERO | Exécution et orchestration |
-| **3 — Action** | FLUX | Flux de données et transformation |
-| **3 — Action** | ZARA | Automatisation et contrôle |
-| **4 — Intégration** | APEX | Coordination globale |
-| **4 — Intégration** | CORE | Noyau central et persistance |
-| **4 — Intégration** | NEXUS | Interconnexion et communication |
-
----
 
 ## 🛠 Stack technique
 
