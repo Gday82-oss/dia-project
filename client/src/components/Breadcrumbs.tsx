@@ -15,9 +15,7 @@ export default function Breadcrumbs() {
 
   // Generate breadcrumbs from current location
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
-    const breadcrumbs: BreadcrumbItem[] = [
-      { label: "Accueil", href: "/" },
-    ];
+    const breadcrumbs: BreadcrumbItem[] = [{ label: "Accueil", href: "/" }];
 
     if (location === "/") {
       return [];
@@ -39,7 +37,8 @@ export default function Breadcrumbs() {
         agent: "Agent",
       };
 
-      const label = labelMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+      const label =
+        labelMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
 
       if (!isLast) {
         breadcrumbs.push({ label, href: currentPath });
@@ -61,7 +60,10 @@ export default function Breadcrumbs() {
     <nav className="mt-16 mb-6 px-4 sm:px-6 lg:px-8" aria-label="Breadcrumb">
       <ol className="flex items-center gap-2 text-sm">
         <li>
-          <Link href="/" className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1">
+          <Link
+            href="/"
+            className="text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1"
+          >
             <Home size={16} />
             <span className="sr-only">Accueil</span>
           </Link>
@@ -72,7 +74,10 @@ export default function Breadcrumbs() {
             {index === breadcrumbs.length - 1 ? (
               <span className="text-slate-300 font-medium">{crumb.label}</span>
             ) : (
-              <Link href={crumb.href} className="text-slate-400 hover:text-cyan-400 transition-colors">
+              <Link
+                href={crumb.href}
+                className="text-slate-400 hover:text-cyan-400 transition-colors"
+              >
                 {crumb.label}
               </Link>
             )}

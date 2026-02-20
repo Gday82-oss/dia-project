@@ -3,7 +3,16 @@
  */
 
 import { eq, desc, and } from "drizzle-orm";
-import { agents, agentLogs, agentTasks, agentMetrics, type InsertAgent, type InsertAgentLog, type InsertAgentTask, type InsertAgentMetric } from "../drizzle/schema";
+import {
+  agents,
+  agentLogs,
+  agentTasks,
+  agentMetrics,
+  type InsertAgent,
+  type InsertAgentLog,
+  type InsertAgentTask,
+  type InsertAgentMetric,
+} from "../drizzle/schema";
 import { getDb } from "./db";
 
 /**
@@ -30,18 +39,21 @@ export async function initializeAgents() {
 
   for (const agent of agentsList) {
     try {
-      await db.insert(agents).values({
-        code: agent.code,
-        name: agent.name,
-        status: "idle",
-        efficiency: 0,
-        health: 100,
-        load: 0,
-      }).onDuplicateKeyUpdate({
-        set: {
+      await db
+        .insert(agents)
+        .values({
+          code: agent.code,
           name: agent.name,
-        },
-      });
+          status: "idle",
+          efficiency: 0,
+          health: 100,
+          load: 0,
+        })
+        .onDuplicateKeyUpdate({
+          set: {
+            name: agent.name,
+          },
+        });
     } catch (error) {
       console.warn(`[Agents] Failed to initialize ${agent.code}:`, error);
     }
@@ -65,14 +77,21 @@ export async function getAgentByCode(code: string) {
   const db = await getDb();
   if (!db) return null;
 
-  const result = await db.select().from(agents).where(eq(agents.code, code)).limit(1);
+  const result = await db
+    .select()
+    .from(agents)
+    .where(eq(agents.code, code))
+    .limit(1);
   return result.length > 0 ? result[0] : null;
 }
 
 /**
  * Mettre à jour le statut d'un agent
  */
-export async function updateAgentStatus(code: string, status: "active" | "idle" | "error") {
+export async function updateAgentStatus(
+  code: string,
+  status: "active" | "idle" | "error"
+) {
   const db = await getDb();
   if (!db) return;
 
@@ -82,12 +101,20 @@ export async function updateAgentStatus(code: string, status: "active" | "idle" 
 /**
  * Mettre à jour les métriques d'un agent
  */
-export async function updateAgentMetrics(code: string, efficiency: number, health: number, load: number) {
+export async function updateAgentMetrics(
+  code: string,
+  efficiency: number,
+  health: number,
+  load: number
+) {
   const db = await getDb();
   if (!db) return;
 
   // Mettre à jour l'agent
-  await db.update(agents).set({ efficiency, health, load }).where(eq(agents.code, code));
+  await db
+    .update(agents)
+    .set({ efficiency, health, load })
+    .where(eq(agents.code, code));
 
   // Enregistrer les métriques historiques
   await db.insert(agentMetrics).values({
@@ -101,7 +128,12 @@ export async function updateAgentMetrics(code: string, efficiency: number, healt
 /**
  * Ajouter un log pour un agent
  */
-export async function addAgentLog(code: string, level: "info" | "warn" | "error", message: string, metadata?: Record<string, unknown>) {
+export async function addAgentLog(
+  code: string,
+  level: "info" | "warn" | "error",
+  message: string,
+  metadata?: Record<string, unknown>
+) {
   const db = await getDb();
   if (!db) return;
 
@@ -120,7 +152,9 @@ export async function getAgentLogs(code: string, limit: number = 50) {
   const db = await getDb();
   if (!db) return [];
 
-  return await db.select().from(agentLogs)
+  return await db
+    .select()
+    .from(agentLogs)
     .where(eq(agentLogs.agentCode, code))
     .orderBy(desc(agentLogs.timestamp))
     .limit(limit);
@@ -129,7 +163,11 @@ export async function getAgentLogs(code: string, limit: number = 50) {
 /**
  * Créer une tâche pour un agent
  */
-export async function createAgentTask(code: string, taskType: string, input?: Record<string, unknown>) {
+export async function createAgentTask(
+  code: string,
+  taskType: string,
+  input?: Record<string, unknown>
+) {
   const db = await getDb();
   if (!db) return null;
 
@@ -146,17 +184,24 @@ export async function createAgentTask(code: string, taskType: string, input?: Re
 /**
  * Obtenir les tâches d'un agent
  */
-export async function getAgentTasks(code: string, status?: "pending" | "running" | "completed" | "failed") {
+export async function getAgentTasks(
+  code: string,
+  status?: "pending" | "running" | "completed" | "failed"
+) {
   const db = await getDb();
   if (!db) return [];
 
   if (status) {
-    return await db.select().from(agentTasks)
+    return await db
+      .select()
+      .from(agentTasks)
       .where(and(eq(agentTasks.agentCode, code), eq(agentTasks.status, status)))
       .orderBy(desc(agentTasks.createdAt));
   }
 
-  return await db.select().from(agentTasks)
+  return await db
+    .select()
+    .from(agentTasks)
     .where(eq(agentTasks.agentCode, code))
     .orderBy(desc(agentTasks.createdAt));
 }
@@ -164,7 +209,12 @@ export async function getAgentTasks(code: string, status?: "pending" | "running"
 /**
  * Mettre à jour le statut d'une tâche
  */
-export async function updateTaskStatus(taskId: number, status: "pending" | "running" | "completed" | "failed", output?: Record<string, unknown>, error?: string) {
+export async function updateTaskStatus(
+  taskId: number,
+  status: "pending" | "running" | "completed" | "failed",
+  output?: Record<string, unknown>,
+  error?: string
+) {
   const db = await getDb();
   if (!db) return;
 
@@ -179,18 +229,26 @@ export async function updateTaskStatus(taskId: number, status: "pending" | "runn
   }
 
   const { id } = agentTasks;
-  await db.update(agentTasks).set(updates as any).where(eq(id, taskId));
+  await db
+    .update(agentTasks)
+    .set(updates as any)
+    .where(eq(id, taskId));
 }
 
 /**
  * Obtenir les métriques historiques d'un agent
  */
-export async function getAgentMetricsHistory(code: string, limit: number = 100) {
+export async function getAgentMetricsHistory(
+  code: string,
+  limit: number = 100
+) {
   const db = await getDb();
   if (!db) return [];
 
   const { agentCode, timestamp } = agentMetrics;
-  return await db.select().from(agentMetrics)
+  return await db
+    .select()
+    .from(agentMetrics)
     .where(eq(agentCode, code))
     .orderBy(desc(timestamp))
     .limit(limit);

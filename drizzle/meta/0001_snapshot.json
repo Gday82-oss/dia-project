@@ -57,9 +57,7 @@
       "compositePrimaryKeys": {
         "agentLogs_id": {
           "name": "agentLogs_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {},
@@ -117,9 +115,7 @@
       "compositePrimaryKeys": {
         "agentMetrics_id": {
           "name": "agentMetrics_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {},
@@ -206,9 +202,7 @@
       "compositePrimaryKeys": {
         "agentTasks_id": {
           "name": "agentTasks_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {},
@@ -302,17 +296,13 @@
       "compositePrimaryKeys": {
         "agents_id": {
           "name": "agents_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {
         "agents_code_unique": {
           "name": "agents_code_unique",
-          "columns": [
-            "code"
-          ]
+          "columns": ["code"]
         }
       },
       "checkConstraint": {}
@@ -394,17 +384,13 @@
       "compositePrimaryKeys": {
         "users_id": {
           "name": "users_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {
         "users_openId_unique": {
           "name": "users_openId_unique",
-          "columns": [
-            "openId"
-          ]
+          "columns": ["openId"]
         }
       },
       "checkConstraint": {}

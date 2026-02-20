@@ -56,10 +56,14 @@ export const agentsRouter = router({
    * Obtenir les tâches d'un agent
    */
   getTasks: publicProcedure
-    .input(z.object({
-      code: z.string(),
-      status: z.enum(["pending", "running", "completed", "failed"]).optional() as any,
-    }))
+    .input(
+      z.object({
+        code: z.string(),
+        status: z
+          .enum(["pending", "running", "completed", "failed"])
+          .optional() as any,
+      })
+    )
     .query(async ({ input }) => {
       return await getAgentTasks(input.code, input.status);
     }),
@@ -77,10 +81,12 @@ export const agentsRouter = router({
    * Mettre à jour le statut d'un agent (admin only)
    */
   updateStatus: protectedProcedure
-    .input(z.object({
-      code: z.string(),
-      status: z.enum(["active", "idle", "error"]) as any,
-    }))
+    .input(
+      z.object({
+        code: z.string(),
+        status: z.enum(["active", "idle", "error"]) as any,
+      })
+    )
     .mutation(async ({ input, ctx }) => {
       if (ctx.user?.role !== "admin") {
         throw new Error("Unauthorized");
@@ -93,14 +99,21 @@ export const agentsRouter = router({
    * Mettre à jour les métriques d'un agent
    */
   updateMetrics: protectedProcedure
-    .input(z.object({
-      code: z.string(),
-      efficiency: z.number().min(0).max(100),
-      health: z.number().min(0).max(100),
-      load: z.number().min(0).max(100),
-    }))
+    .input(
+      z.object({
+        code: z.string(),
+        efficiency: z.number().min(0).max(100),
+        health: z.number().min(0).max(100),
+        load: z.number().min(0).max(100),
+      })
+    )
     .mutation(async ({ input, ctx }) => {
-      await updateAgentMetrics(input.code, input.efficiency, input.health, input.load);
+      await updateAgentMetrics(
+        input.code,
+        input.efficiency,
+        input.health,
+        input.load
+      );
       return { success: true };
     }),
 
@@ -108,14 +121,21 @@ export const agentsRouter = router({
    * Ajouter un log pour un agent
    */
   addLog: protectedProcedure
-    .input(z.object({
-      code: z.string(),
-      level: z.enum(["info", "warn", "error"]) as any,
-      message: z.string(),
-      metadata: z.record(z.string(), z.any()).optional(),
-    }))
+    .input(
+      z.object({
+        code: z.string(),
+        level: z.enum(["info", "warn", "error"]) as any,
+        message: z.string(),
+        metadata: z.record(z.string(), z.any()).optional(),
+      })
+    )
     .mutation(async ({ input, ctx }) => {
-      await addAgentLog(input.code, input.level as any, input.message, input.metadata);
+      await addAgentLog(
+        input.code,
+        input.level as any,
+        input.message,
+        input.metadata
+      );
       return { success: true };
     }),
 
@@ -123,13 +143,19 @@ export const agentsRouter = router({
    * Créer une tâche pour un agent
    */
   createTask: protectedProcedure
-    .input(z.object({
-      code: z.string(),
-      taskType: z.string(),
-      input: z.record(z.string(), z.any()).optional(),
-    }))
+    .input(
+      z.object({
+        code: z.string(),
+        taskType: z.string(),
+        input: z.record(z.string(), z.any()).optional(),
+      })
+    )
     .mutation(async ({ input, ctx }) => {
-      const result = await createAgentTask(input.code, input.taskType, input.input);
+      const result = await createAgentTask(
+        input.code,
+        input.taskType,
+        input.input
+      );
       return { success: true, taskId: (result as any)?.insertId };
     }),
 
@@ -137,14 +163,21 @@ export const agentsRouter = router({
    * Mettre à jour le statut d'une tâche
    */
   updateTaskStatus: protectedProcedure
-    .input(z.object({
-      taskId: z.number(),
-      status: z.enum(["pending", "running", "completed", "failed"]) as any,
-      output: z.record(z.string(), z.any()).optional(),
-      error: z.string().optional(),
-    }))
+    .input(
+      z.object({
+        taskId: z.number(),
+        status: z.enum(["pending", "running", "completed", "failed"]) as any,
+        output: z.record(z.string(), z.any()).optional(),
+        error: z.string().optional(),
+      })
+    )
     .mutation(async ({ input, ctx }) => {
-      await updateTaskStatus(input.taskId, input.status as any, input.output, input.error);
+      await updateTaskStatus(
+        input.taskId,
+        input.status as any,
+        input.output,
+        input.error
+      );
       return { success: true };
     }),
 });

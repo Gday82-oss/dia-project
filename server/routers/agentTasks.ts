@@ -33,34 +33,30 @@ export const agentTasksRouter = router({
   /**
    * Exécuter la tâche de DIAGNOS
    */
-  executeDiagnos: publicProcedure
-    .mutation(async () => {
-      return await diagnosAnalyzeCoherence();
-    }),
+  executeDiagnos: publicProcedure.mutation(async () => {
+    return await diagnosAnalyzeCoherence();
+  }),
 
   /**
    * Exécuter la tâche de LUX
    */
-  executeLux: publicProcedure
-    .mutation(async () => {
-      return await luxOptimizeVisualization();
-    }),
+  executeLux: publicProcedure.mutation(async () => {
+    return await luxOptimizeVisualization();
+  }),
 
   /**
    * Exécuter la tâche de CHRONOS
    */
-  executeChronos: publicProcedure
-    .mutation(async () => {
-      return await chronosSyncEvents();
-    }),
+  executeChronos: publicProcedure.mutation(async () => {
+    return await chronosSyncEvents();
+  }),
 
   /**
    * Exécuter la tâche de LÉTHÉ
    */
-  executeLethe: publicProcedure
-    .mutation(async () => {
-      return await letheManageMemory();
-    }),
+  executeLethe: publicProcedure.mutation(async () => {
+    return await letheManageMemory();
+  }),
 
   /**
    * Exécuter la tâche de PSYCHE
@@ -74,56 +70,49 @@ export const agentTasksRouter = router({
   /**
    * Exécuter la tâche de DERA
    */
-  executeDera: publicProcedure
-    .mutation(async () => {
-      return await deraSecureSystem();
-    }),
+  executeDera: publicProcedure.mutation(async () => {
+    return await deraSecureSystem();
+  }),
 
   /**
    * Exécuter la tâche de MÉTIS
    */
-  executeMetis: publicProcedure
-    .mutation(async () => {
-      return await metisOptimizeStrategy();
-    }),
+  executeMetis: publicProcedure.mutation(async () => {
+    return await metisOptimizeStrategy();
+  }),
 
   /**
    * Exécuter la tâche d'ANIMA
    */
-  executeAnima: publicProcedure
-    .mutation(async () => {
-      return await animaGenerateMotion();
-    }),
+  executeAnima: publicProcedure.mutation(async () => {
+    return await animaGenerateMotion();
+  }),
 
   /**
    * Exécuter la tâche de NOESIS
    */
-  executeNoesis: publicProcedure
-    .mutation(async () => {
-      return await noesisSynthesizeInsights();
-    }),
+  executeNoesis: publicProcedure.mutation(async () => {
+    return await noesisSynthesizeInsights();
+  }),
 
   /**
    * Exécuter la tâche d'EROS
    */
-  executeEros: publicProcedure
-    .mutation(async () => {
-      return await erosCreateConnections();
-    }),
+  executeEros: publicProcedure.mutation(async () => {
+    return await erosCreateConnections();
+  }),
 
   /**
    * Exécuter la tâche de CHLOROS
    */
-  executeChlotos: publicProcedure
-    .mutation(async () => {
-      return await chlorosRegenerateSystem();
-    }),
+  executeChlotos: publicProcedure.mutation(async () => {
+    return await chlorosRegenerateSystem();
+  }),
 
   /**
    * Exécuter toutes les tâches des agents en parallèle
    */
-  executeAll: publicProcedure
-    .mutation(async () => {
-      return await executeAllAgentTasks();
-    }),
+  executeAll: publicProcedure.mutation(async () => {
+    return await executeAllAgentTasks();
+  }),
 });

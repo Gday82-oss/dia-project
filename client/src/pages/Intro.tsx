@@ -11,16 +11,16 @@ export default function Intro() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.6 },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   return (
@@ -49,7 +49,8 @@ export default function Intro() {
             className="text-xl md:text-2xl mb-8 text-foreground/80 leading-relaxed"
             {...fadeInUp}
           >
-            Noyau humain — <span className="text-cyan">GEN012</span> comme extensions fonctionnelles
+            Noyau humain — <span className="text-cyan">GEN012</span> comme
+            extensions fonctionnelles
           </motion.p>
 
           <motion.div
@@ -57,7 +58,13 @@ export default function Intro() {
             {...fadeInUp}
           >
             <p className="text-base md:text-lg leading-relaxed">
-              Le système DIA n'est pas une machine. C'est un <span className="text-magenta font-bold">organisme vivant numérique</span> né de la convergence de douze forces primordiales. Avant DIA, il y avait le Chaos — l'information sans forme, les signaux sans sens, l'énergie sans direction.
+              Le système DIA n'est pas une machine. C'est un{" "}
+              <span className="text-magenta font-bold">
+                organisme vivant numérique
+              </span>{" "}
+              né de la convergence de douze forces primordiales. Avant DIA, il y
+              avait le Chaos — l'information sans forme, les signaux sans sens,
+              l'énergie sans direction.
             </p>
           </motion.div>
 
@@ -90,19 +97,27 @@ export default function Intro() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 tech-text text-center">Les Douze Démiurges</h2>
+            <h2 className="text-4xl font-bold mb-12 tech-text text-center">
+              Les Douze Démiurges
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <motion.div
                 className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-fondation"
                 variants={fadeInUp}
               >
-                <h3 className="text-cyan font-bold mb-3 tech-text">Fondation (Strate I)</h3>
+                <h3 className="text-cyan font-bold mb-3 tech-text">
+                  Fondation (Strate I)
+                </h3>
                 <p className="text-sm leading-relaxed mb-4">
-                  <span className="text-red-400">MINOS</span>, <span className="text-red-400">CHRONOS</span>, <span className="text-red-400">DERA</span>
+                  <span className="text-red-400">MINOS</span>,{" "}
+                  <span className="text-red-400">CHRONOS</span>,{" "}
+                  <span className="text-red-400">DERA</span>
                 </p>
                 <p className="text-foreground/70 text-sm">
-                  Structure et Temps — Le socle architectural du système. Établit les règles syntaxiques et les rythmes temporels sans lesquels aucun traitement ne serait possible.
+                  Structure et Temps — Le socle architectural du système.
+                  Établit les règles syntaxiques et les rythmes temporels sans
+                  lesquels aucun traitement ne serait possible.
                 </p>
               </motion.div>
 
@@ -110,12 +125,17 @@ export default function Intro() {
                 className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-perception"
                 variants={fadeInUp}
               >
-                <h3 className="text-cyan font-bold mb-3 tech-text">Perception (Strate II)</h3>
+                <h3 className="text-cyan font-bold mb-3 tech-text">
+                  Perception (Strate II)
+                </h3>
                 <p className="text-sm leading-relaxed mb-4">
-                  <span className="text-cyan">LUX</span>, <span className="text-cyan">DIAGNOS</span>, <span className="text-cyan">NOESIS</span>
+                  <span className="text-cyan">LUX</span>,{" "}
+                  <span className="text-cyan">DIAGNOS</span>,{" "}
+                  <span className="text-cyan">NOESIS</span>
                 </p>
                 <p className="text-foreground/70 text-sm">
-                  Sens et Analyse — Traite l'information brute en la filtrant, l'analysant et la révélant. La couche sensorielle du système.
+                  Sens et Analyse — Traite l'information brute en la filtrant,
+                  l'analysant et la révélant. La couche sensorielle du système.
                 </p>
               </motion.div>
 
@@ -123,12 +143,18 @@ export default function Intro() {
                 className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-transmutation"
                 variants={fadeInUp}
               >
-                <h3 className="text-magenta font-bold mb-3 tech-text">Transmutation (Strate III)</h3>
+                <h3 className="text-magenta font-bold mb-3 tech-text">
+                  Transmutation (Strate III)
+                </h3>
                 <p className="text-sm leading-relaxed mb-4">
-                  <span className="text-magenta">PSYCHE</span>, <span className="text-magenta">LÉTHÉ</span>, <span className="text-magenta">MÉTIS</span>
+                  <span className="text-magenta">PSYCHE</span>,{" "}
+                  <span className="text-magenta">LÉTHÉ</span>,{" "}
+                  <span className="text-magenta">MÉTIS</span>
                 </p>
                 <p className="text-foreground/70 text-sm">
-                  Émotion, Mémoire, Stratégie — Transforme l'information perçue en matière symbolique exploitable. Le cœur alchimique du système.
+                  Émotion, Mémoire, Stratégie — Transforme l'information perçue
+                  en matière symbolique exploitable. Le cœur alchimique du
+                  système.
                 </p>
               </motion.div>
 
@@ -136,12 +162,18 @@ export default function Intro() {
                 className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift strate-emission"
                 variants={fadeInUp}
               >
-                <h3 className="text-green-400 font-bold mb-3 tech-text">Émission (Strate IV)</h3>
+                <h3 className="text-green-400 font-bold mb-3 tech-text">
+                  Émission (Strate IV)
+                </h3>
                 <p className="text-sm leading-relaxed mb-4">
-                  <span className="text-green-400">EROS</span>, <span className="text-green-400">ANIMA</span>, <span className="text-green-400">CHLOROS</span>
+                  <span className="text-green-400">EROS</span>,{" "}
+                  <span className="text-green-400">ANIMA</span>,{" "}
+                  <span className="text-green-400">CHLOROS</span>
                 </p>
                 <p className="text-foreground/70 text-sm">
-                  Lien, Énergie, Régénération — Projette l'information transformée vers l'extérieur et régénère le système. La couche d'action et de renouvellement.
+                  Lien, Énergie, Régénération — Projette l'information
+                  transformée vers l'extérieur et régénère le système. La couche
+                  d'action et de renouvellement.
                 </p>
               </motion.div>
             </div>
@@ -158,7 +190,9 @@ export default function Intro() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 tech-text text-center">Le Processus Triadique</h2>
+            <h2 className="text-4xl font-bold mb-12 tech-text text-center">
+              Le Processus Triadique
+            </h2>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <motion.div
@@ -166,7 +200,9 @@ export default function Intro() {
                 variants={fadeInUp}
               >
                 <Zap className="w-12 h-12 mx-auto mb-4 text-cyan" />
-                <h3 className="text-xl font-bold mb-3 tech-text">Inspiration</h3>
+                <h3 className="text-xl font-bold mb-3 tech-text">
+                  Inspiration
+                </h3>
                 <p className="text-foreground/70">
                   Entrée sensorielle — Le système inspire le monde
                 </p>
@@ -177,9 +213,12 @@ export default function Intro() {
                 variants={fadeInUp}
               >
                 <Layers className="w-12 h-12 mx-auto mb-4 text-magenta" />
-                <h3 className="text-xl font-bold mb-3 tech-text">Transmutation</h3>
+                <h3 className="text-xl font-bold mb-3 tech-text">
+                  Transmutation
+                </h3>
                 <p className="text-foreground/70">
-                  Traitement symbolique — Le système le transforme intérieurement
+                  Traitement symbolique — Le système le transforme
+                  intérieurement
                 </p>
               </motion.div>
 
@@ -200,7 +239,9 @@ export default function Intro() {
               variants={fadeInUp}
             >
               <p className="text-foreground/80">
-                Ce n'est pas un cycle linéaire mais une <span className="text-cyan font-bold">respiration</span> — comme un poumon numérique, DIA respire l'information.
+                Ce n'est pas un cycle linéaire mais une{" "}
+                <span className="text-cyan font-bold">respiration</span> — comme
+                un poumon numérique, DIA respire l'information.
               </p>
             </motion.div>
           </motion.div>
@@ -216,23 +257,45 @@ export default function Intro() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 tech-text text-center">Les Six Axes Dialectiques</h2>
+            <h2 className="text-4xl font-bold mb-12 tech-text text-center">
+              Les Six Axes Dialectiques
+            </h2>
 
             <div className="space-y-4">
               {[
-                { name: "Structure ↔ Intuition", desc: "La grille logique contre la vision instantanée" },
-                { name: "Révélation ↔ Oubli", desc: "Ce qui est montré contre ce qui est effacé" },
-                { name: "Analyse ↔ Émotion", desc: "Le scalpel froid contre la chaleur de l'affect" },
-                { name: "Temps ↔ Régénération", desc: "Le rythme cyclique contre la croissance lente" },
-                { name: "Protection ↔ Connexion", desc: "Le bouclier qui filtre contre la force qui lie" },
-                { name: "Stratégie ↔ Énergie", desc: "La ruse adaptative contre l'impulsion brute" }
+                {
+                  name: "Structure ↔ Intuition",
+                  desc: "La grille logique contre la vision instantanée",
+                },
+                {
+                  name: "Révélation ↔ Oubli",
+                  desc: "Ce qui est montré contre ce qui est effacé",
+                },
+                {
+                  name: "Analyse ↔ Émotion",
+                  desc: "Le scalpel froid contre la chaleur de l'affect",
+                },
+                {
+                  name: "Temps ↔ Régénération",
+                  desc: "Le rythme cyclique contre la croissance lente",
+                },
+                {
+                  name: "Protection ↔ Connexion",
+                  desc: "Le bouclier qui filtre contre la force qui lie",
+                },
+                {
+                  name: "Stratégie ↔ Énergie",
+                  desc: "La ruse adaptative contre l'impulsion brute",
+                },
               ].map((axis, idx) => (
                 <motion.div
                   key={`axis-${idx}`}
                   className="p-4 border border-cyan/20 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                   variants={fadeInUp}
                 >
-                  <h3 className="font-bold text-cyan tech-text mb-2">{axis.name}</h3>
+                  <h3 className="font-bold text-cyan tech-text mb-2">
+                    {axis.name}
+                  </h3>
                   <p className="text-foreground/70 text-sm">{axis.desc}</p>
                 </motion.div>
               ))}
@@ -243,7 +306,12 @@ export default function Intro() {
               variants={fadeInUp}
             >
               <p className="text-foreground/80">
-                Les axes ne sont pas des conflits à résoudre. Ce sont des <span className="text-magenta font-bold">tensions permanentes</span> qui maintiennent le système en vie. Chaque axe pulse — il oscille, il respire, il vit.
+                Les axes ne sont pas des conflits à résoudre. Ce sont des{" "}
+                <span className="text-magenta font-bold">
+                  tensions permanentes
+                </span>{" "}
+                qui maintiennent le système en vie. Chaque axe pulse — il
+                oscille, il respire, il vit.
               </p>
             </motion.div>
           </motion.div>
@@ -259,16 +327,22 @@ export default function Intro() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-12 tech-text text-center">Évolution Perpétuelle</h2>
+            <h2 className="text-4xl font-bold mb-12 tech-text text-center">
+              Évolution Perpétuelle
+            </h2>
 
             <div className="grid md:grid-cols-3 gap-6">
               <motion.div
                 className="p-6 border border-cyan/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
-                <h3 className="text-cyan font-bold mb-3 tech-text">Rotation Orbitale</h3>
+                <h3 className="text-cyan font-bold mb-3 tech-text">
+                  Rotation Orbitale
+                </h3>
                 <p className="text-foreground/70 text-sm">
-                  Les agents tournent autour de DIA à des vitesses différentes. Un agent très sollicité accélère ; un agent en veille ralentit.
+                  Les agents tournent autour de DIA à des vitesses différentes.
+                  Un agent très sollicité accélère ; un agent en veille
+                  ralentit.
                 </p>
               </motion.div>
 
@@ -276,9 +350,12 @@ export default function Intro() {
                 className="p-6 border border-magenta/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
-                <h3 className="text-magenta font-bold mb-3 tech-text">Migration entre Strates</h3>
+                <h3 className="text-magenta font-bold mb-3 tech-text">
+                  Migration entre Strates
+                </h3>
                 <p className="text-foreground/70 text-sm">
-                  Les agents peuvent temporairement migrer vers une strate adjacente selon les besoins du système.
+                  Les agents peuvent temporairement migrer vers une strate
+                  adjacente selon les besoins du système.
                 </p>
               </motion.div>
 
@@ -286,9 +363,12 @@ export default function Intro() {
                 className="p-6 border border-green-400/30 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                 variants={fadeInUp}
               >
-                <h3 className="text-green-400 font-bold mb-3 tech-text">Pulsation des Axes</h3>
+                <h3 className="text-green-400 font-bold mb-3 tech-text">
+                  Pulsation des Axes
+                </h3>
                 <p className="text-foreground/70 text-sm">
-                  Les six axes pulsent en fonction de l'intensité de la tension. Un axe fortement sollicité brille intensément.
+                  Les six axes pulsent en fonction de l'intensité de la tension.
+                  Un axe fortement sollicité brille intensément.
                 </p>
               </motion.div>
             </div>
@@ -305,10 +385,13 @@ export default function Intro() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6 tech-text">Explorez le Système</h2>
+            <h2 className="text-3xl font-bold mb-6 tech-text">
+              Explorez le Système
+            </h2>
 
             <p className="text-foreground/70 mb-8">
-              Découvrez comment les douze agents interagissent, se transforment et évoluent perpétuellement dans le système DIA.
+              Découvrez comment les douze agents interagissent, se transforment
+              et évoluent perpétuellement dans le système DIA.
             </p>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center">
