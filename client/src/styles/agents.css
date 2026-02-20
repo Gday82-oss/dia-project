@@ -1,0 +1,50 @@
+/**
+ * Styles globaux pour les agents DIA.
+ * Animations et effets partagés entre les composants agents.
+ */
+
+/* Scan line animation — utilisée dans AgentCard et AgentPage */
+@keyframes scan {
+  0% {
+    top: -2px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Rotation 3D continue — utilisée dans AgentAvatar3D */
+@keyframes rotate3d-y {
+  0% {
+    transform: rotateY(0deg) rotateX(var(--tilt, 5deg));
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(calc(var(--tilt, 5deg) * -1));
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(var(--tilt, 5deg));
+  }
+}
+
+/* Scan vertical — halo lumineux sur avatar */
+@keyframes scan-vertical {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Respiration de l'aura */
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
