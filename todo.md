@@ -12,19 +12,20 @@
 - [x] Créer le dashboard de monitoring
 
 ## Phase 2 — UX/UI & Navigation
-- [ ] Créer une navigation fixe (header sticky) avec menu principal
-- [ ] Implémenter breadcrumbs sur toutes les pages
-- [ ] Ajouter responsive design mobile-first
-- [ ] Créer des CTA clairs (boutons d'action)
-- [ ] Ajouter footer avec liens utiles
+- [x] Créer une navigation fixe (header sticky) avec menu principal
+- [x] Implémenter breadcrumbs sur toutes les pages
+- [x] Ajouter responsive design mobile-first
+- [x] Créer des CTA clairs (boutons d'action)
+- [x] Ajouter footer avec liens utiles
+- [ ] Corriger l'erreur React de clés en doublon (clés "#" dans les listes mappées)
 
 ## Phase 3 — Contenu Structuré
-- [ ] Créer page "Qui sommes-nous" (mission DIA, bénéfices)
-- [ ] Créer page "Agents" avec détails complets (soft/hard skills)
-- [ ] Créer page "Valeurs" (approche humaniste)
-- [ ] Intégrer soft/hard skills de chaque agent
-- [ ] Ajouter cas d'usage professionnels
-- [ ] Créer page "Offres professionnelles" (Tech, Création, Stratégie, Humain, Mémoire)
+- [x] Créer page "Qui sommes-nous" (mission DIA, bénéfices)
+- [x] Créer page "Agents" avec détails complets (soft/hard skills)
+- [x] Créer page "Valeurs" (approche humaniste)
+- [x] Intégrer soft/hard skills de chaque agent
+- [x] Ajouter cas d'usage professionnels
+- [x] Créer page "Offres professionnelles" (Tech, Création, Stratégie, Humain, Mémoire)
 
 ## Phase 4 — SEO & Performance
 - [ ] Optimiser meta tags (titre, description)

@@ -189,7 +189,7 @@ export default function Canon() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {diaCore.functions?.map((fn, i) => (
-                <div key={i} className="p-4 rounded-sm bg-background/50 border border-border">
+                <div key={`fn-${i}`} className="p-4 rounded-sm bg-background/50 border border-border">
                   <div className="text-xs tech-text text-[oklch(0.7_0.15_200)] mb-2">{fn.split(" — ")[0]}</div>
                   <p className="text-xs text-muted-foreground">{fn.split(" — ")[1]}</p>
                 </div>

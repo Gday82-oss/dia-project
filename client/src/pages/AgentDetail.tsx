@@ -265,7 +265,7 @@ export default function AgentDetail() {
               { icon: Layers, label: "TRANSMUTATION", value: "Symbolique" },
               { icon: Compass, label: "ÉMISSION", value: "Fractale" },
             ].map((step, i) => (
-              <div key={i} className="contents">
+              <div key={step.label} className="contents">
                 {i > 0 && (
                   <div className="text-3xl font-light" style={{ color: theme.palette.accent + "60" }}>→</div>
                 )}
@@ -336,7 +336,7 @@ export default function AgentDetail() {
               <p className="text-[10px] tech-text mb-2 tracking-wider" style={{ color: theme.palette.text + "60" }}>PALETTE</p>
               <div className="flex gap-2">
                 {[theme.palette.primary, theme.palette.secondary, theme.palette.accent, theme.palette.glow].map((c, i) => (
-                  <div key={i} className="w-8 h-8 rounded-sm border border-white/10" style={{ background: c }} />
+                  <div key={`color-${i}`} className="w-8 h-8 rounded-sm border border-white/10" style={{ background: c }} />
                 ))}
               </div>
             </div>

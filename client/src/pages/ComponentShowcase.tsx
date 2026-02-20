@@ -739,7 +739,7 @@ export default function ComponentsShowcase() {
                     <PaginationContent>
                       <PaginationItem>
                         <PaginationPrevious
-                          href="#"
+                          href="javascript:void(0)"
                           onClick={e => {
                             e.preventDefault();
                             setCurrentPage(Math.max(1, currentPage - 1));
@@ -749,7 +749,7 @@ export default function ComponentsShowcase() {
                       {[1, 2, 3, 4, 5].map(page => (
                         <PaginationItem key={page}>
                           <PaginationLink
-                            href="#"
+                            href={`javascript:void(0)`}
                             isActive={currentPage === page}
                             onClick={e => {
                               e.preventDefault();
@@ -762,7 +762,7 @@ export default function ComponentsShowcase() {
                       ))}
                       <PaginationItem>
                         <PaginationNext
-                          href="#"
+                          href="javascript:void(0)"
                           onClick={e => {
                             e.preventDefault();
                             setCurrentPage(Math.min(5, currentPage + 1));
@@ -1192,7 +1192,7 @@ export default function ComponentsShowcase() {
                 <Carousel className="w-full max-w-xs mx-auto">
                   <CarouselContent>
                     {Array.from({ length: 5 }).map((_, index) => (
-                      <CarouselItem key={index}>
+                      <CarouselItem key={`carousel-${index}`}>
                         <div className="p-1">
                           <Card>
                             <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -1273,7 +1273,7 @@ export default function ComponentsShowcase() {
                     <div className="p-4">
                       <div className="space-y-4">
                         {Array.from({ length: 20 }).map((_, i) => (
-                          <div key={i} className="text-sm">
+                          <div key={`scroll-item-${i}`} className="text-sm">
                             Item {i + 1}: This is a scrollable content area
                           </div>
                         ))}

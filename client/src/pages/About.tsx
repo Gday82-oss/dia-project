@@ -101,7 +101,7 @@ export default function About() {
               const Icon = value.icon;
               return (
                 <motion.div
-                  key={index}
+                  key={value.title}
                   variants={itemVariants}
                   className="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/50 rounded-lg p-8 hover:border-cyan-500/50 transition-all duration-300 group"
                 >

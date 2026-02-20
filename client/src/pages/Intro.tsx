@@ -228,7 +228,7 @@ export default function Intro() {
                 { name: "Stratégie ↔ Énergie", desc: "La ruse adaptative contre l'impulsion brute" }
               ].map((axis, idx) => (
                 <motion.div
-                  key={idx}
+                  key={`axis-${idx}`}
                   className="p-4 border border-cyan/20 rounded-sm bg-card/50 backdrop-blur-sm hover-lift"
                   variants={fadeInUp}
                 >

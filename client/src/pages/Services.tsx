@@ -173,7 +173,7 @@ export default function Services() {
                     <p className="text-sm font-semibold text-slate-300 mb-3">Prestations</p>
                     <ul className="space-y-2">
                       {service.offerings.map((offering, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-slate-400">
+                        <li key={`${service.id}-offering-${idx}`} className="flex items-start gap-2 text-sm text-slate-400">
                           <span className={`w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-br ${service.color}`} />
                           {offering}
                         </li>
