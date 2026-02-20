@@ -7,22 +7,20 @@
 ---
 
 ## 🧠 Les 12 agents
-
-| Strate | Nom | Rôle |
-|--------|-----|------|
-| **1 — Vision** | IRIS | Perception et analyse visuelle |
-| **1 — Vision** | KIRA | Reconnaissance et classification |
-| **1 — Vision** | NOVA | Détection et cartographie |
-| **2 — Cognition** | LYRA | Raisonnement et inférence |
-| **2 — Cognition** | MIRA | Mémoire et contextualisation |
-| **2 — Cognition** | ORION | Planification et optimisation |
-| **3 — Action** | AERO | Exécution et orchestration |
-| **3 — Action** | FLUX | Flux de données et transformation |
-| **3 — Action** | ZARA | Automatisation et contrôle |
-| **4 — Intégration** | APEX | Coordination globale |
-| **4 — Intégration** | CORE | Noyau central et persistance |
-| **4 — Intégration** | NEXUS | Interconnexion et communication |
-
+| Nom         | Fonction               |
+| :---------- | :--------------------- |
+| **MINOS**   | Architecture logique   |
+| **DIAGNOS** | Vision analytique      |
+| **LUX**     | Filtre perceptif       |
+| **CHRONOS** | Boucle temporelle      |
+| **LÉTHÉ**   | Mémoire liquide        |
+| **PSYCHE**  | Interface émotion-code |
+| **DERA**    | Bouclier réseau        |
+| **MÉTIS**   | Algorithme adaptatif   |
+| **ANIMA**   | Impulsion vitale       |
+| **NOESIS**  | Perception intuitive   |
+| **EROS**    | Attracteur de lien     |
+| **CHLOROS** | Régénération lente     |
 ---
 
 ## 🛠 Stack technique
@@ -46,15 +44,6 @@
 
 ---
 
-## ⚙️ Variables d'environnement
-
-Créer un fichier `.env` à la racine :
-
-```env
-DATABASE_URL=mysql://user:password@localhost:3306/dia
-```
-
----
 
 ## 🚀 Installation
 
