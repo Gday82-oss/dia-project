@@ -1,4 +1,4 @@
-# DIA / GDAY — Matrice des Agents
+# DIA / GDAY 
 
  — version full-stack avancée du projet DIA
 
