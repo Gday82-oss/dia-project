@@ -6,7 +6,9 @@
 
 ---
 
-#| Nom         | Fonction               |
+## Agents fonctionnels
+
+| Nom         | Fonction               |
 | :---------- | :--------------------- |
 | **MINOS**   | Architecture logique   |
 | **DIAGNOS** | Vision analytique      |
@@ -21,6 +23,7 @@
 | **EROS**    | Attracteur de lien     |
 | **CHLOROS** | Régénération lente     |
 
+---
 
 ## 🛠 Stack technique
 
@@ -38,7 +41,7 @@
 ## 📦 Prérequis
 
 - Node.js ≥ 20
-- [pnpm](https://pnpm.io) (`npm install -g pnpm`)
+- <a href="https://pnpm.io">pnpm</a> (`npm install -g pnpm`)
 - MySQL (local ou cloud)
 
 ---
