@@ -1,4 +1,11 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import {
+  int,
+  mysqlEnum,
+  mysqlTable,
+  text,
+  timestamp,
+  varchar,
+} from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -30,7 +37,9 @@ export const agents = mysqlTable("agents", {
   id: int("id").autoincrement().primaryKey(),
   code: varchar("code", { length: 16 }).notNull().unique(), // AGT-001, AGT-002, etc.
   name: varchar("name", { length: 64 }).notNull(), // MINOS, DIAGNOS, etc.
-  status: mysqlEnum("status", ["active", "idle", "error"]).default("idle").notNull(),
+  status: mysqlEnum("status", ["active", "idle", "error"])
+    .default("idle")
+    .notNull(),
   lastUpdate: timestamp("lastUpdate").defaultNow().onUpdateNow().notNull(),
   efficiency: int("efficiency").default(0).notNull(), // 0-100
   health: int("health").default(100).notNull(), // 0-100
@@ -46,7 +55,9 @@ export type InsertAgent = typeof agents.$inferInsert;
 export const agentLogs = mysqlTable("agentLogs", {
   id: int("id").autoincrement().primaryKey(),
   agentCode: varchar("agentCode", { length: 16 }).notNull(),
-  level: mysqlEnum("level", ["info", "warn", "error"]).default("info").notNull(),
+  level: mysqlEnum("level", ["info", "warn", "error"])
+    .default("info")
+    .notNull(),
   message: text("message").notNull(),
   metadata: text("metadata"), // JSON string
   timestamp: timestamp("timestamp").defaultNow().notNull(),
@@ -60,7 +71,9 @@ export const agentTasks = mysqlTable("agentTasks", {
   id: int("id").autoincrement().primaryKey(),
   agentCode: varchar("agentCode", { length: 16 }).notNull(),
   taskType: varchar("taskType", { length: 64 }).notNull(), // "analyze", "optimize", "secure", etc.
-  status: mysqlEnum("status", ["pending", "running", "completed", "failed"]).default("pending").notNull(),
+  status: mysqlEnum("status", ["pending", "running", "completed", "failed"])
+    .default("pending")
+    .notNull(),
   input: text("input"), // JSON string
   output: text("output"), // JSON string
   error: text("error"),

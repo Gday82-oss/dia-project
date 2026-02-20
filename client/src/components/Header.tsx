@@ -28,12 +28,14 @@ export default function Header() {
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-magenta-500 bg-clip-text text-transparent">
               DIA
             </div>
-            <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">/GDAY</span>
+            <span className="text-sm text-slate-400 group-hover:text-slate-300 transition-colors">
+              /GDAY
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -47,7 +49,10 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/dashboard" className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
+            <Link
+              href="/dashboard"
+              className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50"
+            >
               Dashboard
             </Link>
           </div>
@@ -70,7 +75,7 @@ export default function Header() {
               exit={{ opacity: 0, y: -10 }}
               className="md:hidden pb-4 space-y-2"
             >
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <Link
                   key={item.href}
                   href={item.href}

@@ -50,7 +50,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  
+
   /* Custom cyberpunk colors */
   --color-cyan: oklch(0.7 0.15 200);
   --color-magenta: oklch(0.65 0.2 330);
@@ -134,7 +134,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     position: relative;
   }
   button:not(:disabled),
@@ -148,14 +148,21 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Orbitron', sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Orbitron", sans-serif;
     letter-spacing: 0.05em;
   }
-  
-  p, span, div {
-    font-family: 'Noto Sans', sans-serif;
+
+  p,
+  span,
+  div {
+    font-family: "Noto Sans", sans-serif;
   }
 }
 
@@ -187,82 +194,92 @@
       max-width: 1400px;
     }
   }
-  
+
   /* Cyberpunk glow effects */
   .glow-cyan {
-    box-shadow: 0 0 10px oklch(0.7 0.15 200 / 50%), 0 0 20px oklch(0.7 0.15 200 / 30%);
+    box-shadow:
+      0 0 10px oklch(0.7 0.15 200 / 50%),
+      0 0 20px oklch(0.7 0.15 200 / 30%);
   }
-  
+
   .glow-magenta {
-    box-shadow: 0 0 10px oklch(0.65 0.2 330 / 50%), 0 0 20px oklch(0.65 0.2 330 / 30%);
+    box-shadow:
+      0 0 10px oklch(0.65 0.2 330 / 50%),
+      0 0 20px oklch(0.65 0.2 330 / 30%);
   }
-  
+
   .glow-red {
-    box-shadow: 0 0 10px oklch(0.6 0.25 25 / 50%), 0 0 20px oklch(0.6 0.25 25 / 30%);
+    box-shadow:
+      0 0 10px oklch(0.6 0.25 25 / 50%),
+      0 0 20px oklch(0.6 0.25 25 / 30%);
   }
-  
+
   /* Organic glow with depth */
   .glow-organic-cyan {
-    box-shadow: 
+    box-shadow:
       0 0 5px oklch(0.7 0.15 200 / 30%),
       0 0 15px oklch(0.7 0.15 200 / 20%),
       0 0 30px oklch(0.7 0.15 200 / 10%),
       inset 0 0 10px oklch(0.7 0.15 200 / 5%);
   }
-  
+
   .glow-organic-magenta {
-    box-shadow: 
+    box-shadow:
       0 0 5px oklch(0.65 0.2 330 / 30%),
       0 0 15px oklch(0.65 0.2 330 / 20%),
       0 0 30px oklch(0.65 0.2 330 / 10%),
       inset 0 0 10px oklch(0.65 0.2 330 / 5%);
   }
-  
+
   .glow-organic-red {
-    box-shadow: 
+    box-shadow:
       0 0 5px oklch(0.6 0.25 25 / 30%),
       0 0 15px oklch(0.6 0.25 25 / 20%),
       0 0 30px oklch(0.6 0.25 25 / 10%),
       inset 0 0 10px oklch(0.6 0.25 25 / 5%);
   }
-  
+
   /* Scan line animation */
   @keyframes scan {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
   }
-  
+
   .scan-line {
     animation: scan 4s linear infinite;
   }
-  
+
   /* Greek text styling */
   .greek-text {
-    font-family: 'Space Mono', monospace;
+    font-family: "Space Mono", monospace;
     letter-spacing: 0.02em;
   }
-  
+
   /* Code/technical text */
   .tech-text {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
-  
+
   /* Matrix background pattern */
   .matrix-bg {
     position: relative;
     overflow: hidden;
   }
-  
+
   .matrix-bg::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
       repeating-linear-gradient(
         0deg,
         oklch(0.7 0.15 200 / 2%) 0px,
@@ -280,27 +297,37 @@
     pointer-events: none;
     z-index: 1;
   }
-  
+
   /* Pulsing animation for organic feel */
   @keyframes pulse-organic {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
-  
+
   .pulse-organic {
     animation: pulse-organic 3s ease-in-out infinite;
   }
-  
+
   /* Breathing animation */
   @keyframes breathe {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
   }
-  
+
   .breathe {
     animation: breathe 4s ease-in-out infinite;
   }
-  
+
   /* Gradient text for titles */
   .gradient-text-cyan-magenta {
     background: linear-gradient(
@@ -312,7 +339,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   /* Layered card effect */
   .card-layered {
     position: relative;
@@ -320,9 +347,9 @@
     border: 1px solid oklch(0.3 0.05 200 / 40%);
     border-radius: 0.375rem;
   }
-  
+
   .card-layered::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -337,15 +364,15 @@
     border-radius: 0.375rem;
     pointer-events: none;
   }
-  
+
   /* Vertical accent line */
   .accent-line {
     position: relative;
     padding-left: 12px;
   }
-  
+
   .accent-line::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -358,7 +385,7 @@
       oklch(0.6 0.25 25) 100%
     );
   }
-  
+
   /* Strate-specific styling */
   .strate-fondation {
     border-color: oklch(0.6 0.25 25 / 50%);
@@ -368,7 +395,7 @@
       oklch(0.15 0.02 25 / 20%) 100%
     );
   }
-  
+
   .strate-perception {
     border-color: oklch(0.7 0.15 200 / 50%);
     background: linear-gradient(
@@ -377,7 +404,7 @@
       oklch(0.15 0.02 200 / 20%) 100%
     );
   }
-  
+
   .strate-transmutation {
     border-color: oklch(0.65 0.2 330 / 50%);
     background: linear-gradient(
@@ -386,7 +413,7 @@
       oklch(0.15 0.02 330 / 20%) 100%
     );
   }
-  
+
   .strate-emission {
     border-color: oklch(0.5 0.15 140 / 50%);
     background: linear-gradient(
@@ -395,32 +422,37 @@
       oklch(0.15 0.02 140 / 20%) 100%
     );
   }
-  
+
   /* Hover effect with depth */
   .hover-lift {
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  
+
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 
+    box-shadow:
       0 10px 20px oklch(0 0 0 / 30%),
       0 0 20px oklch(0.7 0.15 200 / 20%);
   }
-  
+
   /* Text shadow for depth */
   .text-shadow-glow {
-    text-shadow: 
+    text-shadow:
       0 0 10px oklch(0.7 0.15 200 / 50%),
       0 0 20px oklch(0.7 0.15 200 / 30%);
   }
-  
+
   /* Border glow animation */
   @keyframes border-glow {
-    0%, 100% { border-color: oklch(0.3 0.05 200 / 40%); }
-    50% { border-color: oklch(0.7 0.15 200 / 60%); }
+    0%,
+    100% {
+      border-color: oklch(0.3 0.05 200 / 40%);
+    }
+    50% {
+      border-color: oklch(0.7 0.15 200 / 60%);
+    }
   }
-  
+
   .border-glow {
     animation: border-glow 3s ease-in-out infinite;
   }
@@ -446,13 +478,13 @@
 
 /* Global background with organic depth */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(
       ellipse at 20% 50%,
       oklch(0.65 0.2 330 / 3%) 0%,
@@ -469,21 +501,39 @@ body::before {
 
 /* 3D Avatar rotation animations */
 @keyframes rotate3d-y {
-  0% { transform: rotateY(-15deg) rotateX(2deg); }
-  25% { transform: rotateY(15deg) rotateX(-2deg); }
-  50% { transform: rotateY(-15deg) rotateX(2deg); }
-  75% { transform: rotateY(15deg) rotateX(-2deg); }
-  100% { transform: rotateY(-15deg) rotateX(2deg); }
+  0% {
+    transform: rotateY(-15deg) rotateX(2deg);
+  }
+  25% {
+    transform: rotateY(15deg) rotateX(-2deg);
+  }
+  50% {
+    transform: rotateY(-15deg) rotateX(2deg);
+  }
+  75% {
+    transform: rotateY(15deg) rotateX(-2deg);
+  }
+  100% {
+    transform: rotateY(-15deg) rotateX(2deg);
+  }
 }
 
 @keyframes scan-vertical {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(200%); }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Smooth transitions throughout */

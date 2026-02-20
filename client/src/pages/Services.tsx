@@ -14,7 +14,8 @@ export default function Services() {
       title: "Tech & IA",
       icon: Code,
       color: "from-blue-500 to-cyan-500",
-      description: "Architecture IA multi-agents, audit sécurité, automatisation",
+      description:
+        "Architecture IA multi-agents, audit sécurité, automatisation",
       agents: ["MINOS", "DIAGNOS", "DERA"],
       offerings: [
         "Conception d'architectures IA multi-agents",
@@ -70,7 +71,8 @@ export default function Services() {
       title: "Mémoire & Structuration",
       icon: Archive,
       color: "from-slate-500 to-gray-500",
-      description: "Documentation, knowledge base, structuration d'organisation",
+      description:
+        "Documentation, knowledge base, structuration d'organisation",
       agents: ["LÉTHÉ"],
       offerings: [
         "Documentation et knowledge management",
@@ -115,7 +117,9 @@ export default function Services() {
             Nos Offres Professionnelles
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            5 axes stratégiques pour transformer votre organisation. Chaque axe combine expertise technique et approche humaine, orchestrée par nos 12 agents IA spécialisés.
+            5 axes stratégiques pour transformer votre organisation. Chaque axe
+            combine expertise technique et approche humaine, orchestrée par nos
+            12 agents IA spécialisés.
           </p>
         </motion.div>
 
@@ -135,27 +139,35 @@ export default function Services() {
                 className="group relative"
               >
                 {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-lg transition-opacity duration-300 blur-xl`} />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-lg transition-opacity duration-300 blur-xl`}
+                />
 
                 {/* Card */}
                 <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/50 group-hover:border-slate-600/50 rounded-lg p-8 transition-all duration-300">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        {service.title}
+                      </h3>
                       <p className="text-slate-400">{service.description}</p>
                     </div>
-                    <div className={`p-3 bg-gradient-to-br ${service.color} rounded-lg`}>
+                    <div
+                      className={`p-3 bg-gradient-to-br ${service.color} rounded-lg`}
+                    >
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                   </div>
 
                   {/* Agents */}
                   <div className="mb-6">
-                    <p className="text-sm font-semibold text-slate-300 mb-3">Agents impliqués</p>
+                    <p className="text-sm font-semibold text-slate-300 mb-3">
+                      Agents impliqués
+                    </p>
                     <div className="flex flex-wrap gap-2">
-                      {service.agents.map((agentName) => {
-                        const agent = agents.find((a) => a.name === agentName);
+                      {service.agents.map(agentName => {
+                        const agent = agents.find(a => a.name === agentName);
                         return (
                           <span
                             key={agentName}
@@ -170,11 +182,18 @@ export default function Services() {
 
                   {/* Offerings */}
                   <div>
-                    <p className="text-sm font-semibold text-slate-300 mb-3">Prestations</p>
+                    <p className="text-sm font-semibold text-slate-300 mb-3">
+                      Prestations
+                    </p>
                     <ul className="space-y-2">
                       {service.offerings.map((offering, idx) => (
-                        <li key={`${service.id}-offering-${idx}`} className="flex items-start gap-2 text-sm text-slate-400">
-                          <span className={`w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-br ${service.color}`} />
+                        <li
+                          key={`${service.id}-offering-${idx}`}
+                          className="flex items-start gap-2 text-sm text-slate-400"
+                        >
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full mt-1.5 bg-gradient-to-br ${service.color}`}
+                          />
                           {offering}
                         </li>
                       ))}
@@ -182,7 +201,9 @@ export default function Services() {
                   </div>
 
                   {/* CTA */}
-                  <button className={`w-full mt-6 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 rounded-lg`}>
+                  <button
+                    className={`w-full mt-6 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r ${service.color} hover:shadow-lg transition-all duration-300 rounded-lg`}
+                  >
                     En savoir plus
                   </button>
                 </div>
@@ -198,9 +219,14 @@ export default function Services() {
           transition={{ delay: 0.8, duration: 0.6 }}
           className="bg-gradient-to-r from-cyan-500/10 to-magenta-500/10 border border-cyan-500/30 rounded-lg p-12 text-center"
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Approche Intégrée</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Approche Intégrée
+          </h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Nos 5 axes ne sont pas isolés — ils interagissent continuellement. MINOS architécte, DIAGNOS valide, LUX visualise, MÉTIS optimise, et CHLOROS assure la durabilité. Le noyau GDAY (votre intention) dirige l'ensemble.
+            Nos 5 axes ne sont pas isolés — ils interagissent continuellement.
+            MINOS architécte, DIAGNOS valide, LUX visualise, MÉTIS optimise, et
+            CHLOROS assure la durabilité. Le noyau GDAY (votre intention) dirige
+            l'ensemble.
           </p>
           <button className="px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/50">
             Demander une consultation

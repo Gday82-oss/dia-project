@@ -1,6 +1,6 @@
-# DIA / GDAY 
+# DIA / GDAY
 
- — version full-stack avancée du projet DIA
+— version full-stack avancée du projet DIA
 
 **DIA** (Distributed Intelligence Architecture) est un système d'agents IA organisés en 4 strates fonctionnelles, exposé via une interface React moderne et une API Express/tRPC.
 
@@ -27,14 +27,14 @@
 
 ## 🛠 Stack technique
 
-| Couche | Technologie |
-|--------|-------------|
-| Frontend | React 19, TypeScript 5, Vite 7 |
-| Styles | Tailwind CSS 4, Framer Motion 12 |
-| Routage | Wouter 3 |
-| Backend | Express 4, tRPC 11 |
-| Base de données | Drizzle ORM, MySQL |
-| Tests | Vitest |
+| Couche          | Technologie                      |
+| --------------- | -------------------------------- |
+| Frontend        | React 19, TypeScript 5, Vite 7   |
+| Styles          | Tailwind CSS 4, Framer Motion 12 |
+| Routage         | Wouter 3                         |
+| Backend         | Express 4, tRPC 11               |
+| Base de données | Drizzle ORM, MySQL               |
+| Tests           | Vitest                           |
 
 ---
 
@@ -48,11 +48,23 @@
 
 ## ⚙️ Variables d'environnement
 
-Créer un fichier `.env` à la racine :
+Copiez `.env.example` en `.env` et renseignez les valeurs :
 
-```env
-DATABASE_URL=mysql://user:password@localhost:3306/dia
+```bash
+cp .env.example .env
 ```
+
+Les variables requises sont :
+
+| Variable                 | Description                                     |
+| ------------------------ | ----------------------------------------------- |
+| `DATABASE_URL`           | Chaîne de connexion MySQL                       |
+| `JWT_SECRET`             | Secret pour la signature des cookies de session |
+| `OAUTH_SERVER_URL`       | URL du serveur OAuth                            |
+| `OWNER_OPEN_ID`          | OpenID de l'administrateur                      |
+| `VITE_APP_ID`            | Identifiant de l'application Manus              |
+| `BUILT_IN_FORGE_API_URL` | URL de l'API Forge / LLM                        |
+| `BUILT_IN_FORGE_API_KEY` | Clé de l'API Forge / LLM                        |
 
 ---
 
@@ -68,15 +80,15 @@ pnpm dev       # Lancer en développement
 
 ## 📜 Commandes disponibles
 
-| Commande | Description |
-|----------|-------------|
-| `pnpm dev` | Serveur de développement (Express + Vite HMR) |
-| `pnpm build` | Build de production (vite build + esbuild server) |
-| `pnpm start` | Lancer le serveur en production |
-| `pnpm check` | Vérification TypeScript |
-| `pnpm format` | Formatage Prettier |
-| `pnpm test` | Tests Vitest |
-| `pnpm db:push` | Générer et appliquer les migrations Drizzle |
+| Commande       | Description                                       |
+| -------------- | ------------------------------------------------- |
+| `pnpm dev`     | Serveur de développement (Express + Vite HMR)     |
+| `pnpm build`   | Build de production (vite build + esbuild server) |
+| `pnpm start`   | Lancer le serveur en production                   |
+| `pnpm check`   | Vérification TypeScript                           |
+| `pnpm format`  | Formatage Prettier                                |
+| `pnpm test`    | Tests Vitest                                      |
+| `pnpm db:push` | Générer et appliquer les migrations Drizzle       |
 
 ---
 
