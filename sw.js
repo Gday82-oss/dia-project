@@ -1,5 +1,5 @@
-// Le Conseil DIA : mise en cache pour un usage hors ligne.
-const CACHE = "conseil-dia-v1";
+// Le Conseil Dia : mise en cache pour un usage hors ligne.
+const CACHE = "conseil-dia-v2";
 const FILES = ["./", "index.html", "manifest.webmanifest", "img/minos.jpg", "img/noesis.jpg", "icons/icon-192.png", "icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {
