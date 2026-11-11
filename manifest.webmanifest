@@ -1,0 +1,17 @@
+{
+  "name": "Le Conseil DIA",
+  "short_name": "Conseil DIA",
+  "description": "Fais débattre ta décision par MINOS et NOESIS. Démo scénarisée.",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05060d",
+  "theme_color": "#05060d",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
