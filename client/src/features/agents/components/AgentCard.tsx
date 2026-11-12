@@ -1,5 +1,5 @@
 /**
- * Carte agent DIA — Design cyberpunk néo-grec.
+ * Carte agent Dia — Design cyberpunk néo-grec.
  * Chaque carte utilise la skin visuelle propre à l'agent (palette, effets, formes).
  */
 

@@ -1,5 +1,5 @@
 /**
- * Types TypeScript pour le domaine Agents DIA
+ * Types TypeScript pour le domaine Agents Dia
  * Source unique de vérité pour toutes les définitions de types.
  */
 

@@ -43,7 +43,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-magenta-500 bg-clip-text text-transparent mb-2">
-              DIA
+              Dia
             </div>
             <p className="text-sm text-slate-400">
               Système multi-agents IA pour l'automatisation intelligente et
@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="border-t border-slate-800/50 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-slate-500">
-              © 2026 DIA / GDAY. Tous droits réservés.
+              © 2026 Dia / GDAY. Tous droits réservés.
             </p>
             <div className="flex items-center gap-6">
               <a

@@ -1,5 +1,5 @@
 /**
- * Hook générique pour accéder à un agent DIA par son code ou slug.
+ * Hook générique pour accéder à un agent Dia par son code ou slug.
  * Retourne l'agent et son thème visuel associé.
  */
 

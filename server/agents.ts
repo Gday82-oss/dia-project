@@ -1,5 +1,5 @@
 /**
- * Helpers pour gérer les agents DIA dans la base de données
+ * Helpers pour gérer les agents Dia dans la base de données
  */
 
 import { eq, desc, and } from "drizzle-orm";
@@ -16,7 +16,7 @@ import {
 import { getDb } from "./db";
 
 /**
- * Initialiser les 12 agents DIA dans la base de données
+ * Initialiser les 12 agents Dia dans la base de données
  */
 export async function initializeAgents() {
   const db = await getDb();

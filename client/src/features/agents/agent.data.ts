@@ -1,5 +1,5 @@
 /**
- * Données centralisées des 12 agents DIA — SOURCE UNIQUE DE VÉRITÉ
+ * Données centralisées des 12 agents Dia — SOURCE UNIQUE DE VÉRITÉ
  * Ordre officiel : MINOS, DIAGNOS, LUX, CHRONOS, LÉTHÉ, PSYCHE, DERA, MÉTIS, ANIMA, NOESIS, EROS, CHLOROS
  * Inclut : données agents, thèmes visuels, strates, axes dialectiques.
  *
@@ -345,12 +345,12 @@ export const agents: Agent[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Noyau central DIA
+// Noyau central Dia
 // ---------------------------------------------------------------------------
 
 export const diaCore = {
   code: "DIA-CORE",
-  name: "DIA / GDAY",
+  name: "Dia / GDAY",
   greek: "Σπείρα",
   greekKey: "Spiral",
   title: "Spirale centrale",

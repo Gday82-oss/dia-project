@@ -1,5 +1,5 @@
 /* Design Philosophy: Cyberpunk Néo-Grec
- * Visualisation fractale dynamique des agents DIA
+ * Visualisation fractale dynamique des agents Dia
  * - 4 strates concentriques (Fondation, Perception, Transmutation, Émission)
  * - 6 axes dialectiques pulsants
  * - Rotation orbitale à vitesses variables
@@ -116,7 +116,7 @@ export default function Fractal() {
             href="/"
             className="text-xl md:text-2xl font-semibold tracking-tight tech-text hover:text-[oklch(0.7_0.15_200)] transition-colors"
           >
-            DIA • Canon Fractal
+            Dia • Canon Fractal
           </Link>
           <p className="text-xs text-muted-foreground mt-1">
             Visualisation dynamique — positions en perpétuelle évolution
@@ -275,7 +275,7 @@ export default function Fractal() {
             );
           })}
 
-          {/* Central DIA node */}
+          {/* Central Dia node */}
           <g filter="url(#glow2)">
             {/* Spinning spiral hint */}
             <circle

@@ -1,5 +1,5 @@
 /**
- * Services pour les rôles actifs des 12 agents DIA
+ * Services pour les rôles actifs des 12 agents Dia
  * Chaque agent exécute ses propres fonctions
  */
 

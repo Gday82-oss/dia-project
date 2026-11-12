@@ -1,5 +1,5 @@
 /**
- * Page "Qui sommes-nous" — Mission et vision du projet DIA
+ * Page "Qui sommes-nous" — Mission et vision du projet Dia
  */
 
 import { motion } from "framer-motion";
@@ -64,7 +64,7 @@ export default function About() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-magenta-500 to-blue-500 bg-clip-text text-transparent">
-            DIA / GDAY
+            Dia / GDAY
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
             Un système d'intelligence collective où 12 agents IA spécialisés
@@ -83,7 +83,7 @@ export default function About() {
           <h2 className="text-3xl font-bold text-white mb-6">Notre Mission</h2>
           <div className="space-y-4 text-slate-300">
             <p>
-              DIA (Distributed Intelligence Architecture) est un framework
+              Dia (Distributed Intelligence Architecture) est un framework
               d'automatisation intelligente conçu pour les organisations
               modernes qui cherchent à combiner rigueur technique, stratégie
               adaptative et résilience humaine.

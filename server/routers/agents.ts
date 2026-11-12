@@ -1,5 +1,5 @@
 /**
- * tRPC router pour les agents DIA
+ * tRPC router pour les agents Dia
  */
 
 import { z } from "zod";
@@ -20,7 +20,7 @@ import {
 
 export const agentsRouter = router({
   /**
-   * Initialiser les 12 agents DIA
+   * Initialiser les 12 agents Dia
    */
   initialize: protectedProcedure.mutation(async () => {
     await initializeAgents();

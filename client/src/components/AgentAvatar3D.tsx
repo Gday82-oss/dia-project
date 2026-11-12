@@ -1,4 +1,4 @@
-/* Composant Avatar 3D rotatif pour chaque agent DIA
+/* Composant Avatar 3D rotatif pour chaque agent Dia
  * Utilise CSS 3D transforms pour un effet de rotation continue
  * Chaque agent a une vitesse et direction de rotation unique
  */

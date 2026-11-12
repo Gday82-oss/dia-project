@@ -1,12 +1,12 @@
 /**
- * Tokens de design DIA — variables CSS par agent et globales.
+ * Tokens de design Dia — variables CSS par agent et globales.
  * Un token par couleur d'accent pour chaque agent.
  *
  * Usage: var(--agent-agt-001-accent)
  */
 
 :root {
-  /* ── Tokens globaux DIA ── */
+  /* ── Tokens globaux Dia ── */
   --dia-cyan: #00d4ff;
   --dia-magenta: #ff00aa;
   --dia-red: #ff3366;

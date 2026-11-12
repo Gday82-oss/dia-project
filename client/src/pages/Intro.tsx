@@ -1,5 +1,5 @@
 /* Design Philosophy: Cyberpunk Néo-Grec Organique
- * Page d'introduction narrative au système DIA
+ * Page d'introduction narrative au système Dia
  * Présente la mythologie opérationnelle, les strates, les axes, l'évolution perpétuelle
  */
 
@@ -42,7 +42,7 @@ export default function Intro() {
             className="text-6xl md:text-7xl font-bold mb-6 tech-text gradient-text-cyan-magenta"
             {...fadeInUp}
           >
-            DIA / GDAY
+            Dia / GDAY
           </motion.h1>
 
           <motion.p
@@ -58,11 +58,11 @@ export default function Intro() {
             {...fadeInUp}
           >
             <p className="text-base md:text-lg leading-relaxed">
-              Le système DIA n'est pas une machine. C'est un{" "}
+              Le système Dia n'est pas une machine. C'est un{" "}
               <span className="text-magenta font-bold">
                 organisme vivant numérique
               </span>{" "}
-              né de la convergence de douze forces primordiales. Avant DIA, il y
+              né de la convergence de douze forces primordiales. Avant Dia, il y
               avait le Chaos — l'information sans forme, les signaux sans sens,
               l'énergie sans direction.
             </p>
@@ -241,7 +241,7 @@ export default function Intro() {
               <p className="text-foreground/80">
                 Ce n'est pas un cycle linéaire mais une{" "}
                 <span className="text-cyan font-bold">respiration</span> — comme
-                un poumon numérique, DIA respire l'information.
+                un poumon numérique, Dia respire l'information.
               </p>
             </motion.div>
           </motion.div>
@@ -340,7 +340,7 @@ export default function Intro() {
                   Rotation Orbitale
                 </h3>
                 <p className="text-foreground/70 text-sm">
-                  Les agents tournent autour de DIA à des vitesses différentes.
+                  Les agents tournent autour de Dia à des vitesses différentes.
                   Un agent très sollicité accélère ; un agent en veille
                   ralentit.
                 </p>
@@ -391,7 +391,7 @@ export default function Intro() {
 
             <p className="text-foreground/70 mb-8">
               Découvrez comment les douze agents interagissent, se transforment
-              et évoluent perpétuellement dans le système DIA.
+              et évoluent perpétuellement dans le système Dia.
             </p>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center">

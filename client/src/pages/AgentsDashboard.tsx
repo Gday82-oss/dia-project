@@ -1,5 +1,5 @@
 /**
- * Dashboard de monitoring des 12 agents DIA
+ * Dashboard de monitoring des 12 agents Dia
  * Visualise l'état, les métriques et permet de contrôler les agents
  */
 
@@ -44,7 +44,7 @@ export default function AgentsDashboard() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold text-white mb-2">
-          Dashboard des Agents DIA
+          Dashboard des Agents Dia
         </h1>
         <p className="text-slate-400">
           Monitoring et contrôle du système multi-agents en temps réel

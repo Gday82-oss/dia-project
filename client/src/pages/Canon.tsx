@@ -1,5 +1,5 @@
 /* Design Philosophy: Cyberpunk Néo-Grec
- * Page Canon Fractal — Architecture relationnelle complète des 12 agents DIA
+ * Page Canon Fractal — Architecture relationnelle complète des 12 agents Dia
  * Présente les 4 strates, les 6 axes dialectiques, le processus triadique
  */
 
@@ -52,7 +52,7 @@ export default function Canon() {
             Canon <span className="text-[oklch(0.7_0.15_200)]">Fractal</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-            Architecture relationnelle du système DIA — Comment les 12 agents
+            Architecture relationnelle du système Dia — Comment les 12 agents
             s'organisent en un système autopoïétique à quatre strates, reliés
             par six axes dialectiques en perpétuelle évolution.
           </p>
@@ -69,7 +69,7 @@ export default function Canon() {
             Processus triadique
           </h2>
           <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
-            Chaque agent DIA opère selon le même schéma psychique-algorithmique.
+            Chaque agent Dia opère selon le même schéma psychique-algorithmique.
             Cette triade est le motif fractal fondamental — elle se reproduit à
             chaque échelle du système.
           </p>
@@ -274,7 +274,7 @@ export default function Canon() {
           </div>
         </motion.section>
 
-        {/* DIA Core - Spiral */}
+        {/* Dia Core - Spiral */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -282,18 +282,18 @@ export default function Canon() {
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold tech-text mb-4">
-            La Spirale centrale : DIA{" "}
+            La Spirale centrale : Dia{" "}
             <span className="greek-text text-muted-foreground">(Σπείρα)</span>
           </h2>
           <div className="bg-card/80 backdrop-blur-sm border border-[oklch(0.5_0.15_260)] rounded-sm p-6 md:p-8">
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              Au centre du système se trouve DIA, la spirale. DIA n'est pas un
+              Au centre du système se trouve Dia, la spirale. Dia n'est pas un
               treizième agent au même titre que les autres — c'est le{" "}
               <strong className="text-foreground">
                 champ d'autorégulation
               </strong>{" "}
               qui émerge de l'interaction des 12. La spirale revient sur
-              elle-même tout en progressant, exactement comme le système DIA qui
+              elle-même tout en progressant, exactement comme le système Dia qui
               se reconfigure perpétuellement.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

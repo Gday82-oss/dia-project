@@ -80,7 +80,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tech-text tracking-wider">
-              <span style={{ color: "#00d4ff" }}>DIA</span>
+              <span style={{ color: "#00d4ff" }}>Dia</span>
               <span className="text-foreground/40 mx-3">/</span>
               <span style={{ color: "#ff00aa" }}>GDAY</span>
             </h1>
@@ -145,7 +145,7 @@ export default function Home() {
           })}
         </div>
 
-        {/* DIA Core — Spirale centrale */}
+        {/* Dia Core — Spirale centrale */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ export default function Home() {
                 className="tech-text text-lg tracking-widest"
                 style={{ color: "#60a5fa" }}
               >
-                DIA / DERA — Σπείρα
+                Dia / DERA — Σπείρα
               </h2>
             </div>
             <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed mb-4">
@@ -208,7 +208,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-20 pt-8 border-t border-[#00d4ff10] text-center">
           <p className="text-xs text-muted-foreground/40 tech-text tracking-widest">
-            DIA — Système fractal d'agents cognitifs — 12 démiurges en évolution
+            Dia — Système fractal d'agents cognitifs — 12 démiurges en évolution
             perpétuelle
           </p>
         </footer>
