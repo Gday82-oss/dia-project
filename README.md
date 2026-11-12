@@ -98,28 +98,35 @@ pnpm dev       # Lancer en développement
 /
 ├── client/
 │   ├── index.html
-│   ├── public/
+│   ├── public/images/avatars/   # portraits des 12 agents
 │   └── src/
 │       ├── App.tsx
 │       ├── main.tsx
 │       ├── index.css
-│       ├── components/
+│       ├── app/                 # routeur et layout racine
+│       ├── components/          # composants Dia + components/ui (shadcn)
 │       ├── contexts/
 │       ├── data/
+│       ├── features/agents/     # données, types, pages et composants des agents
 │       ├── hooks/
 │       ├── lib/
-│       └── pages/
+│       ├── pages/
+│       └── styles/
 ├── server/
-│   ├── _core/
+│   ├── _core/                   # serveur Express, tRPC, auth, LLM
 │   ├── agents.ts
 │   ├── db.ts
 │   ├── routers/
-│   ├── services/
-│   └── storage.ts
+│   └── services/
 ├── shared/
-│   ├── const.ts
-│   └── types.ts
-├── drizzle/
+├── drizzle/                     # schéma et migrations
+├── docs/
+│   ├── business/                # résumé exécutif, budget, étude de marché, business plan
+│   ├── design/                  # pistes de design et direction « La Faille »
+│   └── archive/                 # anciens documents
+├── tasks/
+│   ├── todo.md                  # plan en cours
+│   └── lessons.md               # leçons retenues
 ├── package.json
 ├── vite.config.ts
 └── drizzle.config.ts
