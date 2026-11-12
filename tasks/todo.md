@@ -54,12 +54,13 @@ Fait en deux demandes de fusion : n° 11 (`chore/rangement-depot`, fusionnée le
 - [x] Ajouter dans `docs/agents/` la présentation des 12 agents qui n'existait que dans le projet Claude
 - [x] Ajouter `docs/README.md` (sommaire des documents)
 - [x] Créer `.env.example`
-- [x] Supprimer les vieilles branches (voir ci-dessous)
+- [ ] Supprimer les 7 vieilles branches (voir ci-dessous) — refusé depuis une session Claude, à faire sur github.com, page « Branches »
+- [ ] Corriger la description du dépôt sur github.com (elle dit encore « Site vitrine… ») — même raison
 - [ ] Retirer de `package.json` les dépendances devenues inutiles — à faire depuis le PC : demande `pnpm install` pour régénérer le fichier de verrouillage
 
 Gardé volontairement bien que non utilisé aujourd'hui : `server/_core/llm.ts` (étape 1), `AIChatBox` et les composants `Button`, `Card`, `Badge`, `Input`, `Textarea`, `Label`, `Dialog`, `Separator`, `Tooltip` (décrits dans le design system), `useAgent`, `shared/types.ts`, `drizzle/relations.ts`. Le greffon `vite-plugin-manus-runtime` reste aussi, jusqu'au nettoyage des dépendances.
 
-Branches supprimées le 2026-11-12. Pour en restaurer une : `git push origin <identifiant>:refs/heads/<nom>`.
+Branches à supprimer (validé par Guillaume le 2026-11-12). Pour en restaurer une ensuite : `git push origin <identifiant>:refs/heads/<nom>`.
 
 | Branche                                | Identifiant | Remarque                                          |
 | -------------------------------------- | ----------- | ------------------------------------------------- |
