@@ -1,4 +1,5 @@
 # RÉSUMÉ EXÉCUTIF
+
 ## Projet Dia - Distributed Intelligence Architecture
 
 ---
@@ -12,6 +13,7 @@ Dia est un système multi-agents IA composé de 12 agents spécialisés, chacun 
 ## Le Problème
 
 Les solutions IA actuelles souffrent de plusieurs limitations :
+
 - **Monolithisme** : Un seul modèle essaie de tout faire
 - **Manque de spécialisation** : Pas d'experts dédiés par domaine
 - **Opacité** : Difficulté à comprendre les décisions de l'IA
@@ -23,20 +25,20 @@ Les solutions IA actuelles souffrent de plusieurs limitations :
 
 **12 Agents Spécialisés** :
 
-| Agent | Fonction | Rôle |
-|-------|----------|------|
-| MINOS | Architecture Logique | Conception système |
-| DIAGNOS | Vision Analytique | Diagnostic problèmes |
-| LUX | Filtre Perceptif | Distillation information |
-| CHRONOS | Boucle Temporelle | Gestion temps/historique |
-| LÉTHÉ | Mémoire Liquide | Mémoire contextuelle |
-| PSYCHE | Interface Émotion-Code | Traduction humain/machine |
-| DERA | Bouclier Réseau | Sécurité |
-| MÉTIS | Algorithme Adaptatif | Optimisation continue |
-| ANIMA | Impulsion Vitale | Créativité |
-| NOESIS | Perception Intuitive | Patterns cachés |
-| EROS | Attracteur de Lien | Collaboration |
-| CHLOROS | Régénération Lente | Récupération erreurs |
+| Agent   | Fonction               | Rôle                      |
+| ------- | ---------------------- | ------------------------- |
+| MINOS   | Architecture Logique   | Conception système        |
+| DIAGNOS | Vision Analytique      | Diagnostic problèmes      |
+| LUX     | Filtre Perceptif       | Distillation information  |
+| CHRONOS | Boucle Temporelle      | Gestion temps/historique  |
+| LÉTHÉ   | Mémoire Liquide        | Mémoire contextuelle      |
+| PSYCHE  | Interface Émotion-Code | Traduction humain/machine |
+| DERA    | Bouclier Réseau        | Sécurité                  |
+| MÉTIS   | Algorithme Adaptatif   | Optimisation continue     |
+| ANIMA   | Impulsion Vitale       | Créativité                |
+| NOESIS  | Perception Intuitive   | Patterns cachés           |
+| EROS    | Attracteur de Lien     | Collaboration             |
+| CHLOROS | Régénération Lente     | Récupération erreurs      |
 
 ---
 
@@ -51,23 +53,25 @@ Les solutions IA actuelles souffrent de plusieurs limitations :
 
 ## Marché Cible
 
-| Segment | Taille estimée | Besoin |
-|---------|---------------|--------|
-| Développeurs indépendants | 5M+ mondial | Architecture, debug |
-| Startups tech | 100K+ | Automatisation, scaling |
-| PME digitale | 50M+ | Productivité, sécurité |
-| Grandes entreprises | 10K+ | Transformation digitale |
+| Segment                   | Taille estimée | Besoin                  |
+| ------------------------- | -------------- | ----------------------- |
+| Développeurs indépendants | 5M+ mondial    | Architecture, debug     |
+| Startups tech             | 100K+          | Automatisation, scaling |
+| PME digitale              | 50M+           | Productivité, sécurité  |
+| Grandes entreprises       | 10K+           | Transformation digitale |
 
 ---
 
 ## Modèle Économique
 
 **SaaS Freemium** :
+
 - **Free** : 1 agent, 100 messages/mois
 - **Pro** (29€/mois) : 3 agents, illimité
 - **Enterprise** (299€/mois) : 12 agents, on-premise
 
 **Revenus annuels prévisionnels** :
+
 - Année 1 : 50K€
 - Année 2 : 300K€
 - Année 3 : 1M€
@@ -77,6 +81,7 @@ Les solutions IA actuelles souffrent de plusieurs limitations :
 ## Besoins de Financement
 
 **Seed round** : 250K€
+
 - Développement produit (6 mois) : 120K€
 - Infrastructure & LLM (12 mois) : 60K€
 - Marketing & acquisition : 50K€

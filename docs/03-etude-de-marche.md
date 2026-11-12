@@ -1,4 +1,5 @@
 # ÉTUDE DE MARCHÉ
+
 ## Projet Dia - Distributed Intelligence Architecture
 
 ---
@@ -7,21 +8,21 @@
 
 ### Marché Global de l'IA (2026)
 
-| Segment | Taille | CAGR |
-|---------|--------|------|
-| IA générative | 150 Mds $ | 35% |
-| Agents IA autonomes | 25 Mds $ | 45% |
-| Outils productivité IA | 40 Mds $ | 28% |
-| **Total adressable** | **215 Mds $** | **32%** |
+| Segment                | Taille        | CAGR    |
+| ---------------------- | ------------- | ------- |
+| IA générative          | 150 Mds $     | 35%     |
+| Agents IA autonomes    | 25 Mds $      | 45%     |
+| Outils productivité IA | 40 Mds $      | 28%     |
+| **Total adressable**   | **215 Mds $** | **32%** |
 
 ### Marché Cible Dia (SAM)
 
-| Segment | Taille | Part accessible |
-|---------|--------|-----------------|
-| Développeurs & DevOps | 30 Mds $ | 5% |
-| Startups tech | 20 Mds $ | 3% |
-| PME digitale | 50 Mds $ | 2% |
-| **SAM total** | **100 Mds $** | **~3%** |
+| Segment               | Taille        | Part accessible |
+| --------------------- | ------------- | --------------- |
+| Développeurs & DevOps | 30 Mds $      | 5%              |
+| Startups tech         | 20 Mds $      | 3%              |
+| PME digitale          | 50 Mds $      | 2%              |
+| **SAM total**         | **100 Mds $** | **~3%**         |
 
 ---
 
@@ -29,13 +30,13 @@
 
 ### Concurrents Directs
 
-| Concurrent | Positionnement | Forces | Faiblesses |
-|------------|---------------|--------|------------|
-| **AutoGPT** | Agents autonomes | Open source, communauté | Instable, pas enterprise |
-| **LangChain** | Framework agents | Flexible, populaire | Complexe, technique |
-| **CrewAI** | Équipes d'agents | Simple, Python | Limité, pas de UI |
-| **Microsoft Copilot** | Productivité | Intégration Office | Fermé, générique |
-| **ChatGPT Enterprise** | Chatbot pro | Marque, performance | Monolithique, cher |
+| Concurrent             | Positionnement   | Forces                  | Faiblesses               |
+| ---------------------- | ---------------- | ----------------------- | ------------------------ |
+| **AutoGPT**            | Agents autonomes | Open source, communauté | Instable, pas enterprise |
+| **LangChain**          | Framework agents | Flexible, populaire     | Complexe, technique      |
+| **CrewAI**             | Équipes d'agents | Simple, Python          | Limité, pas de UI        |
+| **Microsoft Copilot**  | Productivité     | Intégration Office      | Fermé, générique         |
+| **ChatGPT Enterprise** | Chatbot pro      | Marque, performance     | Monolithique, cher       |
 
 ### Avantage Concurrentiel Dia
 
@@ -52,6 +53,7 @@
 ### Personas
 
 #### Persona 1 : "Développeur Solo"
+
 - **Profil** : Freelance, 25-35 ans, tech-savvy
 - **Besoins** : Architecture, debug, documentation
 - **Agents préférés** : MINOS, DIAGNOS, LUX
@@ -59,6 +61,7 @@
 - **Taille marché** : 5M+ (Europe/USA)
 
 #### Persona 2 : "CTO Startup"
+
 - **Profil** : Startup 10-50 employés, croissance rapide
 - **Besoins** : Scaling, sécurité, productivité équipe
 - **Agents préférés** : MINOS, DERA, MÉTIS, CHRONOS
@@ -66,6 +69,7 @@
 - **Taille marché** : 100K+ entreprises
 
 #### Persona 3 : "Responsable Innovation"
+
 - **Profil** : Grande entreprise, transformation digitale
 - **Besoins** : Automatisation, sécurité, conformité
 - **Agents préférés** : Tous les 12
@@ -78,13 +82,13 @@
 
 ### Tendances 2026-2028
 
-| Tendance | Impact sur Dia |
-|----------|----------------|
-| **Multi-agents** | ✅ Aligné avec notre core |
-| **IA locale** | ⚠️ Opportunité (Ollama) |
-| **Agents autonomes** | ✅ Roadmap compatible |
-| **Coûts LLM ↓** | ✅ Marge qui augmente |
-| **Régulation EU** | ⚠️ Besoin conformité |
+| Tendance             | Impact sur Dia            |
+| -------------------- | ------------------------- |
+| **Multi-agents**     | ✅ Aligné avec notre core |
+| **IA locale**        | ⚠️ Opportunité (Ollama)   |
+| **Agents autonomes** | ✅ Roadmap compatible     |
+| **Coûts LLM ↓**      | ✅ Marge qui augmente     |
+| **Régulation EU**    | ⚠️ Besoin conformité      |
 
 ### Opportunités
 
@@ -105,24 +109,28 @@
 ## 5. ANALYSE SWOT
 
 ### Forces (Strengths)
+
 - Architecture innovante multi-agents
 - Différenciation mythologie grecque
 - Stack technique moderne
 - Prix compétitif
 
 ### Faiblesses (Weaknesses)
+
 - Pas de traction encore
 - Dépendance API LLM
 - Équipe petite
 - Pas de fonds levés
 
 ### Opportunités (Opportunities)
+
 - Marché agents IA en explosion
 - Besoin productivité développeurs
 - Tendance open source
 - Coûts LLM qui baissent
 
 ### Menaces (Threats)
+
 - Concurrence Big Tech
 - Régulation européenne
 - Changement modèles LLM
@@ -140,12 +148,12 @@ Pas un chatbot générique. 12 experts IA dédiés, chacun maître dans son doma
 
 ### Proposition de Valeur
 
-| Pour | Valeur |
-|------|--------|
+| Pour        | Valeur                             |
+| ----------- | ---------------------------------- |
 | Développeur | "Debug 10x plus vite avec DIAGNOS" |
-| Architecte | "Conçois mieux avec MINOS" |
-| Équipe | "Collabore mieux avec EROS" |
-| Sécurité | "Dors tranquille avec DERA" |
+| Architecte  | "Conçois mieux avec MINOS"         |
+| Équipe      | "Collabore mieux avec EROS"        |
+| Sécurité    | "Dors tranquille avec DERA"        |
 
 ---
 
@@ -153,14 +161,14 @@ Pas un chatbot générique. 12 experts IA dédiés, chacun maître dans son doma
 
 ### Benchmark Prix
 
-| Solution | Prix/mois | Ce qu'on obtient |
-|----------|-----------|------------------|
-| ChatGPT Plus | 20€ | 1 chatbot générique |
-| GitHub Copilot | 10€ | Autocomplétion code |
-| Claude Pro | 20€ | 1 chatbot générique |
-| Cursor | 20€ | IDE + IA |
-| **Dia Pro** | **29€** | **3 agents spécialisés** |
-| **Dia Enterprise** | **299€** | **12 agents + on-premise** |
+| Solution           | Prix/mois | Ce qu'on obtient           |
+| ------------------ | --------- | -------------------------- |
+| ChatGPT Plus       | 20€       | 1 chatbot générique        |
+| GitHub Copilot     | 10€       | Autocomplétion code        |
+| Claude Pro         | 20€       | 1 chatbot générique        |
+| Cursor             | 20€       | IDE + IA                   |
+| **Dia Pro**        | **29€**   | **3 agents spécialisés**   |
+| **Dia Enterprise** | **299€**  | **12 agents + on-premise** |
 
 ### Positionnement Prix
 
@@ -170,5 +178,5 @@ Pas un chatbot générique. 12 experts IA dédiés, chacun maître dans son doma
 
 ---
 
-*Étude réalisée : Février 2026*  
-*Sources : Gartner, Statista, Crunchbase, enquêtes développeurs*
+_Étude réalisée : Février 2026_  
+_Sources : Gartner, Statista, Crunchbase, enquêtes développeurs_
