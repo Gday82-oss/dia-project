@@ -116,7 +116,7 @@ export default function Fractal() {
             href="/"
             className="text-xl md:text-2xl font-semibold tracking-tight tech-text hover:text-[oklch(0.7_0.15_200)] transition-colors"
           >
-            Dia • Canon Fractal
+            <span className="normal-case">Dia</span> • Canon Fractal
           </Link>
           <p className="text-xs text-muted-foreground mt-1">
             Visualisation dynamique — positions en perpétuelle évolution
@@ -303,7 +303,7 @@ export default function Fractal() {
               x={CX}
               y={CY - 6}
               textAnchor="middle"
-              className="fill-foreground tech-text"
+              className="fill-foreground tech-text normal-case"
               fontSize={16}
               fontWeight={700}
             >

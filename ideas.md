@@ -1,4 +1,4 @@
-# Brainstorming Design - DIA Project
+# Brainstorming Design - Dia Project
 
 ## Approche 1 : Cyberpunk Néo-Grec
 
@@ -130,4 +130,4 @@ Entrées fluides avec des courbes d'easing naturelles (cubic-bezier(0.25, 0.46, 
 
 ## Approche sélectionnée : Cyberpunk Néo-Grec
 
-Cette approche capture parfaitement l'essence du projet DIA : la fusion entre la mythologie grecque ancienne et l'intelligence artificielle moderne. Le contraste visuel fort et les éléments techniques renforcent l'identité du système d'agents.
+Cette approche capture parfaitement l'essence du projet Dia : la fusion entre la mythologie grecque ancienne et l'intelligence artificielle moderne. Le contraste visuel fort et les éléments techniques renforcent l'identité du système d'agents.

@@ -42,7 +42,7 @@ export default function Intro() {
             className="text-6xl md:text-7xl font-bold mb-6 tech-text gradient-text-cyan-magenta"
             {...fadeInUp}
           >
-            Dia / GDAY
+            <span className="normal-case">Dia</span> / GDAY
           </motion.h1>
 
           <motion.p

@@ -32,7 +32,7 @@ export const users = mysqlTable("users", {
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
-// Tables pour les agents DIA
+// Tables pour les agents Dia
 export const agents = mysqlTable("agents", {
   id: int("id").autoincrement().primaryKey(),
   code: varchar("code", { length: 16 }).notNull().unique(), // AGT-001, AGT-002, etc.

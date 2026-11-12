@@ -282,7 +282,7 @@ export default function Canon() {
           className="mb-12"
         >
           <h2 className="text-2xl font-semibold tech-text mb-4">
-            La Spirale centrale : Dia{" "}
+            La Spirale centrale : <span className="normal-case">Dia</span>{" "}
             <span className="greek-text text-muted-foreground">(Σπείρα)</span>
           </h2>
           <div className="bg-card/80 backdrop-blur-sm border border-[oklch(0.5_0.15_260)] rounded-sm p-6 md:p-8">
@@ -462,7 +462,7 @@ export default function Canon() {
                         className="w-2 h-2 rounded-full"
                         style={{ background: diaCore.color }}
                       />
-                      <span className="font-medium tech-text text-[oklch(0.7_0.15_200)]">
+                      <span className="font-medium tech-text normal-case text-[oklch(0.7_0.15_200)]">
                         {diaCore.name}
                       </span>
                     </div>

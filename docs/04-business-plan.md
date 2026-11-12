@@ -1,5 +1,5 @@
 # BUSINESS PLAN PRÉVISIONNEL
-## Projet DIA - Distributed Intelligence Architecture
+## Projet Dia - Distributed Intelligence Architecture
 
 ---
 

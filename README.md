@@ -1,8 +1,8 @@
-# DIA / GDAY
+# Dia / GDAY
 
-— version full-stack avancée du projet DIA
+— version full-stack avancée du projet Dia
 
-**DIA** (Distributed Intelligence Architecture) est un système d'agents IA organisés en 4 strates fonctionnelles, exposé via une interface React moderne et une API Express/tRPC.
+**Dia** (Distributed Intelligence Architecture) est un système d'agents IA organisés en 4 strates fonctionnelles, exposé via une interface React moderne et une API Express/tRPC.
 
 ---
 

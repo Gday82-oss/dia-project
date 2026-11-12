@@ -1,5 +1,5 @@
 # ÉTUDE DE MARCHÉ
-## Projet DIA - Distributed Intelligence Architecture
+## Projet Dia - Distributed Intelligence Architecture
 
 ---
 
@@ -14,7 +14,7 @@
 | Outils productivité IA | 40 Mds $ | 28% |
 | **Total adressable** | **215 Mds $** | **32%** |
 
-### Marché Cible DIA (SAM)
+### Marché Cible Dia (SAM)
 
 | Segment | Taille | Part accessible |
 |---------|--------|-----------------|
@@ -37,7 +37,7 @@
 | **Microsoft Copilot** | Productivité | Intégration Office | Fermé, générique |
 | **ChatGPT Enterprise** | Chatbot pro | Marque, performance | Monolithique, cher |
 
-### Avantage Concurrentiel DIA
+### Avantage Concurrentiel Dia
 
 ✅ **Architecture multi-agents spécialisés** (vs monolithique)  
 ✅ **Mythologie grecque = différenciation marque**  
@@ -78,7 +78,7 @@
 
 ### Tendances 2026-2028
 
-| Tendance | Impact sur DIA |
+| Tendance | Impact sur Dia |
 |----------|----------------|
 | **Multi-agents** | ✅ Aligné avec notre core |
 | **IA locale** | ⚠️ Opportunité (Ollama) |
@@ -159,8 +159,8 @@ Pas un chatbot générique. 12 experts IA dédiés, chacun maître dans son doma
 | GitHub Copilot | 10€ | Autocomplétion code |
 | Claude Pro | 20€ | 1 chatbot générique |
 | Cursor | 20€ | IDE + IA |
-| **DIA Pro** | **29€** | **3 agents spécialisés** |
-| **DIA Enterprise** | **299€** | **12 agents + on-premise** |
+| **Dia Pro** | **29€** | **3 agents spécialisés** |
+| **Dia Enterprise** | **299€** | **12 agents + on-premise** |
 
 ### Positionnement Prix
 

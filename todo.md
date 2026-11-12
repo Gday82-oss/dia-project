@@ -1,9 +1,9 @@
-# TODO - DIA Project
+# TODO - Dia Project
 
 ## Phase 1 — Architecture de base ✅
 
 - [x] Initialiser le projet web statique
-- [x] Créer les 12 agents DIA avec avatars 3D
+- [x] Créer les 12 agents Dia avec avatars 3D
 - [x] Implémenter la visualisation fractale
 - [x] Créer pages de détail par agent
 - [x] Harmoniser les encadrés (supprimer ellipses/ovales)
@@ -23,7 +23,7 @@
 
 ## Phase 3 — Contenu Structuré
 
-- [x] Créer page "Qui sommes-nous" (mission DIA, bénéfices)
+- [x] Créer page "Qui sommes-nous" (mission Dia, bénéfices)
 - [x] Créer page "Agents" avec détails complets (soft/hard skills)
 - [x] Créer page "Valeurs" (approche humaniste)
 - [x] Intégrer soft/hard skills de chaque agent

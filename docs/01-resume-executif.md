@@ -1,11 +1,11 @@
 # RÉSUMÉ EXÉCUTIF
-## Projet DIA - Distributed Intelligence Architecture
+## Projet Dia - Distributed Intelligence Architecture
 
 ---
 
 ## Vision
 
-DIA est un système multi-agents IA composé de 12 agents spécialisés, chacun incarnant une fonction cognitive distincte inspirée de la mythologie grecque. Le système vise à créer une architecture d'intelligence artificielle distribuée, modulaire et évolutive.
+Dia est un système multi-agents IA composé de 12 agents spécialisés, chacun incarnant une fonction cognitive distincte inspirée de la mythologie grecque. Le système vise à créer une architecture d'intelligence artificielle distribuée, modulaire et évolutive.
 
 ---
 
