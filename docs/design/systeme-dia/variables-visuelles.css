@@ -1,0 +1,447 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * SYSTÈME DIA - VARIABLES CSS/TAILWIND
+ * Design System Cyberpunk Néo-Grec
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+@layer base {
+  :root {
+    /* ═══════════════════════════════════════════════════════════════════════
+     * COULEURS DE BASE - Le Néant Cosmique
+     * ═══════════════════════════════════════════════════════════════════════ */
+
+    /* Fonds */
+    --dia-void-black: oklch(0.08 0.02 260);
+    --dia-deep-void: oklch(0.05 0.01 270);
+    --dia-cosmic-black: oklch(0.03 0.005 280);
+
+    /* Marbre Digital */
+    --dia-marble-base: oklch(0.15 0.015 260);
+    --dia-marble-vein: oklch(0.22 0.02 255);
+    --dia-marble-highlight: oklch(0.28 0.025 250);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * COULEURS AGENTS - Le Spectre Néon (12 teintes)
+     * ═══════════════════════════════════════════════════════════════════════ */
+
+    /* DIA-01: ARCHITECTE - Cyan */
+    --dia-cyan: oklch(0.75 0.25 195);
+    --dia-cyan-secondary: oklch(0.65 0.2 195);
+    --dia-cyan-glow: oklch(0.85 0.3 195);
+    --dia-cyan-dark: oklch(0.25 0.15 195);
+
+    /* DIA-02: ORACLE - Magenta */
+    --dia-magenta: oklch(0.72 0.28 330);
+    --dia-magenta-secondary: oklch(0.62 0.23 330);
+    --dia-magenta-glow: oklch(0.82 0.33 330);
+    --dia-magenta-dark: oklch(0.22 0.18 330);
+
+    /* DIA-03: FORGE - Or */
+    --dia-gold: oklch(0.78 0.22 85);
+    --dia-gold-secondary: oklch(0.68 0.17 85);
+    --dia-gold-glow: oklch(0.88 0.27 85);
+    --dia-gold-dark: oklch(0.28 0.12 85);
+
+    /* DIA-04: NYX - Violet */
+    --dia-violet: oklch(0.68 0.24 295);
+    --dia-violet-secondary: oklch(0.58 0.19 295);
+    --dia-violet-glow: oklch(0.78 0.29 295);
+    --dia-violet-dark: oklch(0.18 0.14 295);
+
+    /* DIA-05: ARES - Rouge */
+    --dia-red: oklch(0.65 0.26 25);
+    --dia-red-secondary: oklch(0.55 0.21 25);
+    --dia-red-glow: oklch(0.75 0.31 25);
+    --dia-red-dark: oklch(0.15 0.16 25);
+
+    /* DIA-06: GAIA - Vert */
+    --dia-green: oklch(0.72 0.23 145);
+    --dia-green-secondary: oklch(0.62 0.18 145);
+    --dia-green-glow: oklch(0.82 0.28 145);
+    --dia-green-dark: oklch(0.22 0.13 145);
+
+    /* DIA-07: HERMÈS - Ambre */
+    --dia-amber: oklch(0.76 0.2 75);
+    --dia-amber-secondary: oklch(0.66 0.15 75);
+    --dia-amber-glow: oklch(0.86 0.25 75);
+    --dia-amber-dark: oklch(0.26 0.1 75);
+
+    /* DIA-08: HÉPHAÏSTOS - Coral */
+    --dia-coral: oklch(0.7 0.24 35);
+    --dia-coral-secondary: oklch(0.6 0.19 35);
+    --dia-coral-glow: oklch(0.8 0.29 35);
+    --dia-coral-dark: oklch(0.2 0.14 35);
+
+    /* DIA-09: ATHÉNA - Émeraude */
+    --dia-emerald: oklch(0.75 0.21 155);
+    --dia-emerald-secondary: oklch(0.65 0.16 155);
+    --dia-emerald-glow: oklch(0.85 0.26 155);
+    --dia-emerald-dark: oklch(0.25 0.11 155);
+
+    /* DIA-10: POSÉIDON - Saphir */
+    --dia-sapphire: oklch(0.73 0.23 245);
+    --dia-sapphire-secondary: oklch(0.63 0.18 245);
+    --dia-sapphire-glow: oklch(0.83 0.28 245);
+    --dia-sapphire-dark: oklch(0.23 0.13 245);
+
+    /* DIA-11: APHRODITE - Rose */
+    --dia-rose: oklch(0.71 0.26 355);
+    --dia-rose-secondary: oklch(0.61 0.21 355);
+    --dia-rose-glow: oklch(0.81 0.31 355);
+    --dia-rose-dark: oklch(0.21 0.16 355);
+
+    /* DIA-12: ZEUS - Lime */
+    --dia-lime: oklch(0.78 0.19 125);
+    --dia-lime-secondary: oklch(0.68 0.14 125);
+    --dia-lime-glow: oklch(0.88 0.24 125);
+    --dia-lime-dark: oklch(0.28 0.09 125);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * INTENSITÉS DE GLOW
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-glow-subtle: 0 0 10px;
+    --dia-glow-medium: 0 0 25px;
+    --dia-glow-intense: 0 0 50px;
+    --dia-glow-extreme: 0 0 100px;
+    --dia-glow-pulse: 0 0 75px;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * GRILLE SPATIALE - Modulaire Divine (base 8px)
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-grid-base: 8px;
+    --dia-space-xs: 4px;
+    --dia-space-sm: 8px;
+    --dia-space-md: 16px;
+    --dia-space-lg: 24px;
+    --dia-space-xl: 40px;
+    --dia-space-2xl: 64px;
+    --dia-space-3xl: 104px; /* Nombre d'or × base */
+    --dia-space-4xl: 168px; /* Fibonacci × base */
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * Z-INDEX MYTHOLOGIQUE
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-z-background: -100;
+    --dia-z-particles: -50;
+    --dia-z-base: 0;
+    --dia-z-content: 10;
+    --dia-z-hover: 20;
+    --dia-z-overlay: 50;
+    --dia-z-modal: 100;
+    --dia-z-immersive: 1000;
+    --dia-z-cinematic: 9999;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * OMBRES NÉON
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-shadow-neon-cyan:
+      0 0 5px oklch(0.75 0.25 195 / 0.5), 0 0 20px oklch(0.75 0.25 195 / 0.3),
+      0 0 40px oklch(0.75 0.25 195 / 0.1);
+
+    --dia-shadow-neon-magenta:
+      0 0 5px oklch(0.72 0.28 330 / 0.5), 0 0 20px oklch(0.72 0.28 330 / 0.3),
+      0 0 40px oklch(0.72 0.28 330 / 0.1);
+
+    --dia-shadow-neon-gold:
+      0 0 5px oklch(0.78 0.22 85 / 0.5), 0 0 20px oklch(0.78 0.22 85 / 0.3),
+      0 0 40px oklch(0.78 0.22 85 / 0.1);
+
+    --dia-shadow-depth:
+      0 4px 6px oklch(0 0 0 / 0.3), 0 10px 20px oklch(0 0 0 / 0.4),
+      0 25px 50px oklch(0 0 0 / 0.5);
+
+    --dia-shadow-levitate:
+      0 20px 40px oklch(0 0 0 / 0.4), 0 40px 80px oklch(0 0 0 / 0.3);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * BORDURES & CONTOURS
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-border-glow-cyan: 1px solid oklch(0.75 0.25 195 / 0.6);
+    --dia-border-glow-magenta: 1px solid oklch(0.72 0.28 330 / 0.6);
+    --dia-border-glow-gold: 1px solid oklch(0.78 0.22 85 / 0.6);
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * DURÉES D'ANIMATION
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-duration-fast: 150ms;
+    --dia-duration-normal: 300ms;
+    --dia-duration-slow: 500ms;
+    --dia-duration-dramatic: 1000ms;
+
+    /* ═══════════════════════════════════════════════════════════════════════
+     * EASING FUNCTIONS
+     * ═══════════════════════════════════════════════════════════════════════ */
+    --dia-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --dia-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --dia-easing-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --dia-easing-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * UTILITAIRES TAILWIND CUSTOM
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-dia-void {
+    background-color: var(--dia-void-black);
+  }
+
+  .bg-dia-deep-void {
+    background-color: var(--dia-deep-void);
+  }
+
+  .bg-dia-marble {
+    background-color: var(--dia-marble-base);
+  }
+
+  /* Glow Effects */
+  .glow-cyan {
+    box-shadow: var(--dia-shadow-neon-cyan);
+  }
+
+  .glow-magenta {
+    box-shadow: var(--dia-shadow-neon-magenta);
+  }
+
+  .glow-gold {
+    box-shadow: var(--dia-shadow-neon-gold);
+  }
+
+  .glow-text-cyan {
+    text-shadow:
+      0 0 10px var(--dia-cyan),
+      0 0 20px var(--dia-cyan-glow);
+  }
+
+  .glow-text-magenta {
+    text-shadow:
+      0 0 10px var(--dia-magenta),
+      0 0 20px var(--dia-magenta-glow);
+  }
+
+  /* Border Glow */
+  .border-glow-cyan {
+    border: var(--dia-border-glow-cyan);
+  }
+
+  .border-glow-magenta {
+    border: var(--dia-border-glow-magenta);
+  }
+
+  /* Animations */
+  .animate-pulse-glow {
+    animation: dia-pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: dia-float 6s ease-in-out infinite;
+  }
+
+  .animate-scanlines {
+    animation: dia-scanline-shift 8s linear infinite;
+  }
+
+  /* Hologram Effect */
+  .hologram {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hologram::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      currentColor 3px,
+      currentColor 6px
+    );
+    opacity: 0.1;
+    pointer-events: none;
+    animation: dia-scanline-scroll 2s linear infinite;
+  }
+
+  /* Scanlines Overlay */
+  .scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      oklch(0 0 0 / 0.03) 2px,
+      oklch(0 0 0 / 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: var(--dia-z-overlay);
+  }
+
+  /* Glass Effect */
+  .glass-dia {
+    background: oklch(0.15 0.015 260 / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(1 0 0 / 0.1);
+  }
+
+  /* GPU Acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * KEYFRAMES ANIMATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes dia-pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes dia-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes dia-scanline-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100vh;
+  }
+}
+
+@keyframes dia-scanline-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes dia-hologram-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  52% {
+    opacity: 0.7;
+  }
+  54% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0.85;
+  }
+  94% {
+    opacity: 1;
+  }
+}
+
+@keyframes dia-ripple-expand {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes dia-enter-immersive {
+  0% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  30% {
+    filter: brightness(2);
+    transform: scale(1.02);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(1.5);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RIPPLE EFFECT
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.dia-ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.dia-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+  transform: scale(0);
+  animation: dia-ripple-expand 600ms ease-out forwards;
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SCROLL REVEAL
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.dia-scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s var(--dia-easing-smooth),
+    transform 0.6s var(--dia-easing-smooth);
+}
+
+.dia-scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dia-scroll-reveal.glow-in {
+  filter: blur(10px);
+}
+
+.dia-scroll-reveal.glow-in.visible {
+  filter: blur(0);
+}

@@ -41,7 +41,7 @@ Décidé : les agents agissent d'abord sur les projets de Guillaume (réponse du
 
 ## Rangement du dépôt (2026-11-12)
 
-Branche `chore/rangement-depot`. Rien n'est supprimé de `main` tant que la demande de fusion n'est pas validée.
+Fait en deux demandes de fusion : n° 11 (`chore/rangement-depot`, fusionnée le 2026-11-12) puis `chore/organisation-projet`.
 
 - [x] Supprimer le code jamais utilisé (54 fichiers) : page `ComponentShowcase`, `DashboardLayout`, `ManusDialog`, `Map`, 42 composants shadcn non utilisés, `useMobile`, l'ancien `server/index.ts`, et les aides Manus sans appelant (`map`, `dataApi`, `imageGeneration`, `voiceTranscription`, `storage`)
 - [x] Supprimer les traces d'outils : `.emergent/`, `.gitconfig`, trois `.gitkeep`
@@ -49,20 +49,45 @@ Branche `chore/rangement-depot`. Rien n'est supprimé de `main` tant que la dema
 - [x] Ajouter `tasks/todo.md` et `tasks/lessons.md` dans le dépôt
 - [x] Ajouter la direction visuelle « La Faille » dans `docs/design/`
 - [x] Mettre à jour la structure décrite dans le README
-- [ ] Retirer de `package.json` les dépendances devenues inutiles (demande `pnpm install` pour régénérer le fichier de verrouillage)
-- [ ] Supprimer les six branches `copilot/*` déjà fusionnées
-- [ ] Retirer le collecteur de logs Manus de `vite.config.ts` et `client/public/__manus__/`
+- [x] Retirer le collecteur de logs Manus de `vite.config.ts` et `client/public/__manus__/`
+- [x] Ajouter dans `docs/design/systeme-dia/` les 9 documents du design system qui n'existaient que sur le PC de Guillaume
+- [x] Ajouter dans `docs/agents/` la présentation des 12 agents qui n'existait que dans le projet Claude
+- [x] Ajouter `docs/README.md` (sommaire des documents)
+- [x] Créer `.env.example`
+- [ ] Supprimer les 7 vieilles branches (voir ci-dessous) — refusé depuis une session Claude, à faire sur github.com, page « Branches »
+- [ ] Corriger la description du dépôt sur github.com (elle dit encore « Site vitrine… ») — même raison
+- [ ] Retirer de `package.json` les dépendances devenues inutiles — à faire depuis le PC : demande `pnpm install` pour régénérer le fichier de verrouillage
 
-Gardé volontairement bien que non utilisé aujourd'hui : `server/_core/llm.ts` (étape 1), `AIChatBox` et les composants `Button`, `Card`, `Badge`, `Input`, `Textarea`, `Label`, `Dialog`, `Separator`, `Tooltip` (décrits dans le design system), `useAgent`, `shared/types.ts`, `drizzle/relations.ts`.
+Gardé volontairement bien que non utilisé aujourd'hui : `server/_core/llm.ts` (étape 1), `AIChatBox` et les composants `Button`, `Card`, `Badge`, `Input`, `Textarea`, `Label`, `Dialog`, `Separator`, `Tooltip` (décrits dans le design system), `useAgent`, `shared/types.ts`, `drizzle/relations.ts`. Le greffon `vite-plugin-manus-runtime` reste aussi, jusqu'au nettoyage des dépendances.
 
-**Preuve :** la CI (typecheck, prettier, build, tests) passe sur la demande de fusion.
+Branches à supprimer (validé par Guillaume le 2026-11-12). Pour en restaurer une ensuite : `git push origin <identifiant>:refs/heads/<nom>`.
+
+| Branche                                | Identifiant | Remarque                                          |
+| -------------------------------------- | ----------- | ------------------------------------------------- |
+| `chore/rangement-depot`                | `57bf0f4`   | fusionnée (n° 11)                                 |
+| `copilot/check-deployment-readiness`   | `020b4ee`   | fusionnée                                         |
+| `copilot/review-commit-checks`         | `bc7f07e`   | fusionnée                                         |
+| `copilot/update-project-requirements`  | `37b52a7`   | fusionnée                                         |
+| `copilot/update-readme-agents-table`   | `84ad190`   | fusionnée                                         |
+| `copilot/create-readme-for-full-stack` | `3de0ff0`   | reste non fusionné : retouche du README (20 fév.) |
+| `copilot/fix-run-failed-checks`        | `9b71d25`   | reste non fusionné : correctif CI refait depuis   |
+
+La branche `gh-pages` (appli Le Conseil Dia) est gardée.
+
+**Preuve :** la CI (typecheck, prettier, build, tests) passe sur chaque demande de fusion.
+
+### Où se trouve quoi
+
+- **GitHub** (`Gday82-oss/dia-project`) : la référence. Code, documents (`docs/`), plan (`tasks/`).
+- **Projet Claude « Dia »** : synchronisé avec GitHub, plus une copie de travail de `tasks/todo.md`, `tasks/lessons.md` et `design/direction-la-faille.md`.
+- **PC** (`Bureau/Doc Guillaume/Agent_Système dia`) : copie des documents `docs/`, datée dans son `LISEZ-MOI.md`.
 
 ---
 
 ## Étape 0 — Base saine
 
 - [ ] Vérifier que `pnpm check`, `pnpm test` et `pnpm build` passent sur `main`
-- [ ] Créer `.env.example`
+- [x] Créer `.env.example`
 - [x] Ajouter `tasks/todo.md` et `tasks/lessons.md` dans le dépôt
 - [ ] Travailler sur une branche `feat/systeme-autonome`, jamais directement sur `main`
 
@@ -150,14 +175,14 @@ Onboarding initiatique, gamification, sound design, SEO, offre commerciale. À r
 
 ## Suivi
 
-| Étape               | Statut                    | Preuve |
-| ------------------- | ------------------------- | ------ |
-| Rangement du dépôt  | demande de fusion ouverte |        |
-| 0 Base saine        | à faire                   |        |
-| 1 Cerveau           | à faire                   |        |
-| 2 Outils            | à faire                   |        |
-| 3 Boucle et mémoire | à faire                   |        |
-| 4 Dialogue          | à faire                   |        |
-| 5 Déclencheurs      | à faire                   |        |
-| 6 Les douze         | à faire                   |        |
-| 7 Garde-fous        | à faire                   |        |
+| Étape               | Statut                                                  | Preuve                 |
+| ------------------- | ------------------------------------------------------- | ---------------------- |
+| Rangement du dépôt  | n° 11 fusionnée ; `chore/organisation-projet` à valider | CI verte le 2026-11-12 |
+| 0 Base saine        | à faire                                                 |                        |
+| 1 Cerveau           | à faire                                                 |                        |
+| 2 Outils            | à faire                                                 |                        |
+| 3 Boucle et mémoire | à faire                                                 |                        |
+| 4 Dialogue          | à faire                                                 |                        |
+| 5 Déclencheurs      | à faire                                                 |                        |
+| 6 Les douze         | à faire                                                 |                        |
+| 7 Garde-fous        | à faire                                                 |                        |

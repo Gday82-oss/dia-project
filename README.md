@@ -63,6 +63,7 @@ Les variables requises sont :
 | `OAUTH_SERVER_URL`       | URL du serveur OAuth                            |
 | `OWNER_OPEN_ID`          | OpenID de l'administrateur                      |
 | `VITE_APP_ID`            | Identifiant de l'application Manus              |
+| `VITE_OAUTH_PORTAL_URL`  | URL du portail de connexion                     |
 | `BUILT_IN_FORGE_API_URL` | URL de l'API Forge / LLM                        |
 | `BUILT_IN_FORGE_API_KEY` | Clé de l'API Forge / LLM                        |
 
@@ -120,13 +121,16 @@ pnpm dev       # Lancer en développement
 │   └── services/
 ├── shared/
 ├── drizzle/                     # schéma et migrations
-├── docs/
+├── docs/                        # sommaire dans docs/README.md
+│   ├── agents/                  # présentation complète des 12 agents
 │   ├── business/                # résumé exécutif, budget, étude de marché, business plan
 │   ├── design/                  # pistes de design et direction « La Faille »
+│   │   └── systeme-dia/         # design system : récit, visuel, UX, son, animations
 │   └── archive/                 # anciens documents
 ├── tasks/
 │   ├── todo.md                  # plan en cours
 │   └── lessons.md               # leçons retenues
+├── .env.example                 # modèle de variables d'environnement
 ├── package.json
 ├── vite.config.ts
 └── drizzle.config.ts
